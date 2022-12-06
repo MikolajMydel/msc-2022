@@ -1,19 +1,27 @@
 module.exports = {
-	root: true,
-	parser: "@typescript-eslint/parser",
-	parserOptions: {
-		tsconfigRootDir: __dirname,
-		project: ["./tsconfig.json"],
+	settings: {
+		react: {
+			version: "18.2.0",
+		},
 	},
-	plugins: ["@typescript-eslint"],
+	env: {
+		browser: true,
+		es2021: true,
+	},
 	extends: [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
-		"prettier",
 	],
+	overrides: [],
+	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		ecmaVersion: "latest",
+		sourceType: "module",
+	},
+	plugins: ["react", "@typescript-eslint"],
 	rules: {
-		"no-console": 1,
+		"react/react-in-jsx-scope": "off",
+		"no-console": "warn",
 	},
 };
