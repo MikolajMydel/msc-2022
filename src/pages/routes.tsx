@@ -1,7 +1,9 @@
 import { RouteObject } from "react-router-dom";
+
 import Root from "./Root";
-import CodeAnalysis from "./CodeAnalysis/CodeAnalysis";
-import CodeInput from "./CodeInput/CodeInput";
+import CodeAnalysis from "./CodeAnalysis";
+import CodeInput from "./CodeInput";
+import Visualization from "./Visualization";
 
 export const routes: RouteObject[] = [
 	{
@@ -9,12 +11,16 @@ export const routes: RouteObject[] = [
 		element: <Root />,
 		children: [
 			{
-				path: "/",
+				index: true,
 				element: <CodeInput />,
 			},
 			{
-				path: "/:sequence",
+				path: "/analysis/:sequence",
 				element: <CodeAnalysis />,
+			},
+			{
+				path: "/visualization/:sequence",
+				element: <Visualization />,
 			},
 		],
 	},
