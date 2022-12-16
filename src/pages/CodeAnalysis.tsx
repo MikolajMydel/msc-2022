@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 
-const DNA_REGEXP = /^[AGCT]+$/;
-const RNA_REGEXP = /^[AGCU]+$/;
-
-
+const DNA_REGEXP = /^[AGCT]+$/i;
+const RNA_REGEXP = /^[AGCU]+$/i;
 
 enum InputType {
 	Invalid = 0,
@@ -11,10 +9,10 @@ enum InputType {
 	DNA,
 }
 
-function CheckInputType(sequence: string): InputType {	
+function CheckInputType(sequence: string): InputType {
 	if (DNA_REGEXP.test(sequence)) return InputType.DNA;
 	else if (RNA_REGEXP.test(sequence)) return InputType.RNA;
-	return InputType.Invalid
+	return InputType.Invalid;
 }
 
 function GetRNA(input: string | undefined): string {
@@ -22,10 +20,14 @@ function GetRNA(input: string | undefined): string {
 
 	const inputType = CheckInputType(input);
 
-	if (inputType == InputType.RNA) { return input; }
-	if (inputType == InputType.DNA) { return input.replaceAll('T', 'U'); }
-	
-	return ""; 
+	if (inputType == InputType.RNA) {
+		return input.toUpperCase();
+	}
+	if (inputType == InputType.DNA) {
+		return input.replaceAll(/T/gi, "U").toUpperCase();
+	}
+
+	return "";
 }
 
 export default function CodeAnalysis() {
