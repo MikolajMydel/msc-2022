@@ -1,38 +1,9 @@
 import { useParams } from "react-router-dom";
-
-const DNA_REGEXP = /^[AGCT]+$/i;
-const RNA_REGEXP = /^[AGCU]+$/i;
-
-enum InputType {
-	Invalid = 0,
-	RNA,
-	DNA,
-}
-
-function CheckInputType(sequence: string): InputType {
-	if (DNA_REGEXP.test(sequence)) return InputType.DNA;
-	else if (RNA_REGEXP.test(sequence)) return InputType.RNA;
-	return InputType.Invalid;
-}
-
-function GetRNA(input: string | undefined): string {
-	if (!input) return "";
-
-	const inputType = CheckInputType(input);
-
-	if (inputType == InputType.RNA) {
-		return input.toUpperCase();
-	}
-	if (inputType == InputType.DNA) {
-		return input.replaceAll(/T/gi, "U").toUpperCase();
-	}
-
-	return "";
-}
+import { getRNA } from "../features/codeAnalysis/utils/transcription";
 
 export default function CodeAnalysis() {
 	const { sequence } = useParams<{ sequence: string }>();
-	const rna = GetRNA(sequence);
+	const rna = getRNA(sequence);
 
 	if (!rna) return <div> Invalid input </div>;
 	return <div> mRNA: {rna} </div>;
