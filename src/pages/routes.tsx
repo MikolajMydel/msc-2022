@@ -1,9 +1,9 @@
 import { RouteObject } from "react-router-dom";
 
-import Root from "./Root";
-import CodeAnalysis from "./CodeAnalysis";
-import CodeInput from "./CodeInput";
-import Visualization from "./Visualization";
+import Root from "./Root/Root";
+import CodeAnalysis from "./CodeAnalysis/CodeAnalysis";
+import CodeInput from "./CodeInput/CodeInput";
+import Visualization from "./Visualization/Visualization";
 
 export const routes: RouteObject[] = [
 	{

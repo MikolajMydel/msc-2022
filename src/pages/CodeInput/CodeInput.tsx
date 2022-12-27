@@ -1,4 +1,4 @@
-import InputContainer from "../features/codeInput/components/Input/InputContainer";
+import InputContainer from "../../features/codeInput/components/Input/InputContainer";
 
 export default function CodeInput() {
 	return (
