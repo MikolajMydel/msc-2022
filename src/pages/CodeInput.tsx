@@ -1,5 +1,11 @@
+import InputContainer from "../features/codeInput/components/Input/InputContainer";
+
 export default function CodeInput() {
-	return <div>Code Input</div>;
+	return (
+		<div>
+			<InputContainer />
+		</div>
+	);
 }
 
 // Keep track of input code (entire page is input)
