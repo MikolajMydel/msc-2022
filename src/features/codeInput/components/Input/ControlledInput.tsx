@@ -1,11 +1,6 @@
-import {
-	HTMLInputTypeAttribute,
-	useEffect,
-	useRef,
-	useState,
-	ChangeEvent,
-} from "react";
+import { HTMLInputTypeAttribute, useEffect, useRef, useState } from "react";
 import { handleChangeType, handleKeyDownType } from "./InputContainer";
+
 type ControlledInputProps = {
 	value: string;
 	onChange?: handleChangeType;
@@ -13,8 +8,9 @@ type ControlledInputProps = {
 	type: HTMLInputTypeAttribute;
 	className: string;
 };
-const ControlledInput = (props: ControlledInputProps) => {
-	const { value, onChange, ...rest } = props;
+
+export default function ControlledInput(props: ControlledInputProps) {
+	const { value, onChange, onKeyDown, ...rest } = props;
 	const [cursor, setCursor] = useState<number>(0);
 	const ref = useRef<HTMLInputElement>(null);
 
@@ -23,7 +19,7 @@ const ControlledInput = (props: ControlledInputProps) => {
 		if (input) input.setSelectionRange(cursor, cursor);
 	}, [ref, cursor, value]);
 
-	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+	const handleChange: handleChangeType = (event) => {
 		const selectionStart = event.target.selectionStart;
 		if (selectionStart) setCursor(selectionStart);
 
@@ -31,7 +27,23 @@ const ControlledInput = (props: ControlledInputProps) => {
 		onChange && onChange(event);
 	};
 
-	return <input ref={ref} value={value} onChange={handleChange} {...rest} />;
-};
+	const handleKeyDown: handleKeyDownType = (event) => {
+		if (event.key === "backspace") {
+			setCursor((currentCursor) => {
+				return currentCursor - 1;
+			});
+		}
+		// call props onKeyDown handler (if exists)
+		onKeyDown && onKeyDown(event);
+	};
 
-export default ControlledInput;
+	return (
+		<input
+			ref={ref}
+			value={value}
+			onChange={handleChange}
+			onKeyDown={handleKeyDown}
+			{...rest}
+		/>
+	);
+}
