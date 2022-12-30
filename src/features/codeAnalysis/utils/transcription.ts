@@ -1,4 +1,4 @@
-import { DNA_REGEXP, RNA_REGEXP } from "../../../utils";
+import { DNA_REGEXP, RNA_REGEXP } from "../../../utils/sequenceValidation";
 
 enum InputType {
 	Invalid = 0,

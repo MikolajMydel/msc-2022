@@ -1,19 +1,11 @@
 import { ChangeEvent, useState, KeyboardEvent } from "react";
 import Input from "./Input";
-import { DNA_REGEXP, RNA_REGEXP } from "../../../../utils";
+import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
 
 export type handleChangeType = (event: ChangeEvent<HTMLInputElement>) => void;
 export type handleKeyDownType = (
 	event: KeyboardEvent<HTMLInputElement>
 ) => void;
-
-const allowedCharacters: RegExp[] = [DNA_REGEXP, RNA_REGEXP];
-const isCharacterAllowed = (keyCode: string): boolean => {
-	for (const regex of allowedCharacters) {
-		if (regex.test(keyCode)) return true;
-	}
-	return false;
-};
 
 export default function InputContainer() {
 	const [value, setValue] = useState<string>("");
