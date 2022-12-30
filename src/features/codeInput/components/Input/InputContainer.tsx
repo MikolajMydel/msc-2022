@@ -9,7 +9,7 @@ export type handleKeyDownType = (
 
 const allowedCharacters: RegExp[] = [DNA_REGEXP, RNA_REGEXP];
 const isCharacterAllowed = (keyCode: string): boolean => {
-	for (let regex of allowedCharacters) {
+	for (const regex of allowedCharacters) {
 		if (regex.test(keyCode)) return true;
 	}
 	return false;

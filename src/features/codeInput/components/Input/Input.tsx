@@ -2,6 +2,7 @@
 import { handleChangeType, handleKeyDownType } from "./InputContainer";
 import styles from "./Input.module.scss";
 import CodonList from "../CodonList/CodonList";
+import ControlledInput from "./ControlledInput";
 
 type InputProps = {
 	value: string;
@@ -17,7 +18,7 @@ export default function Input({
 	const codonsArray = value.match(/.{1,3}/g) ?? [];
 	return (
 		<div className={styles.Input}>
-			<input
+			<ControlledInput
 				className={styles.InputDOMElement}
 				type={"text"}
 				value={value}
