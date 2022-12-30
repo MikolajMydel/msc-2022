@@ -17,6 +17,7 @@ const isCharacterAllowed = (keyCode: string): boolean => {
 
 export default function InputContainer() {
 	const [value, setValue] = useState<string>("");
+	const [error, setError] = useState<boolean>(false);
 
 	const handleChange: handleChangeType = (event) => {
 		setValue(event.target.value.toUpperCase());
@@ -24,7 +25,14 @@ export default function InputContainer() {
 
 	const handleKeydown: handleKeyDownType = (event) => {
 		const key = event.key;
-		if (key.length === 1 && !isCharacterAllowed(key)) event.preventDefault();
+		if (key.length === 1 && !isCharacterAllowed(key)) {
+			setError(true);
+			event.preventDefault();
+		}
+	};
+
+	const cancelError = () => {
+		setError(false);
 	};
 
 	return (
@@ -32,6 +40,8 @@ export default function InputContainer() {
 			value={value}
 			handleChange={handleChange}
 			handleKeyDown={handleKeydown}
+			error={error}
+			cancelError={cancelError}
 		/>
 	);
 }
