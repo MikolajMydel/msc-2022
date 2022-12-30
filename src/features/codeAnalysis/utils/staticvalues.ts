@@ -1,25 +1,25 @@
 export enum AminoAcid {
-    Phenylalanine,
-    Leucine,
-    Isoleucine,
-    Methionine, /* START codon */
-    Valine,
-    Serine,
-    Proline,
-    Threonine,
-    Alanine,
-    Tyrosine,
-    STOP,
-    Histidine,
-    Glutamine,
-    Aspargine,
-    Lysine,
-    AsparticAcid,
-    GlutamicAcid,
-    Cysterine,
-    Tryptophan,
-    Arginine,
-    Glycine
+    Phenylalanine = "Phenylalanine",
+    Leucine = "Leucine",
+    Isoleucine = "Isoleucine",
+    Methionine = "Methionine", /* START codon */
+    Valine = "Valine",
+    Serine = "Serine",
+    Proline = "Proline",
+    Threonine = "Threonine",
+    Alanine = "Alanine",
+    Tyrosine = "Tyrosine",
+    STOP = "STOP",
+    Histidine = "Histidine",
+    Glutamine = "Glutamine",
+    Aspargine = "Aspargine",
+    Lysine = "Lysine",
+    AsparticAcid = "AsparticAcid",
+    GlutamicAcid = "GlutamicAcid",
+    Cysterine = "Cysterine",
+    Tryptophan = "Tryptophan",
+    Arginine = "Arginine",
+    Glycine = "Glycine"
 }
 
 type CodonTable = {
