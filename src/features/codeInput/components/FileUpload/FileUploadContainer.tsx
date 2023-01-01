@@ -1,7 +1,9 @@
-import { DragEvent, useState } from "react";
+import { ChangeEvent, DragEvent, useState } from "react";
 import FileUploadZone from "./FileUploadZone";
+import styles from "./FileUpload.module.scss";
 
 export type handleDropType = (event: DragEvent<HTMLDivElement>) => void;
+export type handleChangeType = (event: ChangeEvent<HTMLInputElement>) => void;
 export type handleDragType = (event: DragEvent<HTMLDivElement>) => void;
 
 export default function FileUploadContainer() {
@@ -15,7 +17,7 @@ export default function FileUploadContainer() {
 		event.stopPropagation();
 
 		const file = event.dataTransfer?.files[0];
-		if (file) setFile(file);
+		if (file) updateFile(file);
 		setDragActive(false);
 	};
 
@@ -28,15 +30,28 @@ export default function FileUploadContainer() {
 			setDragActive(false);
 		}
 	};
+
+	const handleChange: handleChangeType = (event) => {
+		const files = event.target.files;
+		if (files && files.length > 0) {
+			updateFile(files[0]);
+		}
+	};
+
+	const updateFile = (file: File) => {
+		// TODO: validation
+		setFile(file);
+	};
+
 	return (
-		<div>
-			{/*  TMP */}
-			<div style={{ color: "white" }}>Current file: {fileName}</div>
+		<div className={styles.Wrapper}>
+			<h2 className={styles.FileName}>Current file: {fileName}</h2>
 
 			<FileUploadZone
 				handleDrop={handleDrop}
 				handleDrag={handleDrag}
 				dragActive={dragActive}
+				handleChange={handleChange}
 			/>
 		</div>
 	);
