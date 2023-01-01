@@ -3,5 +3,3 @@ export default function Visualization() {
 	const { sequence } = useParams();
 	return <div>{sequence}</div>;
 }
-
-// Visualize proteins

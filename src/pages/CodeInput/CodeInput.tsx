@@ -9,14 +9,3 @@ export default function CodeInput() {
 		</div>
 	);
 }
-
-// [x] Keep track of input code (entire page is input)
-// [x] Prevent user from typing illegal characters
-// [] Prevent user from typing T and U in one sequence (xor)
-
-// [x] Divide code visually (space every 3 letters)
-// [] Highlight start codons
-// [] Allow user to select start point
-
-// [] Autosave user input
-// [x] Pass code to CodeAnalysis page (using link)
