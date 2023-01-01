@@ -2,7 +2,8 @@ import {
 	handleDragType,
 	handleDropType,
 	handleChangeType,
-} from "./FileUploadContainer";
+} from "../../../../types/events";
+
 import styles from "./FileUpload.module.scss";
 import classNames from "classnames";
 

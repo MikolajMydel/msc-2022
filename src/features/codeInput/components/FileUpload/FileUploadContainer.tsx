@@ -1,10 +1,12 @@
-import { ChangeEvent, DragEvent, useState } from "react";
+import { useState } from "react";
 import FileUploadZone from "./FileUploadZone";
 import styles from "./FileUpload.module.scss";
 
-export type handleDropType = (event: DragEvent<HTMLDivElement>) => void;
-export type handleChangeType = (event: ChangeEvent<HTMLInputElement>) => void;
-export type handleDragType = (event: DragEvent<HTMLDivElement>) => void;
+import {
+	handleChangeType,
+	handleDropType,
+	handleDragType,
+} from "../../../../types/events";
 
 export default function FileUploadContainer() {
 	const [file, setFile] = useState<File | null>(null);

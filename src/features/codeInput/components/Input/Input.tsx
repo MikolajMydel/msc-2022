@@ -1,6 +1,6 @@
 // Input presentation component
 import { useEffect } from "react";
-import { handleChangeType, handleKeyDownType } from "./InputContainer";
+import { handleChangeType, handleKeyDownType } from "../../../../types/events";
 import styles from "./Input.module.scss";
 import CodonList from "../CodonList/CodonList";
 import ControlledInput from "./ControlledInput";

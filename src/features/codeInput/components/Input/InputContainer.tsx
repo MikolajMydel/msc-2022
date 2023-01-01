@@ -1,11 +1,8 @@
-import { ChangeEvent, useState, KeyboardEvent } from "react";
+import { useState } from "react";
 import Input from "./Input";
 import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
 
-export type handleChangeType = (event: ChangeEvent<HTMLInputElement>) => void;
-export type handleKeyDownType = (
-	event: KeyboardEvent<HTMLInputElement>
-) => void;
+import { handleChangeType, handleKeyDownType } from "../../../../types/events";
 
 export default function InputContainer() {
 	const [value, setValue] = useState<string>("");
