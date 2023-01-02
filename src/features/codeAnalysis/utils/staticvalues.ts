@@ -27,10 +27,10 @@ type CodonTable = {
 }
 
 export const CODON_TABLE: CodonTable = {
-    /* Phenylalanine */
+    
     UUU: AminoAcid.Phenylalanine,
     UUC: AminoAcid.Phenylalanine,
-    /* Leucine */
+    
     UUA: AminoAcid.Leucine,
     UUG: AminoAcid.Leucine,
     CUU: AminoAcid.Leucine,
@@ -108,8 +108,8 @@ export const CODON_TABLE: CodonTable = {
     AGA: AminoAcid.Arginine,
     AGG: AminoAcid.Arginine,
 
-    GGU: AminoAcid.Arginine,
-    GGC: AminoAcid.Arginine,
-    GGA: AminoAcid.Arginine,
-    GGG: AminoAcid.Arginine,
+    GGU: AminoAcid.Glycine,
+    GGC: AminoAcid.Glycine,
+    GGA: AminoAcid.Glycine,
+    GGG: AminoAcid.Glycine,
 }
