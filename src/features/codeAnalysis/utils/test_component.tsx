@@ -1,5 +1,7 @@
-import { AminoAcid, CODON_TABLE } from "./staticvalues";
+// temporary components just for testing purposes
 import { v4 as uuid } from "uuid";
+import { AminoAcid } from "./staticvalues";
+import { getAminoAcids } from "./translation";
 
 type AcidProps = {
     codon: AminoAcid;
@@ -15,16 +17,7 @@ type AminoAcidsProps = {
 }
 
 export function AminoAcids({ code, shift }: AminoAcidsProps) {
-    // remove first letters
-    code = code.slice(shift);
-
-    const codonsArray = code.match(/.{1,3}/g) ?? [];
-    
-    const aminoAcidArray: AminoAcid[] = [];
-
-    codonsArray.forEach(codon => {
-        aminoAcidArray.push(CODON_TABLE[codon]);
-    });
+    const aminoAcidArray = getAminoAcids(code, shift);
     return (
         <div>
             P+{shift}
