@@ -9,10 +9,10 @@ export default function CodeAnalysis() {
 
 	if (!rna) return <div> Invalid input </div>;
 	return <div> 
-			<p>mRNA: {rna}</p>
-			<p><AminoAcids code={ rna } shift={ 0 } /></p>
-			<p><AminoAcids code={ rna } shift={ 1 } /></p>
-			<p><AminoAcids code={ rna } shift={ 2 } /></p>
+			<div>mRNA: {rna}</div>
+			<div><AminoAcids code={ rna } shift={ 0 } /></div>
+			<div><AminoAcids code={ rna } shift={ 1 } /></div>
+			<div><AminoAcids code={ rna } shift={ 2 } /></div>
 		</div>;
 }
 

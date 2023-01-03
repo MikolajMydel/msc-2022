@@ -19,11 +19,11 @@ type AminoAcidsProps = {
 export function AminoAcids({ code, shift }: AminoAcidsProps) {
     const aminoAcidArray = getAminoAcids(code, shift);
     return (
-        <div>
+        <p>
             P+{shift}
             {aminoAcidArray.map((codon) => (
                 <Acid key={uuid()} codon={ codon } />
             ))}
-        </div>
+        </p>
     );
 }
