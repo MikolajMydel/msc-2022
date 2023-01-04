@@ -1,7 +1,6 @@
 // temporary components just for testing purposes
 import { v4 as uuid } from "uuid";
 import { AminoAcid } from "../../../utils/staticvalues";
-import { getAminoAcids } from "../utils/translation";
 
 type AcidProps = {
 	codon: AminoAcid;
@@ -12,16 +11,13 @@ function Acid({ codon }: AcidProps) {
 }
 
 type AminoAcidsProps = {
-	code: string;
-	shift: number;
+	acids: AminoAcid[];
 };
 
-export function AminoAcids({ code, shift }: AminoAcidsProps) {
-	const aminoAcidArray = getAminoAcids(code, shift);
+export function AminoAcids({ acids }: AminoAcidsProps) {
 	return (
-		<p style={{ color: "#fff" }}>
-			P+{shift}
-			{aminoAcidArray.map((codon) => (
+		<p>
+			{acids.map((codon) => (
 				<Acid key={uuid()} codon={codon} />
 			))}
 		</p>
