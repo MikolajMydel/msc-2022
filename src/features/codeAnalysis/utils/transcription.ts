@@ -1,5 +1,4 @@
-const DNA_REGEXP = /^[AGCT]+$/i;
-const RNA_REGEXP = /^[AGCU]+$/i;
+import { DNA_REGEXP, RNA_REGEXP } from "../../../utils/sequenceValidation";
 
 enum InputType {
 	Invalid = 0,

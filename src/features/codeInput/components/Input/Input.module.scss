@@ -1,0 +1,20 @@
+@use "../../../../styles/variables" as v;
+@import url("../../../../styles/animations.scss");
+
+.Wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.Input {
+	background-color: map-get(v.$colors, "white");
+	transition: background-color v.$animation-duration v.$timing-function;
+
+	width: 100%;
+	font-size: 3rem;
+	&Error {
+		animation: shake v.$animation-duration v.$timing-function both;
+		background-color: map-get(v.$colors, "error");
+	}
+}
