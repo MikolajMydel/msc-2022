@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getRNA } from "../../features/codeAnalysis/utils/transcription";
-import { AminoAcids } from "../../features/codeAnalysis/utils/test_component";
+import { AminoAcids } from "../../features/codeAnalysis/components/test_component";
 
 export default function CodeAnalysis() {
 	const { sequence } = useParams<{ sequence: string }>();

@@ -1,7 +1,7 @@
 // temporary components just for testing purposes
 import { v4 as uuid } from "uuid";
 import { AminoAcid } from "../../../utils/staticvalues";
-import { getAminoAcids } from "./translation";
+import { getAminoAcids } from "../utils/translation";
 
 type AcidProps = {
 	codon: AminoAcid;
