@@ -1,14 +1,15 @@
 import styles from "./Codon.module.scss";
-import { getName } from "../../utils/recognizeAminoAcid";
+import classNames from "classnames";
+import { translateCodon } from "../../../../utils/codonOperations";
 
 type CodonProps = {
 	nitrogenBases: string;
 };
 export default function Codon({ nitrogenBases }: CodonProps) {
-	const name = getName(nitrogenBases);
+	const name = translateCodon(nitrogenBases);
 	return (
 		<div className={styles.Wrapper}>
-			<div className={styles.Codon}>{nitrogenBases}</div>
+			<div className={classNames(styles.Codon)}>{nitrogenBases}</div>
 			<div className={styles.Name}>{name}</div>
 		</div>
 	);

@@ -5,6 +5,7 @@ import styles from "./Input.module.scss";
 import CodonList from "../CodonList/CodonList";
 import ControlledInput from "./ControlledInput";
 import classNames from "classnames";
+import { splitIntoCodons } from "../../../../utils/codonOperations";
 
 type InputProps = {
 	value: string;
@@ -21,7 +22,7 @@ export default function Input({
 	error,
 	cancelError,
 }: InputProps) {
-	const codonsArray = value.match(/.{1,3}/g) ?? [];
+	const codonsArray = splitIntoCodons(value);
 
 	useEffect(() => {
 		if (error) setTimeout(cancelError, 1000);
