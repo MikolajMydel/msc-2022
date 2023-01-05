@@ -1,13 +1,13 @@
-// temporary components just for testing purposes
 import { v4 as uuid } from "uuid";
 import { AminoAcid } from "../../../utils/staticvalues";
+import { getShortName } from "../../../utils/staticvalues";
 
 type AcidProps = {
 	codon: AminoAcid;
 };
 
 function Acid({ codon }: AcidProps) {
-	return <span> {codon}</span>;
+	return <span> {getShortName(codon)}</span>;
 }
 
 type AminoAcidsProps = {

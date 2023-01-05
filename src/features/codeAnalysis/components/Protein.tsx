@@ -1,5 +1,5 @@
 import { Protein } from "../utils/protein";
-import { AminoAcids } from "./aminoacid";
+import { AminoAcids } from "./AminoAcid";
 
 type ProteinComponentProps = {
 	protein: Protein;

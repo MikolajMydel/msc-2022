@@ -112,3 +112,22 @@ export const CODON_TABLE: CodonTable = {
 	GGA: AminoAcid.Glycine,
 	GGG: AminoAcid.Glycine,
 };
+
+export function getShortName(acid: AminoAcid): string {
+	/* exceptions */
+	if (acid == AminoAcid.Aspargine) {
+		return "Asn";
+	}
+	if (acid == AminoAcid.Tryptophan) {
+		return "Trp";
+	}
+	if (acid == AminoAcid.Isoleucine) {
+		return "Ile";
+	}
+	/* don't change stop acid */
+	if (acid == AminoAcid.STOP) {
+		return AminoAcid.STOP;
+	}
+
+	return acid.slice(0, 3);
+}

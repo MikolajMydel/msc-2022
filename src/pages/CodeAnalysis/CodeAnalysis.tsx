@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import { ProteinComponent } from "../../features/codeAnalysis/components/protein";
+import { ProteinComponent } from "../../features/codeAnalysis/components/Protein";
 import { getRNA } from "../../features/codeAnalysis/utils/transcription";
 import { getAllProteins } from "../../features/codeAnalysis/utils/translation";
 
