@@ -1,6 +1,6 @@
 import { AminoAcid } from "../../../utils/staticvalues";
 import {
-	splitIntoCodons,
+	splitIntoFullCodons,
 	translateCodon,
 } from "../../../utils/codonOperations";
 import { Protein, ProteinMetadata } from "../utils/protein";
@@ -9,8 +9,8 @@ function shiftRNA(code: string, shift: number): string {
 	return code.slice(shift);
 }
 
-export function getAminoAcids(code: string, shift = 0): AminoAcid[] {
-	const codonsArray = splitIntoCodons(shiftRNA(code, shift));
+function getAminoAcids(code: string, shift = 0): AminoAcid[] {
+	const codonsArray = splitIntoFullCodons(shiftRNA(code, shift));
 	const aminoAcidArray: AminoAcid[] = [];
 
 	codonsArray.forEach((codon) => {
@@ -33,7 +33,7 @@ class AnalyserState {
 	}
 }
 
-export function getProteins(acids: AminoAcid[], shift: number): Protein[] {
+function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 	const baseMetadata: ProteinMetadata = new ProteinMetadata();
 	baseMetadata.shift = shift;
 
@@ -66,14 +66,22 @@ export function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 	return proteins;
 }
 
-export function getAllProteins(code: string): Protein[] {
+export function getAllFrames(code: string): AminoAcid[][] {
+	const frames: AminoAcid[][] = [];
+	for (let i = 0; i < 3; i++) {
+		frames.push(getAminoAcids(code, i));
+	}
+
+	return frames;
+}
+
+export function getAllProteins(frames: AminoAcid[][]): Protein[] {
 	let proteins: Protein[] = [];
 
-	/* loop through all possible shift values*/
-	for (let i = 0; i < 3; i++) {
-		const aminoAcids = getAminoAcids(code, i);
-		proteins = proteins.concat(getProteins(aminoAcids, i));
-	}
+	/* loop through all frames values*/
+	frames.forEach((frame, i) => {
+		proteins = proteins.concat(getProteins(frame, i));
+	});
 	/* sort proteins by length */
 	return proteins.sort((a, b) => b.length - a.length);
 }
