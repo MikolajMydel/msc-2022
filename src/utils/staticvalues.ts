@@ -147,9 +147,21 @@ const AMINO_ACID_NAMES: AminoAcidNames = {
 	Arginine: { Symbol: "R", Short: "Arg" },
 	Glycine: { Symbol: "G", Short: "Gly" },
 };
+
 export function getShortName(acid: AminoAcid): string {
 	return AMINO_ACID_NAMES[acid].Short;
 }
+
 export function getSymbol(acid: AminoAcid): string {
 	return AMINO_ACID_NAMES[acid].Symbol;
+}
+
+/* combine amino acid array into a string */
+export function aminoAcidArrayToString(acids: AminoAcid[]): string {
+	const symbols: string[] = [];
+	acids.forEach((element) => {
+		symbols.push(getSymbol(element));
+	});
+
+	return symbols.join("");
 }
