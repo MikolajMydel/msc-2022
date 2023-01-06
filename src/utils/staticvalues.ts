@@ -113,14 +113,43 @@ export const CODON_TABLE: CodonTable = {
 	GGG: AminoAcid.Glycine,
 };
 
-/* first three letters with some exceptions */
-export function getShortName(acid: AminoAcid): string {
-	/* exceptions */
-	if (acid == AminoAcid.Aspargine) return "Asn";
-	if (acid == AminoAcid.Tryptophan) return "Trp";
-	if (acid == AminoAcid.Isoleucine) return "Ile";
-	/* don't change stop acid */
-	if (acid == AminoAcid.STOP) return AminoAcid.STOP;
+interface AcidNames {
+	/* 1-letter */
+	Symbol: string;
+	/* 3-letters */
+	Short: string;
+}
 
-	return acid.slice(0, 3);
+type AminoAcidNames = {
+	[key: string]: AcidNames;
+};
+
+const AMINO_ACID_NAMES: AminoAcidNames = {
+	Phenylalanine: { Symbol: "F", Short: "Phe" },
+	Leucine: { Symbol: "L", Short: "Leu" },
+	Isoleucine: { Symbol: "I", Short: "Ile" },
+	Methionine: { Symbol: "M", Short: "Met" },
+	Valine: { Symbol: "V", Short: "Val" },
+	Serine: { Symbol: "S", Short: "Ser" },
+	Proline: { Symbol: "P", Short: "Pro" },
+	Threonine: { Symbol: "T", Short: "Thr" },
+	Alanine: { Symbol: "A", Short: "Ala" },
+	Tyrosine: { Symbol: "Y", Short: "Tyr" },
+	STOP: { Symbol: "-", Short: "(STOP)" },
+	Histidine: { Symbol: "H", Short: "His" },
+	Glutamine: { Symbol: "Q", Short: "Gln" },
+	Aspargine: { Symbol: "N", Short: "Asn" },
+	Lysine: { Symbol: "K", Short: "Lys" },
+	AsparticAcid: { Symbol: "D", Short: "Asp" },
+	GlutamicAcid: { Symbol: "E", Short: "Glu" },
+	Cysterine: { Symbol: "C", Short: "Cys" },
+	Tryptophan: { Symbol: "W", Short: "Trp" },
+	Arginine: { Symbol: "R", Short: "Arg" },
+	Glycine: { Symbol: "G", Short: "Gly" },
+};
+export function getShortName(acid: AminoAcid): string {
+	return AMINO_ACID_NAMES[acid].Short;
+}
+export function getSymbol(acid: AminoAcid): string {
+	return AMINO_ACID_NAMES[acid].Symbol;
 }
