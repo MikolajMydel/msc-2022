@@ -11,8 +11,5 @@ export function splitIntoFullCodons(code: string): string[] {
 
 /* Requires full codons */
 export function translateCodon(codon: string): AminoAcid {
-	if (codon.length != 3) {
-		throw new RangeError("Codon length is different than 3!");
-	}
 	return CODON_TABLE[codon];
 }
