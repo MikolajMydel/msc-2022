@@ -74,6 +74,6 @@ export function getAllProteins(code: string): Protein[] {
 		const aminoAcids = getAminoAcids(code, i);
 		proteins = proteins.concat(getProteins(aminoAcids, i));
 	}
-
-	return proteins;
+	/* sort proteins by length */
+	return proteins.sort((a, b) => b.length - a.length);
 }
