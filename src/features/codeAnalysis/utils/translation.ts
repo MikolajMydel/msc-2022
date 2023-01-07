@@ -23,6 +23,7 @@ function getAminoAcids(code: string, shift = 0): AminoAcid[] {
 /* private class for getProteins function */
 class AnalyserState {
 	buffor: AminoAcid[] = [];
+	start_index = 0;
 
 	empty(): boolean {
 		return this.buffor.length == 0;
@@ -30,6 +31,7 @@ class AnalyserState {
 
 	reset() {
 		this.buffor = [];
+		this.start_index = 0;
 	}
 }
 
@@ -39,19 +41,19 @@ function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 
 	const proteins: Protein[] = [];
 	const state = new AnalyserState();
-
 	acids.forEach((acid, index) => {
 		/* start codon */
 		if (state.empty()) {
 			/* start a new protein */
 			if (acid == AminoAcid.Methionine) {
 				state.buffor.push(acid);
+				state.start_index = index;
 			}
 		} else {
 			if (acid == AminoAcid.STOP) {
 				/* create new metadata */
 				const newMetadata = baseMetadata;
-				newMetadata.codonIndex = index;
+				newMetadata.codonIndex = state.start_index;
 				/* add protein to proteins array */
 				const protein = new Protein(state.buffor, newMetadata);
 
