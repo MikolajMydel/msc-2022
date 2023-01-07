@@ -21,7 +21,6 @@ export default function CodeAnalysis() {
 			<div>
 				<h3> Reading frames: </h3>
 				<div>
-					{" "}
 					{frames.map((frame, index) => (
 						<Frame key={uuid()} acids={frame} shift={index} />
 					))}

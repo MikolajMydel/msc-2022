@@ -37,6 +37,7 @@ export const CODON_TABLE: CodonTable = {
 	CUA: AminoAcid.Leucine,
 	CUG: AminoAcid.Leucine,
 
+	AUA: AminoAcid.Isoleucine,
 	AUU: AminoAcid.Isoleucine,
 	AUC: AminoAcid.Isoleucine,
 
@@ -45,6 +46,7 @@ export const CODON_TABLE: CodonTable = {
 	GUU: AminoAcid.Valine,
 	GUA: AminoAcid.Valine,
 	GUG: AminoAcid.Valine,
+	GUC: AminoAcid.Valine,
 
 	UCU: AminoAcid.Serine,
 	UCC: AminoAcid.Serine,

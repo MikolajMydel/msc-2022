@@ -36,9 +36,6 @@ class AnalyserState {
 }
 
 function getProteins(acids: AminoAcid[], shift: number): Protein[] {
-	const baseMetadata: ProteinMetadata = new ProteinMetadata();
-	baseMetadata.shift = shift;
-
 	const proteins: Protein[] = [];
 	const state = new AnalyserState();
 	acids.forEach((acid, index) => {
@@ -51,12 +48,13 @@ function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 			}
 		} else {
 			if (acid == AminoAcid.STOP) {
-				/* create new metadata */
-				const newMetadata = baseMetadata;
-				newMetadata.codonIndex = state.start_index;
+				/* create metadata */
+				const metadata = new ProteinMetadata();
+				metadata.shift = shift;
+				metadata.codonIndex = state.start_index;
 				/* add protein to proteins array */
-				const protein = new Protein(state.buffor, newMetadata);
-
+				const protein = new Protein(state.buffor, metadata);
+				protein.metadata.codonIndex = state.start_index;
 				proteins.push(protein);
 				state.reset();
 			} else {
