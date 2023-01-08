@@ -167,3 +167,42 @@ export function aminoAcidArrayToString(acids: AminoAcid[]): string {
 
 	return symbols.join("");
 }
+
+interface Section {
+	isProtein: boolean;
+	string: string;
+}
+
+export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
+	let symbols: string[] = [];
+
+	// (is after Methionine)
+	let isAfterMet = false;
+	const sections: Section[] = [];
+
+	const addSection = (isProtein: boolean) => {
+		isAfterMet = !isProtein;
+		sections.push({ string: symbols.join(""), isProtein: isProtein });
+		symbols = [];
+	};
+
+	acids.forEach((element) => {
+		/* start of a new section */
+		if (element == AminoAcid.Methionine && !isAfterMet) {
+			addSection(false);
+			symbols.push(getSymbol(element));
+			return;
+		}
+
+		symbols.push(getSymbol(element));
+		if (element == AminoAcid.STOP && isAfterMet) {
+			addSection(true);
+		}
+	});
+
+	if (symbols.length != 0) {
+		addSection(false);
+	}
+
+	return sections;
+}
