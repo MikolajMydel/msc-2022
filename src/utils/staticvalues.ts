@@ -4,7 +4,6 @@ export enum AminoAcid {
 	Isoleucine = "Isoleucine",
 
 	Methionine = "Methionine" /* START codon */,
-	START = AminoAcid.Methionine,
 
 	Valine = "Valine",
 	Serine = "Serine",
