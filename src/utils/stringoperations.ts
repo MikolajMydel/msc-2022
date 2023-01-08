@@ -1,11 +1,11 @@
-import { AminoAcid, AMINO_ACID_NAMES } from "./staticvalues";
+import { AminoAcid, AMINO_ACID_PROPERTIES } from "./staticvalues";
 
 export function getShortName(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Short;
+	return AMINO_ACID_PROPERTIES[acid].Names.Short;
 }
 
 export function getSymbol(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Symbol;
+	return AMINO_ACID_PROPERTIES[acid].Names.Symbol;
 }
 
 /* combine amino acid array into a string */

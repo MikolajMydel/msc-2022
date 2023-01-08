@@ -124,62 +124,113 @@ interface AcidNames {
 	Short: string;
 }
 
-type AminoAcidNames = {
-	[key: string]: AcidNames;
-};
+export interface Atoms {
+	Hydrogen: number;
+	Carbon: number;
+	Oxygen: number;
+	Nitrogen: number;
+	Sulphur: number;
+}
 
-export const AMINO_ACID_NAMES: AminoAcidNames = {
-	Phenylalanine: { Symbol: "F", Short: "Phe" },
-	Leucine: { Symbol: "L", Short: "Leu" },
-	Isoleucine: { Symbol: "I", Short: "Ile" },
-	Methionine: { Symbol: "M", Short: "Met" },
-	Valine: { Symbol: "V", Short: "Val" },
-	Serine: { Symbol: "S", Short: "Ser" },
-	Proline: { Symbol: "P", Short: "Pro" },
-	Threonine: { Symbol: "T", Short: "Thr" },
-	Alanine: { Symbol: "A", Short: "Ala" },
-	Tyrosine: { Symbol: "Y", Short: "Tyr" },
-	STOP: { Symbol: "-", Short: "(STOP)" },
-	Histidine: { Symbol: "H", Short: "His" },
-	Glutamine: { Symbol: "Q", Short: "Gln" },
-	Aspargine: { Symbol: "N", Short: "Asn" },
-	Lysine: { Symbol: "K", Short: "Lys" },
-	AsparticAcid: { Symbol: "D", Short: "Asp" },
-	GlutamicAcid: { Symbol: "E", Short: "Glu" },
-	Cysteine: { Symbol: "C", Short: "Cys" },
-	Tryptophan: { Symbol: "W", Short: "Trp" },
-	Arginine: { Symbol: "R", Short: "Arg" },
-	Glycine: { Symbol: "G", Short: "Gly" },
-};
-
-interface AcidProperties {
+interface AcidProps {
 	Mass: number;
 }
 
-type AminoAcidProperties = {
-	[key: string]: AcidProperties;
+interface AcidValues {
+	Names: AcidNames;
+	Props: AcidProps;
+}
+
+type AcidProperties = {
+	[key: string]: AcidValues;
 };
 
-export const AMINO_ACID_PROPERTIES: AminoAcidProperties = {
-	Phenylalanine: { Mass: 165.192 },
-	Leucine: { Mass: 131.175 },
-	Isoleucine: { Mass: 131.175 },
-	Methionine: { Mass: 149.208 },
-	Valine: { Mass: 117.148 },
-	Serine: { Mass: 105.093 },
-	Proline: { Mass: 115.132 },
-	Threonine: { Mass: 119.119 },
-	Alanine: { Mass: 89.094 },
-	Tyrosine: { Mass: 181.191 },
-	STOP: { Mass: 0 },
-	Histidine: { Mass: 155.156 },
-	Glutamine: { Mass: 146.146 },
-	Aspargine: { Mass: 132.119 },
-	Lysine: { Mass: 146.189 },
-	AsparticAcid: { Mass: 133.104 },
-	GlutamicAcid: { Mass: 147.131 },
-	Cysteine: { Mass: 121.154 },
-	Tryptophan: { Mass: 204.228 },
-	Arginine: { Mass: 174.203 },
-	Glycine: { Mass: 75.067 },
+// source: https://proteomicsresource.washington.edu/protocols06/masses.php
+export const AMINO_ACID_PROPERTIES: AcidProperties = {
+	Phenylalanine: {
+		Names: { Symbol: "F", Short: "Phe" },
+		Props: { Mass: 147.17386 },
+	},
+	Leucine: {
+		Names: { Symbol: "L", Short: "Leu" },
+		Props: { Mass: 113.15764 },
+	},
+	Isoleucine: {
+		Names: { Symbol: "I", Short: "Ile" },
+		Props: { Mass: 113.15764 },
+	},
+	Methionine: {
+		Names: { Symbol: "M", Short: "Met" },
+		Props: { Mass: 131.19606 },
+	},
+	Valine: {
+		Names: { Symbol: "V", Short: "Val" },
+		Props: { Mass: 99.13106 },
+	},
+	Serine: {
+		Names: { Symbol: "S", Short: "Ser" },
+		Props: { Mass: 87.0773 },
+	},
+	Proline: {
+		Names: { Symbol: "P", Short: "Pro" },
+		Props: { Mass: 97.11518 },
+	},
+	Threonine: {
+		Names: { Symbol: "T", Short: "Thr" },
+		Props: { Mass: 101.10388 },
+	},
+	Alanine: {
+		Names: { Symbol: "A", Short: "Ala" },
+		Props: { Mass: 71.0779 },
+	},
+	Tyrosine: {
+		Names: { Symbol: "Y", Short: "Tyr" },
+		Props: { Mass: 163.17326 },
+	},
+	STOP: {
+		Names: { Symbol: "-", Short: "(STOP)" },
+		Props: { Mass: 0 },
+	},
+	Histidine: {
+		Names: { Symbol: "H", Short: "His" },
+		Props: { Mass: 137.13928 },
+	},
+	Glutamine: {
+		Names: { Symbol: "Q", Short: "Gln" },
+		Props: { Mass: 128.12922 },
+	},
+	Aspargine: {
+		Names: { Symbol: "N", Short: "Asn" },
+		Props: { Mass: 114.10264 },
+	},
+	Lysine: {
+		Names: { Symbol: "K", Short: "Lys" },
+		Props: { Mass: 128.17228 },
+	},
+	AsparticAcid: {
+		Names: { Symbol: "D", Short: "Asp" },
+		Props: { Mass: 115.0874 },
+	},
+	GlutamicAcid: {
+		Names: { Symbol: "E", Short: "Glu" },
+		Props: { Mass: 129.11398 },
+	},
+	Cysteine: {
+		Names: { Symbol: "C", Short: "Cys" },
+		Props: { Mass: 103.1429 },
+	},
+	Tryptophan: {
+		Names: { Symbol: "W", Short: "Trp" },
+		Props: { Mass: 186.2099 },
+	},
+	Arginine: {
+		Names: { Symbol: "R", Short: "Arg" },
+		Props: { Mass: 156.18568 },
+	},
+	Glycine: {
+		Names: { Symbol: "G", Short: "Gly" },
+		Props: { Mass: 57.05132 },
+	},
 };
+
+export const WATER_MASS = 18.015;
