@@ -28,6 +28,14 @@ $codon-list-height: 4rem;
 .Codon {
 	font-size: 2rem;
 	color: map-get(v.$colors, "white");
+
+	&Start {
+		color: map-get(v.$colors, "green");
+	}
+
+	&Stop {
+		color: map-get(v.$colors, "red");
+	}
 }
 
 .Name {
