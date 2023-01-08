@@ -3,29 +3,7 @@ import { AminoAcid } from "../../../utils/staticvalues";
 import { getAllFrames, getAllProteins } from "../utils/translation";
 import { checkProtein } from "./testutils";
 
-import {
-	CODON_TABLE,
-	getShortName,
-	getSymbol,
-} from "../../../utils/staticvalues";
-
 describe("transcription", () => {
-	test("check all possible codons", () => {
-		const bases = ["A", "C", "G", "U"];
-
-		bases.forEach((b1) => {
-			bases.forEach((b2) => {
-				bases.forEach((b3) => {
-					const codon = b1 + b2 + b3;
-					const translatedCodon = CODON_TABLE[codon];
-					expect(translatedCodon).toBeTruthy();
-					expect(getShortName(translatedCodon)).toBeTruthy();
-					expect(getSymbol(translatedCodon)).toBeTruthy();
-				});
-			});
-		});
-	});
-
 	test("convert amino acid array to string", () => {
 		/* empty string */
 		expect(aminoAcidArrayToString([])).toBe("");

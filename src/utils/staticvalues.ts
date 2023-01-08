@@ -168,7 +168,7 @@ export function aminoAcidArrayToString(acids: AminoAcid[]): string {
 	return symbols.join("");
 }
 
-interface Section {
+export interface Section {
 	isProtein: boolean;
 	string: string;
 }
@@ -182,7 +182,10 @@ export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
 
 	const addSection = (isProtein: boolean) => {
 		isAfterMet = !isProtein;
-		sections.push({ string: symbols.join(""), isProtein: isProtein });
+		/* don't add empty sections */
+		if (symbols.length != 0) {
+			sections.push({ string: symbols.join(""), isProtein: isProtein });
+		}
 		symbols = [];
 	};
 
@@ -200,9 +203,7 @@ export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
 		}
 	});
 
-	if (symbols.length != 0) {
-		addSection(false);
-	}
+	addSection(false);
 
 	return sections;
 }
