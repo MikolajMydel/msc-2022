@@ -39,6 +39,7 @@ export const CODON_TABLE: CodonTable = {
 	CUA: AminoAcid.Leucine,
 	CUG: AminoAcid.Leucine,
 
+	AUA: AminoAcid.Isoleucine,
 	AUU: AminoAcid.Isoleucine,
 	AUC: AminoAcid.Isoleucine,
 
@@ -47,6 +48,7 @@ export const CODON_TABLE: CodonTable = {
 	GUU: AminoAcid.Valine,
 	GUA: AminoAcid.Valine,
 	GUG: AminoAcid.Valine,
+	GUC: AminoAcid.Valine,
 
 	UCU: AminoAcid.Serine,
 	UCC: AminoAcid.Serine,
@@ -114,3 +116,96 @@ export const CODON_TABLE: CodonTable = {
 	GGA: AminoAcid.Glycine,
 	GGG: AminoAcid.Glycine,
 };
+
+interface AcidNames {
+	/* 1-letter */
+	Symbol: string;
+	/* 3-letters */
+	Short: string;
+}
+
+type AminoAcidNames = {
+	[key: string]: AcidNames;
+};
+
+const AMINO_ACID_NAMES: AminoAcidNames = {
+	Phenylalanine: { Symbol: "F", Short: "Phe" },
+	Leucine: { Symbol: "L", Short: "Leu" },
+	Isoleucine: { Symbol: "I", Short: "Ile" },
+	Methionine: { Symbol: "M", Short: "Met" },
+	Valine: { Symbol: "V", Short: "Val" },
+	Serine: { Symbol: "S", Short: "Ser" },
+	Proline: { Symbol: "P", Short: "Pro" },
+	Threonine: { Symbol: "T", Short: "Thr" },
+	Alanine: { Symbol: "A", Short: "Ala" },
+	Tyrosine: { Symbol: "Y", Short: "Tyr" },
+	STOP: { Symbol: "-", Short: "(STOP)" },
+	Histidine: { Symbol: "H", Short: "His" },
+	Glutamine: { Symbol: "Q", Short: "Gln" },
+	Aspargine: { Symbol: "N", Short: "Asn" },
+	Lysine: { Symbol: "K", Short: "Lys" },
+	AsparticAcid: { Symbol: "D", Short: "Asp" },
+	GlutamicAcid: { Symbol: "E", Short: "Glu" },
+	Cysterine: { Symbol: "C", Short: "Cys" },
+	Tryptophan: { Symbol: "W", Short: "Trp" },
+	Arginine: { Symbol: "R", Short: "Arg" },
+	Glycine: { Symbol: "G", Short: "Gly" },
+};
+
+export function getShortName(acid: AminoAcid): string {
+	return AMINO_ACID_NAMES[acid].Short;
+}
+
+export function getSymbol(acid: AminoAcid): string {
+	return AMINO_ACID_NAMES[acid].Symbol;
+}
+
+/* combine amino acid array into a string */
+export function aminoAcidArrayToString(acids: AminoAcid[]): string {
+	const symbols: string[] = [];
+	acids.forEach((element) => {
+		symbols.push(getSymbol(element));
+	});
+
+	return symbols.join("");
+}
+
+export interface Section {
+	isProtein: boolean;
+	string: string;
+}
+
+export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
+	let symbols: string[] = [];
+
+	// (is after Methionine)
+	let isAfterMet = false;
+	const sections: Section[] = [];
+
+	const addSection = (isProtein: boolean) => {
+		isAfterMet = !isProtein;
+		/* don't add empty sections */
+		if (symbols.length != 0) {
+			sections.push({ string: symbols.join(""), isProtein: isProtein });
+		}
+		symbols = [];
+	};
+
+	acids.forEach((element) => {
+		/* start of a new section */
+		if (element == AminoAcid.Methionine && !isAfterMet) {
+			addSection(false);
+			symbols.push(getSymbol(element));
+			return;
+		}
+
+		symbols.push(getSymbol(element));
+		if (element == AminoAcid.STOP && isAfterMet) {
+			addSection(true);
+		}
+	});
+
+	addSection(false);
+
+	return sections;
+}

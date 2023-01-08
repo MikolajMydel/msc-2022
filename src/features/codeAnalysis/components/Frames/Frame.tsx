@@ -1,0 +1,28 @@
+import { AminoAcid } from "../../../../utils/staticvalues";
+import { aminoAcidArrayToSections } from "../../../../utils/staticvalues";
+import { v4 as uuid } from "uuid";
+import { Section } from "./Section";
+
+type FrameProps = {
+	acids: AminoAcid[];
+	shift: number;
+};
+
+/* RNA Reading frames */
+export function Frame({ acids, shift }: FrameProps) {
+	const sections = aminoAcidArrayToSections(acids);
+	return (
+		<div>
+			<span>+{shift}</span>
+			<span>
+				{sections.map((section) => (
+					<Section
+						key={uuid()}
+						acids={section.string}
+						isProtein={section.isProtein}
+					/>
+				))}
+			</span>
+		</div>
+	);
+}
