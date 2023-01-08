@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
-import { aminoAcidArrayToString } from "../../../../utils/staticvalues";
+import { aminoAcidArrayToString } from "../../../../utils/stringoperations";
 
 type AminoAcidsProps = {
 	acids: AminoAcid[];

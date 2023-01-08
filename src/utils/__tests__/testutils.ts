@@ -1,4 +1,4 @@
-import { Section } from "../staticvalues";
+import { Section } from "../stringoperations";
 
 interface SectionData {
 	isProtein: boolean;

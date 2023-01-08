@@ -18,7 +18,7 @@ export enum AminoAcid {
 	Lysine = "Lysine",
 	AsparticAcid = "AsparticAcid",
 	GlutamicAcid = "GlutamicAcid",
-	Cysterine = "Cysterine",
+	Cysteine = "Cysteine",
 	Tryptophan = "Tryptophan",
 	Arginine = "Arginine",
 	Glycine = "Glycine",
@@ -94,8 +94,8 @@ export const CODON_TABLE: CodonTable = {
 	GAA: AminoAcid.GlutamicAcid,
 	GAG: AminoAcid.GlutamicAcid,
 
-	UGU: AminoAcid.Cysterine,
-	UGC: AminoAcid.Cysterine,
+	UGU: AminoAcid.Cysteine,
+	UGC: AminoAcid.Cysteine,
 
 	UGA: AminoAcid.STOP,
 	UGG: AminoAcid.Tryptophan,
@@ -128,7 +128,7 @@ type AminoAcidNames = {
 	[key: string]: AcidNames;
 };
 
-const AMINO_ACID_NAMES: AminoAcidNames = {
+export const AMINO_ACID_NAMES: AminoAcidNames = {
 	Phenylalanine: { Symbol: "F", Short: "Phe" },
 	Leucine: { Symbol: "L", Short: "Leu" },
 	Isoleucine: { Symbol: "I", Short: "Ile" },
@@ -146,66 +146,40 @@ const AMINO_ACID_NAMES: AminoAcidNames = {
 	Lysine: { Symbol: "K", Short: "Lys" },
 	AsparticAcid: { Symbol: "D", Short: "Asp" },
 	GlutamicAcid: { Symbol: "E", Short: "Glu" },
-	Cysterine: { Symbol: "C", Short: "Cys" },
+	Cysteine: { Symbol: "C", Short: "Cys" },
 	Tryptophan: { Symbol: "W", Short: "Trp" },
 	Arginine: { Symbol: "R", Short: "Arg" },
 	Glycine: { Symbol: "G", Short: "Gly" },
 };
 
-export function getShortName(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Short;
+interface AcidProperties {
+	Mass: number;
 }
 
-export function getSymbol(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Symbol;
-}
+type AminoAcidProperties = {
+	[key: string]: AcidProperties;
+};
 
-/* combine amino acid array into a string */
-export function aminoAcidArrayToString(acids: AminoAcid[]): string {
-	const symbols: string[] = [];
-	acids.forEach((element) => {
-		symbols.push(getSymbol(element));
-	});
-
-	return symbols.join("");
-}
-
-export interface Section {
-	isProtein: boolean;
-	string: string;
-}
-
-export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
-	let symbols: string[] = [];
-
-	// (is after Methionine)
-	let isAfterMet = false;
-	const sections: Section[] = [];
-
-	const addSection = (isProtein: boolean) => {
-		isAfterMet = !isProtein;
-		/* don't add empty sections */
-		if (symbols.length != 0) {
-			sections.push({ string: symbols.join(""), isProtein: isProtein });
-		}
-		symbols = [];
-	};
-
-	acids.forEach((element) => {
-		/* start of a new section */
-		if (element == AminoAcid.Methionine && !isAfterMet) {
-			addSection(false);
-			symbols.push(getSymbol(element));
-			return;
-		}
-
-		symbols.push(getSymbol(element));
-		if (element == AminoAcid.STOP && isAfterMet) {
-			addSection(true);
-		}
-	});
-
-	addSection(false);
-
-	return sections;
-}
+export const AMINO_ACID_PROPERTIES: AminoAcidProperties = {
+	Phenylalanine: { Mass: 165.192 },
+	Leucine: { Mass: 131.175 },
+	Isoleucine: { Mass: 131.175 },
+	Methionine: { Mass: 149.208 },
+	Valine: { Mass: 117.148 },
+	Serine: { Mass: 105.093 },
+	Proline: { Mass: 115.132 },
+	Threonine: { Mass: 119.119 },
+	Alanine: { Mass: 89.094 },
+	Tyrosine: { Mass: 181.191 },
+	STOP: { Mass: 0 },
+	Histidine: { Mass: 155.156 },
+	Glutamine: { Mass: 146.146 },
+	Aspargine: { Mass: 132.119 },
+	Lysine: { Mass: 146.189 },
+	AsparticAcid: { Mass: 133.104 },
+	GlutamicAcid: { Mass: 147.131 },
+	Cysteine: { Mass: 121.154 },
+	Tryptophan: { Mass: 204.228 },
+	Arginine: { Mass: 174.203 },
+	Glycine: { Mass: 75.067 },
+};

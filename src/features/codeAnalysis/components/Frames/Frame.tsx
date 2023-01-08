@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
-import { aminoAcidArrayToSections } from "../../../../utils/staticvalues";
+import { aminoAcidArrayToSections } from "../../../../utils/stringoperations";
 import { v4 as uuid } from "uuid";
 import { Section } from "./Section";
 

@@ -1,11 +1,11 @@
 import { splitIntoCodons, splitIntoFullCodons } from "../codonOperations";
+import { CODON_TABLE, AminoAcid } from "../staticvalues";
+
 import {
-	CODON_TABLE,
 	getSymbol,
 	getShortName,
 	aminoAcidArrayToSections,
-	AminoAcid,
-} from "../staticvalues";
+} from "../stringoperations";
 
 import { checkSection } from "./testutils";
 
