@@ -1,5 +1,5 @@
-import { Protein } from "../utils/protein";
-import { AminoAcids } from "./AminoAcid";
+import { Protein } from "../../utils/protein";
+import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinPropertries } from "./ProteinProperties";
 
 type ProteinComponentProps = {

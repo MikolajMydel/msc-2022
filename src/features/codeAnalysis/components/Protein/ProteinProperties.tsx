@@ -1,4 +1,4 @@
-import { Protein } from "../utils/protein";
+import { Protein } from "../../utils/protein";
 
 type ProteinPropertiesProps = {
 	protein: Protein;

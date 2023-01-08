@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import { ProteinComponent } from "../../features/codeAnalysis/components/Protein";
+import { ProteinComponent } from "../../features/codeAnalysis/components/Protein/Protein";
 import { getRNA } from "../../features/codeAnalysis/utils/transcription";
 import {
 	getAllFrames,
 	getAllProteins,
 } from "../../features/codeAnalysis/utils/translation";
-import { Frame } from "../../features/codeAnalysis/components/Frame";
+import { Frame } from "../../features/codeAnalysis/components/Frames/Frame";
 export default function CodeAnalysis() {
 	const { sequence } = useParams<{ sequence: string }>();
 	const rna = getRNA(sequence);
