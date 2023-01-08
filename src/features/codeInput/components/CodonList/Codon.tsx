@@ -13,7 +13,7 @@ export default function Codon({ nitrogenBases }: CodonProps) {
 		<div className={styles.Wrapper}>
 			<div
 				className={classNames(styles.Codon, {
-					[styles.CodonStart]: name === AminoAcid.START,
+					[styles.CodonStart]: name === AminoAcid.Methionine,
 					[styles.CodonStop]: name === AminoAcid.STOP,
 				})}
 			>
