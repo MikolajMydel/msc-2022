@@ -36,7 +36,7 @@ describe("utility functions", () => {
 		expect(splitIntoFullCodons("AAAA")).toStrictEqual(["AAA"]);
 	});
 
-	test("check section detection", () => {
+	test("check section detection single coding section", () => {
 		expect(aminoAcidArrayToSections([])).toStrictEqual([]);
 		// threonine - T
 		// alanine - A
@@ -99,6 +99,102 @@ describe("utility functions", () => {
 		checkSection(sections4[2], {
 			isProtein: false,
 			string: "A-",
+		});
+	});
+
+	test("check section detection, multiple coding sections", () => {
+		expect(aminoAcidArrayToSections([])).toStrictEqual([]);
+		// threonine - T
+		// alanine - A
+		/* only highlighted sections */
+		const sections1 = aminoAcidArrayToSections([
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections1.length).toBe(2);
+		checkSection(sections1[0], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections1[1], {
+			isProtein: true,
+			string: "MTA-",
+		});
+
+		/* section between coding sections */
+		const sections2 = aminoAcidArrayToSections([
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections2.length).toBe(3);
+		checkSection(sections2[0], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections2[1], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections2[2], {
+			isProtein: true,
+			string: "MTA-",
+		});
+
+		/* sections before, after and between coding sections */
+		const sections3 = aminoAcidArrayToSections([
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections3.length).toBe(5);
+		checkSection(sections3[0], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections3[1], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections3[2], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections3[3], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections3[4], {
+			isProtein: false,
+			string: "TA-",
 		});
 	});
 });
