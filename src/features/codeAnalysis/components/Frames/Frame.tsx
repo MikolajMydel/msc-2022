@@ -13,7 +13,7 @@ export function Frame({ acids, shift }: FrameProps) {
 	const sections = aminoAcidArrayToSections(acids);
 	return (
 		<div>
-			<span>+{shift}</span>
+			<span> +{shift} </span>
 			<span>
 				{sections.map((section) => (
 					<Section
