@@ -153,10 +153,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 147.17386,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 9,
+				Carbon: 9,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -166,10 +166,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 113.15764,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 11,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -179,10 +179,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 113.15764,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 11,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -192,11 +192,11 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 131.19606,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
-				Sulphur: 0,
+				Hydrogen: 9,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 1,
 			},
 		},
 	},
@@ -205,10 +205,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 99.13106,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 9,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -218,10 +218,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 87.0773,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 2,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -231,10 +231,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 97.11518,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 7,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -244,10 +244,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 101.10388,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 7,
+				Carbon: 4,
+				Oxygen: 2,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -257,10 +257,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 71.0779,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -270,10 +270,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 163.17326,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 9,
+				Carbon: 9,
+				Oxygen: 2,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -296,10 +296,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 137.13928,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 7,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 3,
 				Sulphur: 0,
 			},
 		},
@@ -309,10 +309,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 128.12922,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 8,
+				Carbon: 5,
+				Oxygen: 2,
+				Nitrogen: 2,
 				Sulphur: 0,
 			},
 		},
@@ -322,10 +322,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 114.10264,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 6,
+				Carbon: 4,
+				Oxygen: 2,
+				Nitrogen: 2,
 				Sulphur: 0,
 			},
 		},
@@ -335,10 +335,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 128.17228,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 12,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 2,
 				Sulphur: 0,
 			},
 		},
@@ -348,10 +348,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 115.0874,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 5,
+				Carbon: 4,
+				Oxygen: 3,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -361,10 +361,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 129.11398,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 7,
+				Carbon: 5,
+				Oxygen: 3,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},
@@ -374,11 +374,11 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 103.1429,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
-				Sulphur: 0,
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 1,
 			},
 		},
 	},
@@ -387,10 +387,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 186.2099,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 10,
+				Carbon: 11,
+				Oxygen: 1,
+				Nitrogen: 2,
 				Sulphur: 0,
 			},
 		},
@@ -400,10 +400,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 156.18568,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 12,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 4,
 				Sulphur: 0,
 			},
 		},
@@ -413,10 +413,10 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 		Props: {
 			Mass: 57.05132,
 			Atoms: {
-				Hydrogen: 0,
-				Carbon: 0,
-				Oxygen: 0,
-				Nitrogen: 0,
+				Hydrogen: 3,
+				Carbon: 2,
+				Oxygen: 1,
+				Nitrogen: 1,
 				Sulphur: 0,
 			},
 		},

@@ -1,9 +1,5 @@
-import {
-	AminoAcid,
-	AMINO_ACID_PROPERTIES,
-	WATER_MASS,
-} from "../../../utils/staticvalues";
-import { roundFloat } from "../../../utils/utils";
+import { AminoAcid } from "../../../utils/staticvalues";
+import { getMass, roundFloat, getAtomCount } from "../../../utils/utils";
 export class ProteinMetadata {
 	shift = 0;
 	/* index of the start codon */
@@ -25,13 +21,10 @@ export class Protein {
 	}
 
 	get mass() {
-		/* add water mass */
-		let mass = WATER_MASS;
+		return roundFloat(getMass(this.acids), 2);
+	}
 
-		this.acids.forEach((acid) => {
-			mass += AMINO_ACID_PROPERTIES[acid].Props.Mass;
-		});
-
-		return roundFloat(mass, 2);
+	get atomCount() {
+		return getAtomCount(this.acids);
 	}
 }
