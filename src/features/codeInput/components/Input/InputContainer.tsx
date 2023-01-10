@@ -1,4 +1,8 @@
-import { useState } from "react";
+import {
+	convertDnaToRna,
+	convertRnaToDna,
+} from "../../../../utils/transcription";
+import { useState, useEffect } from "react";
 import Input from "./Input";
 import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
@@ -13,6 +17,20 @@ export default function InputContainer() {
 	const [error, setError] = useState<boolean>(false);
 
 	const [sequenceType, setSequenceType] = useState<sequenceTypes>("RNA");
+
+	// translate value on sequence type change
+	useEffect(() => {
+		const newSequenceType = sequenceType;
+		convertValue(newSequenceType);
+	}, [sequenceType]);
+
+	const convertValue = (newSequenceType: sequenceTypes) => {
+		setValue((currentValue) => {
+			return newSequenceType === "DNA"
+				? convertRnaToDna(currentValue)
+				: convertDnaToRna(currentValue);
+		});
+	};
 
 	const handleChange: handleChangeType = (event) => {
 		setValue(event.target.value.toUpperCase());
@@ -32,7 +50,10 @@ export default function InputContainer() {
 	};
 
 	const switchSequenceType = () => {
-		setSequenceType((currentType) => getAnotherSequence(currentType));
+		setSequenceType((currentType) => {
+			const newSequenceType = getAnotherSequence(currentType);
+			return newSequenceType;
+		});
 	};
 
 	return (

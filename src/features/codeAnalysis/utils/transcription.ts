@@ -1,4 +1,5 @@
 import { DNA_REGEXP, RNA_REGEXP } from "../../../utils/sequenceValidation";
+import { convertDnaToRna } from "../../../utils/transcription";
 
 enum InputType {
 	Invalid = 0,
@@ -21,7 +22,7 @@ export function getRNA(input: string | undefined): string {
 		return input.toUpperCase();
 	}
 	if (inputType == InputType.DNA) {
-		return input.replaceAll(/T/gi, "U").toUpperCase();
+		return convertDnaToRna(input).toUpperCase();
 	}
 
 	return "";

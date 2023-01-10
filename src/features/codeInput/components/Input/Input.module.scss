@@ -11,6 +11,7 @@
 	display: flex;
 	align-items: stretch;
 	justify-content: center;
+
 	&HTMLElement,
 	&Button {
 		border: 2px solid green;
@@ -26,5 +27,9 @@
 			animation: shake v.$animation-duration v.$timing-function both;
 			background-color: map-get(v.$colors, "error");
 		}
+	}
+
+	&Button {
+		cursor: pointer;
 	}
 }
