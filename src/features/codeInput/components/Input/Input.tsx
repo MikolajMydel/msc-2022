@@ -35,17 +35,20 @@ export default function Input({
 
 	return (
 		<div className={styles.Wrapper}>
-			<ControlledInput
-				className={classNames({
-					[styles.InputHTMLElementError]: error,
-				})}
-				type={"text"}
-				value={value}
-				onChange={handleChange}
-				onKeyDown={handleKeyDown}
-				switchSequenceType={switchSequenceType}
-				sequenceType={sequenceType}
-			/>
+			<div className={styles.Input}>
+				<button onClick={switchSequenceType} className={styles.InputButton}>
+					{sequenceType}
+				</button>
+				<ControlledInput
+					className={classNames(styles.InputHTMLElement, {
+						[styles.InputHTMLElementError]: error,
+					})}
+					type={"text"}
+					value={value}
+					onChange={handleChange}
+					onKeyDown={handleKeyDown}
+				/>
+			</div>
 			<CodonList codons={codonsArray} />
 		</div>
 	);

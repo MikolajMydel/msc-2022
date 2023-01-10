@@ -1,29 +1,16 @@
 import { HTMLInputTypeAttribute, useEffect, useRef, useState } from "react";
 import { handleChangeType, handleKeyDownType } from "../../../../types/events";
-import { sequenceTypes } from "../../../../types/biology/codeSequence";
-import classNames from "classnames";
-import styles from "./Input.module.scss";
 
 type ControlledInputProps = {
 	value: string;
 	onChange?: handleChangeType;
 	onKeyDown?: handleKeyDownType;
 	type: HTMLInputTypeAttribute;
-	className: string;
-	sequenceType: sequenceTypes;
-	switchSequenceType: () => void;
+	className?: string;
 };
 
 export default function ControlledInput(props: ControlledInputProps) {
-	const {
-		value,
-		onChange,
-		onKeyDown,
-		sequenceType,
-		switchSequenceType,
-		className,
-		...rest
-	} = props;
+	const { value, onChange, onKeyDown, ...rest } = props;
 	const [cursor, setCursor] = useState<number>(0);
 	const ref = useRef<HTMLInputElement>(null);
 
@@ -51,16 +38,12 @@ export default function ControlledInput(props: ControlledInputProps) {
 	};
 
 	return (
-		<div className={styles.Input}>
-			<button onClick={switchSequenceType}>{sequenceType}</button>
-			<input
-				className={classNames(styles.InputHTMLElement, className)}
-				ref={ref}
-				value={value}
-				onChange={handleChange}
-				onKeyDown={handleKeyDown}
-				{...rest}
-			/>
-		</div>
+		<input
+			ref={ref}
+			value={value}
+			onChange={handleChange}
+			onKeyDown={handleKeyDown}
+			{...rest}
+		/>
 	);
 }
