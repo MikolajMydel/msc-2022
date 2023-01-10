@@ -36,3 +36,15 @@ export function getAtomCount(acids: AminoAcid[]) {
 
 	return atoms;
 }
+
+export type AcidCount = {
+	[key: string]: number;
+};
+
+export function getAminoAcidCounts(acids: AminoAcid[]) {
+	const counts: AcidCount = {};
+	acids.forEach((acid) => {
+		counts[acid] ? counts[acid]++ : (counts[acid] = 1);
+	});
+	return counts;
+}

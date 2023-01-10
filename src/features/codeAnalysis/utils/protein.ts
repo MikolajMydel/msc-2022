@@ -1,5 +1,10 @@
 import { AminoAcid } from "../../../utils/staticvalues";
-import { getMass, roundFloat, getAtomCount } from "../../../utils/utils";
+import {
+	getMass,
+	roundFloat,
+	getAtomCount,
+	getAminoAcidCounts,
+} from "../../../utils/utils";
 export class ProteinMetadata {
 	shift = 0;
 	/* index of the start codon */
@@ -29,7 +34,7 @@ export class Protein {
 	}
 
 	get totalAtomCount() {
-		let atoms = this.atomCounts;
+		const atoms = this.atomCounts;
 
 		let sum = atoms.Hydrogen;
 		sum += atoms.Carbon;
@@ -38,5 +43,9 @@ export class Protein {
 		sum += atoms.Sulphur;
 
 		return sum;
+	}
+
+	get aminoAcidCounts() {
+		return getAminoAcidCounts(this.acids);
 	}
 }
