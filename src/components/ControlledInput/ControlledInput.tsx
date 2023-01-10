@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute, useEffect, useRef, useState } from "react";
-import { handleChangeType, handleKeyDownType } from "../../../../types/events";
+import { handleChangeType, handleKeyDownType } from "../../types/events";
 
 type ControlledInputProps = {
 	value: string;

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { handleChangeType, handleKeyDownType } from "../../../../types/events";
 import styles from "./Input.module.scss";
 import CodonList from "../CodonList/CodonList";
-import ControlledInput from "./ControlledInput";
+import ControlledInput from "../../../../components/ControlledInput/ControlledInput";
 import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
