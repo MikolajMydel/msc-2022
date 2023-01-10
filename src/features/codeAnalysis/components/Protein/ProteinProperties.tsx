@@ -10,7 +10,7 @@ export function ProteinPropertries({ protein }: ProteinPropertiesProps) {
 			<p>Number of amino acids: {protein.length}</p>
 			<p>Mass: {protein.mass}</p>
 			<p>
-				<ChemicalComposition atoms={protein.atomCounts} />
+				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
 			<h5>Found:</h5>
