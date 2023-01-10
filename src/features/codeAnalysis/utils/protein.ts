@@ -24,7 +24,19 @@ export class Protein {
 		return roundFloat(getMass(this.acids), 2);
 	}
 
-	get atomCount() {
+	get atomCounts() {
 		return getAtomCount(this.acids);
+	}
+
+	get totalAtomCount() {
+		let atoms = this.atomCounts;
+
+		let sum = atoms.Hydrogen;
+		sum += atoms.Carbon;
+		sum += atoms.Nitrogen;
+		sum += atoms.Oxygen;
+		sum += atoms.Sulphur;
+
+		return sum;
 	}
 }

@@ -23,13 +23,13 @@ function Atom({ symbol, number }: AtomProps) {
 
 export function ChemicalComposition({ atoms }: ProteinCompositionProps) {
 	return (
-		<div>
-			<h5>Chemical formula:</h5>
+		<>
+			<span>Chemical formula: </span>
 			<Atom symbol={"H"} number={atoms.Hydrogen} />
 			<Atom symbol={"C"} number={atoms.Carbon} />
 			<Atom symbol={"N"} number={atoms.Nitrogen} />
 			<Atom symbol={"O"} number={atoms.Oxygen} />
 			<Atom symbol={"S"} number={atoms.Sulphur} />
-		</div>
+		</>
 	);
 }
