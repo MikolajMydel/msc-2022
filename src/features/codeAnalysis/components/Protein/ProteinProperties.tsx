@@ -4,7 +4,7 @@ type ProteinPropertiesProps = {
 	protein: Protein;
 };
 
-export function ProteinPropertries({ protein }: ProteinPropertiesProps) {
+export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 	return (
 		<div>
 			<p>Number of amino acids: {protein.length}</p>
