@@ -13,7 +13,13 @@ export function ProteinPropertries({ protein }: ProteinPropertiesProps) {
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
-			<h5>Found:</h5>
+		</div>
+	);
+}
+
+export function ProteinPosition({ protein }: ProteinPropertiesProps) {
+	return (
+		<div>
 			<p>Frame: {protein.metadata.shift}</p>
 			<p>Codon index: {protein.metadata.codonIndex}</p>
 		</div>

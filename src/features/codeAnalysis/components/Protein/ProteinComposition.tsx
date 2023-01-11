@@ -14,21 +14,21 @@ function Atom({ symbol, number }: AtomProps) {
 	if (!number) return null;
 
 	return (
-		<span>
+		<>
 			{symbol}
 			<span className={styles.sub}>{number}</span>
-		</span>
+		</>
 	);
 }
 
 export function ChemicalComposition({ atoms }: ProteinCompositionProps) {
 	return (
-		<>
+		<span>
 			<Atom symbol={"H"} number={atoms.Hydrogen} />
 			<Atom symbol={"C"} number={atoms.Carbon} />
 			<Atom symbol={"N"} number={atoms.Nitrogen} />
 			<Atom symbol={"O"} number={atoms.Oxygen} />
 			<Atom symbol={"S"} number={atoms.Sulphur} />
-		</>
+		</span>
 	);
 }
