@@ -26,3 +26,17 @@ export function Frame({ acids, shift }: FrameProps) {
 		</div>
 	);
 }
+
+type ReadingFramesProps = {
+	frames: AminoAcid[][];
+};
+
+export function ReadingFrames({ frames }: ReadingFramesProps) {
+	return (
+		<>
+			{frames.map((frame, index) => (
+				<Frame key={uuid()} acids={frame} shift={index} />
+			))}
+		</>
+	);
+}
