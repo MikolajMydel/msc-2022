@@ -10,7 +10,7 @@ export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 	const frames = getAllFrames(rna);
 	const proteins = getAllProteins(frames);
 	return (
-		<div style={{ color: "#fff" }}>
+		<div style={{ color: "#fff", overflowWrap: "anywhere" }}>
 			<CodeAndFrames rna={rna} frames={frames} />
 
 			<AnalysisResult proteins={proteins} />
