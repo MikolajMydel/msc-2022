@@ -1,11 +1,12 @@
 import { splitIntoCodons, splitIntoFullCodons } from "../codonOperations";
+import { CODON_TABLE, AminoAcid } from "../staticvalues";
+
 import {
-	CODON_TABLE,
 	getSymbol,
 	getShortName,
 	aminoAcidArrayToSections,
-	AminoAcid,
-} from "../staticvalues";
+} from "../stringoperations";
+import { getAminoAcidCounts, AcidCount } from "../utils";
 
 import { checkSection } from "./testutils";
 
@@ -36,7 +37,7 @@ describe("utility functions", () => {
 		expect(splitIntoFullCodons("AAAA")).toStrictEqual(["AAA"]);
 	});
 
-	test("check section detection", () => {
+	test("check section detection single coding section", () => {
 		expect(aminoAcidArrayToSections([])).toStrictEqual([]);
 		// threonine - T
 		// alanine - A
@@ -100,5 +101,150 @@ describe("utility functions", () => {
 			isProtein: false,
 			string: "A-",
 		});
+	});
+
+	test("check section detection, multiple coding sections", () => {
+		expect(aminoAcidArrayToSections([])).toStrictEqual([]);
+		// threonine - T
+		// alanine - A
+		/* only highlighted sections */
+		const sections1 = aminoAcidArrayToSections([
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections1.length).toBe(2);
+		checkSection(sections1[0], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections1[1], {
+			isProtein: true,
+			string: "MTA-",
+		});
+
+		/* section between coding sections */
+		const sections2 = aminoAcidArrayToSections([
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections2.length).toBe(3);
+		checkSection(sections2[0], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections2[1], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections2[2], {
+			isProtein: true,
+			string: "MTA-",
+		});
+
+		/* sections before, after and between coding sections */
+		const sections3 = aminoAcidArrayToSections([
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		]);
+		expect(sections3.length).toBe(5);
+		checkSection(sections3[0], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections3[1], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections3[2], {
+			isProtein: false,
+			string: "TA-",
+		});
+		checkSection(sections3[3], {
+			isProtein: true,
+			string: "MTA-",
+		});
+		checkSection(sections3[4], {
+			isProtein: false,
+			string: "TA-",
+		});
+	});
+
+	test("check amino acid counting", () => {
+		// empty array
+		expect(getAminoAcidCounts([])).toStrictEqual({});
+
+		const acids1 = [AminoAcid.Threonine];
+		const acids1_count: AcidCount = {
+			Threonine: 1,
+		};
+		expect(getAminoAcidCounts(acids1)).toStrictEqual(acids1_count);
+
+		const acids2 = [
+			AminoAcid.Threonine,
+			AminoAcid.Threonine,
+			AminoAcid.Threonine,
+			AminoAcid.Threonine,
+		];
+		const acids2_count: AcidCount = {
+			Threonine: 4,
+		};
+		expect(getAminoAcidCounts(acids2)).toStrictEqual(acids2_count);
+
+		const acids3 = [
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Methionine,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+			AminoAcid.Threonine,
+			AminoAcid.Alanine,
+			AminoAcid.STOP,
+		];
+		const acids3_count: AcidCount = {
+			Threonine: 5,
+			Alanine: 5,
+			STOP: 5,
+			Methionine: 2,
+		};
+		expect(getAminoAcidCounts(acids3)).toStrictEqual(acids3_count);
 	});
 });

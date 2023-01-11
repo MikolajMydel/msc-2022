@@ -12,3 +12,9 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Uruchomienie testów automatycznych
+
+```bash
+npm test
+```

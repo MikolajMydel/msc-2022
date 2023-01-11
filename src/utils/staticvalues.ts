@@ -18,7 +18,7 @@ export enum AminoAcid {
 	Lysine = "Lysine",
 	AsparticAcid = "AsparticAcid",
 	GlutamicAcid = "GlutamicAcid",
-	Cysterine = "Cysterine",
+	Cysteine = "Cysteine",
 	Tryptophan = "Tryptophan",
 	Arginine = "Arginine",
 	Glycine = "Glycine",
@@ -94,8 +94,8 @@ export const CODON_TABLE: CodonTable = {
 	GAA: AminoAcid.GlutamicAcid,
 	GAG: AminoAcid.GlutamicAcid,
 
-	UGU: AminoAcid.Cysterine,
-	UGC: AminoAcid.Cysterine,
+	UGU: AminoAcid.Cysteine,
+	UGC: AminoAcid.Cysteine,
 
 	UGA: AminoAcid.STOP,
 	UGG: AminoAcid.Tryptophan,
@@ -124,88 +124,318 @@ interface AcidNames {
 	Short: string;
 }
 
-type AminoAcidNames = {
-	[key: string]: AcidNames;
+export interface Atoms {
+	Hydrogen: number;
+	Carbon: number;
+	Oxygen: number;
+	Nitrogen: number;
+	Sulphur: number;
+}
+
+interface AcidProps {
+	Mass: number;
+	Atoms: Atoms;
+}
+
+interface AcidValues {
+	Names: AcidNames;
+	Props: AcidProps;
+}
+
+type AcidProperties = {
+	[key: string]: AcidValues;
 };
 
-const AMINO_ACID_NAMES: AminoAcidNames = {
-	Phenylalanine: { Symbol: "F", Short: "Phe" },
-	Leucine: { Symbol: "L", Short: "Leu" },
-	Isoleucine: { Symbol: "I", Short: "Ile" },
-	Methionine: { Symbol: "M", Short: "Met" },
-	Valine: { Symbol: "V", Short: "Val" },
-	Serine: { Symbol: "S", Short: "Ser" },
-	Proline: { Symbol: "P", Short: "Pro" },
-	Threonine: { Symbol: "T", Short: "Thr" },
-	Alanine: { Symbol: "A", Short: "Ala" },
-	Tyrosine: { Symbol: "Y", Short: "Tyr" },
-	STOP: { Symbol: "-", Short: "(STOP)" },
-	Histidine: { Symbol: "H", Short: "His" },
-	Glutamine: { Symbol: "Q", Short: "Gln" },
-	Aspargine: { Symbol: "N", Short: "Asn" },
-	Lysine: { Symbol: "K", Short: "Lys" },
-	AsparticAcid: { Symbol: "D", Short: "Asp" },
-	GlutamicAcid: { Symbol: "E", Short: "Glu" },
-	Cysterine: { Symbol: "C", Short: "Cys" },
-	Tryptophan: { Symbol: "W", Short: "Trp" },
-	Arginine: { Symbol: "R", Short: "Arg" },
-	Glycine: { Symbol: "G", Short: "Gly" },
+// source: https://proteomicsresource.washington.edu/protocols06/masses.php
+export const AMINO_ACID_PROPERTIES: AcidProperties = {
+	Phenylalanine: {
+		Names: { Symbol: "F", Short: "Phe" },
+		Props: {
+			Mass: 147.17386,
+			Atoms: {
+				Hydrogen: 9,
+				Carbon: 9,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Leucine: {
+		Names: { Symbol: "L", Short: "Leu" },
+		Props: {
+			Mass: 113.15764,
+			Atoms: {
+				Hydrogen: 11,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Isoleucine: {
+		Names: { Symbol: "I", Short: "Ile" },
+		Props: {
+			Mass: 113.15764,
+			Atoms: {
+				Hydrogen: 11,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Methionine: {
+		Names: { Symbol: "M", Short: "Met" },
+		Props: {
+			Mass: 131.19606,
+			Atoms: {
+				Hydrogen: 9,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 1,
+			},
+		},
+	},
+	Valine: {
+		Names: { Symbol: "V", Short: "Val" },
+		Props: {
+			Mass: 99.13106,
+			Atoms: {
+				Hydrogen: 9,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Serine: {
+		Names: { Symbol: "S", Short: "Ser" },
+		Props: {
+			Mass: 87.0773,
+			Atoms: {
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 2,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Proline: {
+		Names: { Symbol: "P", Short: "Pro" },
+		Props: {
+			Mass: 97.11518,
+			Atoms: {
+				Hydrogen: 7,
+				Carbon: 5,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Threonine: {
+		Names: { Symbol: "T", Short: "Thr" },
+		Props: {
+			Mass: 101.10388,
+			Atoms: {
+				Hydrogen: 7,
+				Carbon: 4,
+				Oxygen: 2,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Alanine: {
+		Names: { Symbol: "A", Short: "Ala" },
+		Props: {
+			Mass: 71.0779,
+			Atoms: {
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Tyrosine: {
+		Names: { Symbol: "Y", Short: "Tyr" },
+		Props: {
+			Mass: 163.17326,
+			Atoms: {
+				Hydrogen: 9,
+				Carbon: 9,
+				Oxygen: 2,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	STOP: {
+		Names: { Symbol: "-", Short: "(STOP)" },
+		Props: {
+			Mass: 0,
+			Atoms: {
+				Hydrogen: 0,
+				Carbon: 0,
+				Oxygen: 0,
+				Nitrogen: 0,
+				Sulphur: 0,
+			},
+		},
+	},
+	Histidine: {
+		Names: { Symbol: "H", Short: "His" },
+		Props: {
+			Mass: 137.13928,
+			Atoms: {
+				Hydrogen: 7,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 3,
+				Sulphur: 0,
+			},
+		},
+	},
+	Glutamine: {
+		Names: { Symbol: "Q", Short: "Gln" },
+		Props: {
+			Mass: 128.12922,
+			Atoms: {
+				Hydrogen: 8,
+				Carbon: 5,
+				Oxygen: 2,
+				Nitrogen: 2,
+				Sulphur: 0,
+			},
+		},
+	},
+	Aspargine: {
+		Names: { Symbol: "N", Short: "Asn" },
+		Props: {
+			Mass: 114.10264,
+			Atoms: {
+				Hydrogen: 6,
+				Carbon: 4,
+				Oxygen: 2,
+				Nitrogen: 2,
+				Sulphur: 0,
+			},
+		},
+	},
+	Lysine: {
+		Names: { Symbol: "K", Short: "Lys" },
+		Props: {
+			Mass: 128.17228,
+			Atoms: {
+				Hydrogen: 12,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 2,
+				Sulphur: 0,
+			},
+		},
+	},
+	AsparticAcid: {
+		Names: { Symbol: "D", Short: "Asp" },
+		Props: {
+			Mass: 115.0874,
+			Atoms: {
+				Hydrogen: 5,
+				Carbon: 4,
+				Oxygen: 3,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	GlutamicAcid: {
+		Names: { Symbol: "E", Short: "Glu" },
+		Props: {
+			Mass: 129.11398,
+			Atoms: {
+				Hydrogen: 7,
+				Carbon: 5,
+				Oxygen: 3,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
+	Cysteine: {
+		Names: { Symbol: "C", Short: "Cys" },
+		Props: {
+			Mass: 103.1429,
+			Atoms: {
+				Hydrogen: 5,
+				Carbon: 3,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 1,
+			},
+		},
+	},
+	Tryptophan: {
+		Names: { Symbol: "W", Short: "Trp" },
+		Props: {
+			Mass: 186.2099,
+			Atoms: {
+				Hydrogen: 10,
+				Carbon: 11,
+				Oxygen: 1,
+				Nitrogen: 2,
+				Sulphur: 0,
+			},
+		},
+	},
+	Arginine: {
+		Names: { Symbol: "R", Short: "Arg" },
+		Props: {
+			Mass: 156.18568,
+			Atoms: {
+				Hydrogen: 12,
+				Carbon: 6,
+				Oxygen: 1,
+				Nitrogen: 4,
+				Sulphur: 0,
+			},
+		},
+	},
+	Glycine: {
+		Names: { Symbol: "G", Short: "Gly" },
+		Props: {
+			Mass: 57.05132,
+			Atoms: {
+				Hydrogen: 3,
+				Carbon: 2,
+				Oxygen: 1,
+				Nitrogen: 1,
+				Sulphur: 0,
+			},
+		},
+	},
 };
 
-export function getShortName(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Short;
-}
+export const WATER_MASS = 18.015;
+export const WATER_ATOMS: Atoms = {
+	Hydrogen: 2,
+	Oxygen: 1,
+	Carbon: 0,
+	Nitrogen: 0,
+	Sulphur: 0,
+};
 
-export function getSymbol(acid: AminoAcid): string {
-	return AMINO_ACID_NAMES[acid].Symbol;
-}
-
-/* combine amino acid array into a string */
-export function aminoAcidArrayToString(acids: AminoAcid[]): string {
-	const symbols: string[] = [];
-	acids.forEach((element) => {
-		symbols.push(getSymbol(element));
-	});
-
-	return symbols.join("");
-}
-
-export interface Section {
-	isProtein: boolean;
-	string: string;
-}
-
-export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
-	let symbols: string[] = [];
-
-	// (is after Methionine)
-	let isAfterMet = false;
-	const sections: Section[] = [];
-
-	const addSection = (isProtein: boolean) => {
-		isAfterMet = !isProtein;
-		/* don't add empty sections */
-		if (symbols.length != 0) {
-			sections.push({ string: symbols.join(""), isProtein: isProtein });
-		}
-		symbols = [];
-	};
-
-	acids.forEach((element) => {
-		/* start of a new section */
-		if (element == AminoAcid.Methionine && !isAfterMet) {
-			addSection(false);
-			symbols.push(getSymbol(element));
-			return;
-		}
-
-		symbols.push(getSymbol(element));
-		if (element == AminoAcid.STOP && isAfterMet) {
-			addSection(true);
-		}
-	});
-
-	addSection(false);
-
-	return sections;
-}
+export const ATOM_MASS: Atoms = {
+	Hydrogen: 1.008,
+	Carbon: 12.01,
+	Oxygen: 15.999,
+	Nitrogen: 14.006,
+	Sulphur: 32.065,
+};

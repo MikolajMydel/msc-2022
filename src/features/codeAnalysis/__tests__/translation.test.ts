@@ -1,4 +1,4 @@
-import { aminoAcidArrayToString } from "../../../utils/staticvalues";
+import { aminoAcidArrayToString } from "../../../utils/stringoperations";
 import { AminoAcid } from "../../../utils/staticvalues";
 import { getAllFrames, getAllProteins } from "../utils/translation";
 import { checkProtein } from "./testutils";
@@ -10,7 +10,7 @@ describe("transcription", () => {
 
 		const test1_AminoAcids = [
 			AminoAcid.Alanine,
-			AminoAcid.Cysterine,
+			AminoAcid.Cysteine,
 			AminoAcid.STOP,
 		];
 		expect(aminoAcidArrayToString(test1_AminoAcids)).toBe("AC-");

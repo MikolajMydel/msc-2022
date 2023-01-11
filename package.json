@@ -19,7 +19,8 @@
 		"react-router-dom": "^6.4.5",
 		"sass": "^1.57.1",
 		"typed-scss-modules": "^7.0.1",
-		"uuidv4": "^6.2.13"
+		"uuidv4": "^6.2.13",
+		"react-chartjs-2": "^5.2.0"
 	},
 	"devDependencies": {
 		"@types/jest": "^29.2.5",

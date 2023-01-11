@@ -10,5 +10,5 @@ export function Section({ acids, isProtein }: SectionProps) {
 		return <span className={styles.Highlighted}>{acids}</span>;
 	}
 
-	return <span> {acids} </span>;
+	return <span>{acids}</span>;
 }
