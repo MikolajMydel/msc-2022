@@ -1,9 +1,19 @@
 import { DNA_REGEXP, RNA_REGEXP } from "../../../utils/sequenceValidation";
+import { sequenceTypes } from "../../../types/biology/codeSequence";
 
-const allowedCharacters: RegExp[] = [DNA_REGEXP, RNA_REGEXP];
-export const isCharacterAllowed = (keyCode: string): boolean => {
-	for (const regex of allowedCharacters) {
-		if (regex.test(keyCode)) return true;
-	}
-	return false;
+const sequenceRegex: Record<sequenceTypes, RegExp> = {
+	DNA: DNA_REGEXP,
+	RNA: RNA_REGEXP,
 };
+
+type isCharacterAllowed = Record<sequenceTypes, boolean>;
+
+export function isCharacterAllowed(keyCode: string): isCharacterAllowed {
+	return Object.entries(sequenceRegex).reduce(function (
+		previousValue,
+		[sequenceType, regex]
+	) {
+		return { ...previousValue, [sequenceType]: regex.test(keyCode) };
+	},
+	{} as isCharacterAllowed);
+}
