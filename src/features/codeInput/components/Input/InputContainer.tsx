@@ -1,6 +1,6 @@
 import {
-	convertDnaToRna,
-	convertRnaToDna,
+	convertDNAToRNA,
+	convertRNAToDNA,
 } from "../../../../utils/transcription";
 import { useState, useEffect } from "react";
 import Input from "./Input";
@@ -27,8 +27,8 @@ export default function InputContainer() {
 	const convertValue = (newSequenceType: sequenceTypes) => {
 		setValue((currentValue) => {
 			return newSequenceType === "DNA"
-				? convertRnaToDna(currentValue)
-				: convertDnaToRna(currentValue);
+				? convertRNAToDNA(currentValue)
+				: convertDNAToRNA(currentValue);
 		});
 	};
 

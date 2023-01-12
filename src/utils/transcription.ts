@@ -1,7 +1,7 @@
-export function convertDnaToRna(source: string) {
+export function convertDNAToRNA(source: string) {
 	return source.replaceAll(/T/gi, "U");
 }
 
-export function convertRnaToDna(source: string) {
+export function convertRNAToDNA(source: string) {
 	return source.replaceAll(/U/gi, "T");
 }
