@@ -3,9 +3,10 @@ import { useEffect } from "react";
 import { handleChangeType, handleKeyDownType } from "../../../../types/events";
 import styles from "./Input.module.scss";
 import CodonList from "../CodonList/CodonList";
-import ControlledInput from "./ControlledInput";
+import ControlledInput from "../../../../components/ControlledInput/ControlledInput";
 import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
+import { sequenceTypes } from "../../../../types/biology/codeSequence";
 
 type InputProps = {
 	value: string;
@@ -13,6 +14,8 @@ type InputProps = {
 	handleKeyDown: handleKeyDownType;
 	error: boolean;
 	cancelError: () => void;
+	sequenceType: sequenceTypes;
+	switchSequenceType: () => void;
 };
 
 export default function Input({
@@ -21,6 +24,8 @@ export default function Input({
 	handleKeyDown,
 	error,
 	cancelError,
+	sequenceType,
+	switchSequenceType,
 }: InputProps) {
 	const codonsArray = splitIntoCodons(value);
 
@@ -30,15 +35,20 @@ export default function Input({
 
 	return (
 		<div className={styles.Wrapper}>
-			<ControlledInput
-				className={classNames(styles.Input, {
-					[styles.InputError]: error,
-				})}
-				type={"text"}
-				value={value}
-				onChange={handleChange}
-				onKeyDown={handleKeyDown}
-			/>
+			<div className={styles.Input}>
+				<button onClick={switchSequenceType} className={styles.InputButton}>
+					{sequenceType}
+				</button>
+				<ControlledInput
+					className={classNames(styles.InputHTMLElement, {
+						[styles.InputHTMLElementError]: error,
+					})}
+					type={"text"}
+					value={value}
+					onChange={handleChange}
+					onKeyDown={handleKeyDown}
+				/>
+			</div>
 			<CodonList codons={codonsArray} />
 		</div>
 	);

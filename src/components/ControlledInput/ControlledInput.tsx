@@ -1,12 +1,12 @@
 import { HTMLInputTypeAttribute, useEffect, useRef, useState } from "react";
-import { handleChangeType, handleKeyDownType } from "../../../../types/events";
+import { handleChangeType, handleKeyDownType } from "../../types/events";
 
 type ControlledInputProps = {
 	value: string;
 	onChange?: handleChangeType;
 	onKeyDown?: handleKeyDownType;
 	type: HTMLInputTypeAttribute;
-	className: string;
+	className?: string;
 };
 
 export default function ControlledInput(props: ControlledInputProps) {
