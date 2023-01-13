@@ -13,6 +13,10 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
+			<p>Grand Average of Hydropathicity: {protein.hydropathicityIndex}</p>
+
+			<p>Positively charged amino acids: {protein.positivelyChargedAcids}</p>
+			<p>Negatively charged amino acids: {protein.negativelyChargedAcids}</p>
 		</div>
 	);
 }

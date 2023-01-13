@@ -55,6 +55,20 @@ export class Protein {
 		return getHydropathicityIndex(this.acids);
 	}
 
+	get positivelyChargedAcids() {
+		return (
+			this.aminoAcidCount(AminoAcid.Arginine) +
+			this.aminoAcidCount(AminoAcid.Lysine)
+		);
+	}
+
+	get negativelyChargedAcids() {
+		return (
+			this.aminoAcidCount(AminoAcid.AsparticAcid) +
+			this.aminoAcidCount(AminoAcid.GlutamicAcid)
+		);
+	}
+
 	aminoAcidCount(acid: AminoAcid) {
 		const counts = this.aminoAcidCounts;
 		if (acid in counts) return counts[acid];
