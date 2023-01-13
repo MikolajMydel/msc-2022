@@ -18,3 +18,9 @@ npm run dev
 ```bash
 npm test
 ```
+
+## Źródła
+
+Masa molekularna, wzór chemiczny: https://proteomicsresource.washington.edu/protocols06/masses.php
+Indeks hydrofobowy: https://web.expasy.org/protscale/pscale/Hphob.Doolittle.html
+Wzory: https://web.expasy.org/protparam/protparam-doc.html
