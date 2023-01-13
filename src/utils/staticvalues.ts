@@ -135,6 +135,7 @@ export interface Atoms {
 interface AcidProps {
 	Mass: number;
 	Atoms: Atoms;
+	Hydropathicity: number;
 }
 
 interface AcidValues {
@@ -159,6 +160,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: 2.8,
 		},
 	},
 	Leucine: {
@@ -172,6 +174,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: 3.8,
 		},
 	},
 	Isoleucine: {
@@ -185,6 +188,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: 4.5,
 		},
 	},
 	Methionine: {
@@ -198,6 +202,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 1,
 			},
+			Hydropathicity: 1.9,
 		},
 	},
 	Valine: {
@@ -211,6 +216,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: 4.2,
 		},
 	},
 	Serine: {
@@ -224,6 +230,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -0.8,
 		},
 	},
 	Proline: {
@@ -237,6 +244,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -1.6,
 		},
 	},
 	Threonine: {
@@ -250,6 +258,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -0.7,
 		},
 	},
 	Alanine: {
@@ -263,6 +272,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: 1.8,
 		},
 	},
 	Tyrosine: {
@@ -276,6 +286,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -1.3,
 		},
 	},
 	STOP: {
@@ -289,6 +300,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 0,
 				Sulphur: 0,
 			},
+			Hydropathicity: 0,
 		},
 	},
 	Histidine: {
@@ -302,6 +314,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 3,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.2,
 		},
 	},
 	Glutamine: {
@@ -315,6 +328,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.5,
 		},
 	},
 	Aspargine: {
@@ -328,6 +342,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.5,
 		},
 	},
 	Lysine: {
@@ -341,6 +356,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.9,
 		},
 	},
 	AsparticAcid: {
@@ -354,6 +370,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.5,
 		},
 	},
 	GlutamicAcid: {
@@ -367,6 +384,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -3.5,
 		},
 	},
 	Cysteine: {
@@ -380,6 +398,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 1,
 			},
+			Hydropathicity: 2.5,
 		},
 	},
 	Tryptophan: {
@@ -393,6 +412,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
+			Hydropathicity: -0.9,
 		},
 	},
 	Arginine: {
@@ -406,6 +426,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 4,
 				Sulphur: 0,
 			},
+			Hydropathicity: -4.5,
 		},
 	},
 	Glycine: {
@@ -419,6 +440,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
+			Hydropathicity: -0.4,
 		},
 	},
 };
