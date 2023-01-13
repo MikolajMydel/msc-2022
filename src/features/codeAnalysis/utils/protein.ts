@@ -52,7 +52,7 @@ export class Protein {
 
 	// grand average of hydropathicity
 	get hydropathicityIndex() {
-		return getHydropathicityIndex(this.acids);
+		return roundFloat(getHydropathicityIndex(this.acids), 3);
 	}
 
 	get positivelyChargedAcids() {
