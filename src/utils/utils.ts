@@ -48,3 +48,13 @@ export function getAminoAcidCounts(acids: AminoAcid[]) {
 	});
 	return counts;
 }
+
+export function getHydropathicityIndex(acids: AminoAcid[]) {
+	if (acids.length == 0) return 0;
+
+	let sum = 0;
+	acids.forEach((acid) => {
+		sum += AMINO_ACID_PROPERTIES[acid].Props.Hydropathicity;
+	});
+	return sum / acids.length;
+}

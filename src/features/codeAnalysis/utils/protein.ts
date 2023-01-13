@@ -4,6 +4,7 @@ import {
 	roundFloat,
 	getAtomCount,
 	getAminoAcidCounts,
+	getHydropathicityIndex,
 } from "../../../utils/utils";
 export class ProteinMetadata {
 	shift = 0;
@@ -47,5 +48,17 @@ export class Protein {
 
 	get aminoAcidCounts() {
 		return getAminoAcidCounts(this.acids);
+	}
+
+	// grand average of hydropathicity
+	get hydropathicityIndex() {
+		return getHydropathicityIndex(this.acids);
+	}
+
+	aminoAcidCount(acid: AminoAcid) {
+		const counts = this.aminoAcidCounts;
+		if (acid in counts) return counts[acid];
+
+		return 0;
 	}
 }
