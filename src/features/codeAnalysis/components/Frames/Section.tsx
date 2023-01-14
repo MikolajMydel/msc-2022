@@ -10,8 +10,11 @@ type SectionProps = {
 export function Section({ acids, isProtein, startIndex, frame }: SectionProps) {
 	if (isProtein) {
 		return (
-			<a href={getProteinLink(startIndex, frame)}>
-				<span className={styles.Highlighted}>{acids}</span>
+			<a
+				href={getProteinLink(startIndex, frame)}
+				className={styles.Highlighted}
+			>
+				<span>{acids}</span>
 			</a>
 		);
 	}
