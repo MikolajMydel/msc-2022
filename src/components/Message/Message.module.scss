@@ -1,6 +1,15 @@
 @use "../../styles/variables.scss" as v;
 
+.MessageList {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
 .Message {
+	margin: map-get(v.$spacing, "sm");
+
 	border: 1px solid map-get(v.$colors, "green");
 	color: map-get(v.$colors, "white");
 	padding: map-get(v.$spacing, "sm");

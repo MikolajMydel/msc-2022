@@ -7,9 +7,10 @@ import ControlledInput from "../../../../components/ControlledInput/ControlledIn
 import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
-import MessageContainer from "../../../../components/Message/MessageContainer";
+import MessageList from "../../../../components/Message/MessageList";
 
-const ERROR_MESSAGE = "Error message";
+const ERROR_MESSAGE = "Error message",
+	MESSAGE_DURATION = 3000;
 
 type InputProps = {
 	value: string;
@@ -33,7 +34,7 @@ export default function Input({
 	const codonsArray = splitIntoCodons(value);
 
 	useEffect(() => {
-		if (error) setTimeout(cancelError, 1000);
+		if (error) setTimeout(cancelError, MESSAGE_DURATION);
 	}, [error]);
 
 	return (
@@ -53,7 +54,7 @@ export default function Input({
 				/>
 			</div>
 
-			<MessageContainer content={error ? [ERROR_MESSAGE] : []} />
+			<MessageList content={error ? [ERROR_MESSAGE, "2", "3"] : []} />
 
 			<CodonList codons={codonsArray} />
 		</div>
