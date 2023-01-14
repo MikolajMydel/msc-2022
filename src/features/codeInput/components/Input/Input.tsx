@@ -7,6 +7,9 @@ import ControlledInput from "../../../../components/ControlledInput/ControlledIn
 import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
+import MessageContainer from "../../../../components/Message/MessageContainer";
+
+const ERROR_MESSAGE = "Error message";
 
 type InputProps = {
 	value: string;
@@ -49,6 +52,9 @@ export default function Input({
 					onKeyDown={handleKeyDown}
 				/>
 			</div>
+
+			<MessageContainer text={ERROR_MESSAGE} />
+
 			<CodonList codons={codonsArray} />
 		</div>
 	);
