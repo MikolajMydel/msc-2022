@@ -1,0 +1,7 @@
+@use "../../styles/variables.scss" as v;
+
+.Message {
+	border: 1px solid map-get(v.$colors, "green");
+	color: map-get(v.$colors, "white");
+	padding: map-get(v.$spacing, "sm");
+}

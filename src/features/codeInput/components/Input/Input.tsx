@@ -53,7 +53,7 @@ export default function Input({
 				/>
 			</div>
 
-			<MessageContainer text={ERROR_MESSAGE} />
+			<MessageContainer content={error ? [ERROR_MESSAGE] : []} />
 
 			<CodonList codons={codonsArray} />
 		</div>
