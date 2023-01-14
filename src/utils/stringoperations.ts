@@ -21,6 +21,7 @@ export function aminoAcidArrayToString(acids: AminoAcid[]): string {
 export interface Section {
 	isProtein: boolean;
 	string: string;
+	codonIndex: number;
 }
 
 export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
@@ -29,27 +30,36 @@ export function aminoAcidArrayToSections(acids: AminoAcid[]): Section[] {
 	// (is after Methionine)
 	let isAfterMet = false;
 	const sections: Section[] = [];
+	let sectionStart = 0;
 
 	const addSection = (isProtein: boolean) => {
 		isAfterMet = !isProtein;
 		/* don't add empty sections */
 		if (symbols.length != 0) {
-			sections.push({ string: symbols.join(""), isProtein: isProtein });
+			sections.push({
+				string: symbols.join(""),
+				isProtein: isProtein,
+				codonIndex: sectionStart,
+			});
 		}
 		symbols = [];
 	};
 
-	acids.forEach((element) => {
+	acids.forEach((element, index) => {
 		/* start of a new section */
 		if (element == AminoAcid.Methionine && !isAfterMet) {
 			addSection(false);
 			symbols.push(getSymbol(element));
+			// next section starts with Methionine (at current index)
+			sectionStart = index;
 			return;
 		}
 
 		symbols.push(getSymbol(element));
 		if (element == AminoAcid.STOP && isAfterMet) {
 			addSection(true);
+			// next section starts after stop (at next index)
+			sectionStart = index + 1;
 		}
 	});
 
