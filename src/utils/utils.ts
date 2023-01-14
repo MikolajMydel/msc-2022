@@ -58,3 +58,14 @@ export function getHydropathicityIndex(acids: AminoAcid[]) {
 	});
 	return sum / acids.length;
 }
+
+function getLink(codonIndex: number, frame: number): string {
+	return String(codonIndex) + "f" + String(frame);
+}
+
+export function getProteinLink(codonIndex: number, frame: number, link = true) {
+	if (link) {
+		return "#" + getLink(codonIndex, frame);
+	}
+	return getLink(codonIndex, frame);
+}
