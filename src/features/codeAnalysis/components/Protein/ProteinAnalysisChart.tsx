@@ -5,12 +5,12 @@ import { AminoAcid} from "../../../../utils/staticvalues";
 
 //Proteins Number Of Amino Acids Chart 
 export function ProteinsNumberOfAminoAcidsChart({ proteins }: any ){
-  const proteinNumbering = [];
+  const proteinsNumbering = [];
   for(let i=0;i<proteins.length;i++){
-     proteinNumbering[i] = `protein ${i+1}`;
+     proteinsNumbering[i] = `protein ${i+1}`;
   } 
   const Chartdata = {
-    labels: proteinNumbering,
+    labels: proteinsNumbering,
     datasets: [
       {
         label: 'Number of amino acids',
@@ -21,7 +21,7 @@ export function ProteinsNumberOfAminoAcidsChart({ proteins }: any ){
           "#50AF95",
           "#f3ba2f",
           "#2a71d0",
-          "#72FF5E",
+          "#FF5E5E",
         ],
       }
     ]
@@ -39,15 +39,31 @@ export function AminoAcidsInProteinChart({ protein }: any){
     labels: Object.keys(AminoAcid).filter(amin => amin),
     datasets: [
       {
-        label: 'Number of amino acids',
-        data: Object.keys(AminoAcid).filter(amin => amin).map((Amino) => protein.aminoAcidCount(Amino)),
+        label: `amount of this amino acid in the protein`,
+        data: Object.keys(AminoAcid).filter(amin => amin).map(amin => protein.aminoAcidCount(amin)), 
         backgroundColor: [
           "#2a71d0",
           "#ecf0f1",
           "#50AF95",
-          "#f3ba2f",
+          "#810000",
           "#2a71d0",
+          "#FF5E5E",
           "#72FF5E",
+          "#FFFFA4",
+          "#266300",
+          "#46FFDB",
+          "#466AFF",
+          "#021358",
+          "#D39AFF",
+          "#7D7D7D",
+          "#540042",
+          "#FF48D8",
+          "#FF487A",
+          "#6F3948",
+          "#4B4C1F",
+          "#000000",
+          "#FFC9C9",
+          "#000000",
         ],
       }
     ]
