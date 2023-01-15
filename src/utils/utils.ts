@@ -84,5 +84,8 @@ function getDipeptideInstabilitySum(acids: AminoAcid[]) {
 export function getInstabilityIndex(acids: AminoAcid[]) {
 	if (acids.length < 2) return undefined;
 
-	return roundFloat((10 / acids.length) * getDipeptideInstabilitySum(acids), 2);
+	return roundFloat(
+		(10.0 / acids.length) * getDipeptideInstabilitySum(acids),
+		2
+	);
 }

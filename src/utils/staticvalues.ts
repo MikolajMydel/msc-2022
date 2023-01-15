@@ -205,7 +205,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			Hydropathicity: 3.8,
 			DipeptideInstability: {
 				Phenylalanine: 1.0, // F
-				Leucine: 24.68, // L
+				Leucine: 1.0, // L
 				Isoleucine: 1.0, // I
 				Methionine: 1.0, // M
 				Valine: 1.0, // V
@@ -221,7 +221,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				AsparticAcid: 1.0, // D
 				GlutamicAcid: 1.0, // E
 				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
+				Tryptophan: 24.68, // W
 				Arginine: 20.26, // R
 				Glycine: 1.0, // G
 				STOP: 0.0, // leave empty
@@ -356,9 +356,9 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Leucine: 1.0, // L
 				Isoleucine: 1.0, // I
 				Methionine: 1.0, // M
-				Valine: 20.26, // V
+				Valine: 1.0, // V
 				Serine: 20.26, // S
-				Proline: 44.49, // P
+				Proline: 44.94, // P
 				Threonine: 1.0, // T
 				Alanine: 1.0, // A
 				Tyrosine: 1.0, // Y

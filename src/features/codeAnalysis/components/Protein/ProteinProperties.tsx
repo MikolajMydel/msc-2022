@@ -9,10 +9,10 @@ function ProteinStabilityIndex({ protein }: ProteinPropertiesProps) {
 	const stability = getInstabilityIndex(protein.acids);
 
 	if (!stability) {
-		return <span> Too short to calculate! </span>;
+		return <> Too short to calculate! </>;
 	}
 
-	return <span>{stability}</span>;
+	return <>{stability}</>;
 }
 
 export function ProteinProperties({ protein }: ProteinPropertiesProps) {
