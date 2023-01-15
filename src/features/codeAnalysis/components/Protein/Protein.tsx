@@ -2,7 +2,6 @@ import { getProteinLink } from "../../../../utils/utils";
 import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
-
 type ProteinLinkProps = {
 	protein: Protein;
 };

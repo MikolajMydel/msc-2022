@@ -1,5 +1,6 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
+
 type ProteinPropertiesProps = {
 	protein: Protein;
 };
@@ -15,6 +16,7 @@ function ProteinStabilityIndex({ protein }: ProteinPropertiesProps) {
 }
 
 export function ProteinProperties({ protein }: ProteinPropertiesProps) {
+	
 	return (
 		<div>
 			<p>Number of amino acids: {protein.length}</p>
