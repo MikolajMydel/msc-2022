@@ -1,9 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Message from "./Message";
 import styles from "./Message.module.scss";
+import { v4 as uuidv4 } from "uuid";
+import Message, { MessageProps } from "./Message";
 
 type MessageContainerProps = {
-	content: string[];
+	children?:
+		| React.ReactElement<MessageProps>
+		| React.ReactElement<MessageProps>[];
 };
 
 const messageVariants = {
@@ -15,24 +18,30 @@ const messageVariants = {
 	},
 };
 
-export default function MessageList({ content }: MessageContainerProps) {
+export default function MessageList({ children }: MessageContainerProps) {
+	const messages = Array.isArray(children) ? children : [children];
+
 	return (
 		<div className={styles.MessageList}>
 			<AnimatePresence>
-				{content.map((text) => (
-					<motion.div
-						key={text}
-						variants={messageVariants}
-						initial={"hidden"}
-						animate={"visible"}
-						exit={"hidden"}
-						transition={{
-							type: "spring",
-						}}
-					>
-						<Message text={text} />
-					</motion.div>
-				))}
+				{messages.map((message) => {
+					if (typeof message === "undefined") return "";
+
+					return (
+						<motion.div
+							key={uuidv4()}
+							variants={messageVariants}
+							initial={"hidden"}
+							animate={"visible"}
+							exit={"hidden"}
+							transition={{
+								type: "spring",
+							}}
+						>
+							<Message {...message.props}>{message.props.children}</Message>
+						</motion.div>
+					);
+				})}
 			</AnimatePresence>
 		</div>
 	);

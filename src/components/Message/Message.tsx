@@ -1,8 +1,8 @@
 import styles from "./Message.module.scss";
-type MessageProps = {
-	text: string;
+export type MessageProps = {
+	children: React.ReactNode;
 };
 
-export default function Message({ text }: MessageProps) {
-	return <div className={styles.Message}>{text}</div>;
+export default function Message({ children }: MessageProps) {
+	return <div className={styles.Message}>{children}</div>;
 }

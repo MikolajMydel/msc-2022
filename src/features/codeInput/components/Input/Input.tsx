@@ -8,9 +8,10 @@ import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
 import MessageList from "../../../../components/Message/MessageList";
+import Message from "../../../../components/Message/Message";
 
 const ERROR_MESSAGE = "Error message",
-	MESSAGE_DURATION = 3000;
+	MESSAGE_DURATION = 2000;
 
 type InputProps = {
 	value: string;
@@ -54,7 +55,9 @@ export default function Input({
 				/>
 			</div>
 
-			<MessageList content={error ? [ERROR_MESSAGE, "2", "3"] : []} />
+			<MessageList>
+				{error ? <Message>{ERROR_MESSAGE}</Message> : undefined}
+			</MessageList>
 
 			<CodonList codons={codonsArray} />
 		</div>
