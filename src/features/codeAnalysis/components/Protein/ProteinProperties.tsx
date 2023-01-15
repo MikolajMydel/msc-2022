@@ -1,8 +1,19 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
+import { getInstabilityIndex } from "../../../../utils/utils";
 type ProteinPropertiesProps = {
 	protein: Protein;
 };
+
+function ProteinStabilityIndex({ protein }: ProteinPropertiesProps) {
+	const stability = getInstabilityIndex(protein.acids);
+
+	if (!stability) {
+		return <span> Too short to calculate! </span>;
+	}
+
+	return <span>{stability}</span>;
+}
 
 export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 	return (
@@ -11,6 +22,9 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			<p>Mass: {protein.mass}</p>
 			<p>
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
+			</p>
+			<p>
+				Instability index: <ProteinStabilityIndex protein={protein} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
 			<p>Grand Average of Hydropathy: {protein.hydropathicityIndex}</p>

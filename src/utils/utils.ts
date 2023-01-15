@@ -69,3 +69,20 @@ export function getProteinLink(codonIndex: number, frame: number, link = true) {
 	}
 	return getLink(codonIndex, frame);
 }
+
+function getDipeptideInstabilitySum(acids: AminoAcid[]) {
+	let sum = 0.0;
+
+	for (let i = 0; i < acids.length - 1; i++) {
+		sum +=
+			AMINO_ACID_PROPERTIES[acids[i]].Props.DipeptideInstability[acids[i + 1]];
+	}
+
+	return sum;
+}
+
+export function getInstabilityIndex(acids: AminoAcid[]) {
+	if (acids.length < 2) return undefined;
+
+	return roundFloat((10 / acids.length) * getDipeptideInstabilitySum(acids), 2);
+}
