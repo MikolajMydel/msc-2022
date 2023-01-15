@@ -26,8 +26,8 @@ type ProteinComponentProps = {
 
 export function ProteinComponent({ protein }: ProteinComponentProps) {
 	const Stable = () => {
-		if (!protein.instabilityIndex) return null;
-		if (protein.instabilityIndex < 40)
+		if (protein.stable == undefined) return null;
+		if (protein.stable)
 			return (
 				<>
 					, <span className={styles.stable}>stable</span>

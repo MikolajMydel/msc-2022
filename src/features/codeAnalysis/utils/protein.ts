@@ -80,4 +80,10 @@ export class Protein {
 	get instabilityIndex() {
 		return getInstabilityIndex(this.acids);
 	}
+
+	get stable() {
+		return this.instabilityIndex == undefined
+			? undefined
+			: this.instabilityIndex < 40;
+	}
 }
