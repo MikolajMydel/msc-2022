@@ -1,12 +1,12 @@
 import { AminoAcid } from "../../../utils/staticvalues";
+import { roundFloat } from "../../../utils/utils";
 import {
 	getMass,
-	roundFloat,
 	getAtomCount,
 	getAminoAcidCounts,
 	getHydropathicityIndex,
 	getInstabilityIndex,
-} from "../../../utils/utils";
+} from "../utils/analysis";
 export class ProteinMetadata {
 	shift = 0;
 	/* index of the start codon */
