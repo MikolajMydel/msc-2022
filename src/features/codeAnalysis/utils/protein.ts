@@ -5,6 +5,7 @@ import {
 	getAtomCount,
 	getAminoAcidCounts,
 	getHydropathicityIndex,
+	getInstabilityIndex,
 } from "../../../utils/utils";
 export class ProteinMetadata {
 	shift = 0;
@@ -74,5 +75,9 @@ export class Protein {
 		if (acid in counts) return counts[acid];
 
 		return 0;
+	}
+
+	get instabilityIndex() {
+		return getInstabilityIndex(this.acids);
 	}
 }

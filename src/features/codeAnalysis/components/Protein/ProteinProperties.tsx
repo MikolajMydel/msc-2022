@@ -6,7 +6,7 @@ type ProteinPropertiesProps = {
 };
 
 function ProteinStabilityIndex({ protein }: ProteinPropertiesProps) {
-	const stability = getInstabilityIndex(protein.acids);
+	const stability = protein.instabilityIndex;
 
 	if (!stability) {
 		return <> Too short to calculate! </>;
