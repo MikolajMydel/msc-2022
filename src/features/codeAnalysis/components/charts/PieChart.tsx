@@ -16,9 +16,7 @@ function PieChart({ChartData}:any) {
 
     }
     return (
-        <div style={{width:300}}>
         <Pie data={ChartData} options={options}/>
-        </div>
     )
 }
 
