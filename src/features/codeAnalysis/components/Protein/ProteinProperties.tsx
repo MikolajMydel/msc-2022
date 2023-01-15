@@ -1,6 +1,5 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
-import { getInstabilityIndex } from "../../../../utils/utils";
 type ProteinPropertiesProps = {
 	protein: Protein;
 };
