@@ -1,6 +1,6 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
-import  { AminoAcidsInProteinChart, AminoAcidsInProteinDoughnutChart } from "./ProteinAnalysisChart";
+import  { AminoAcidsInProteinDoughnutChart } from "./ProteinAnalysisChart";
 
 
 export type ProteinPropertiesProps = {
