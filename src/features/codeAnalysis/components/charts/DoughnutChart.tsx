@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS,
     ArcElement,
     Tooltip,
@@ -11,13 +11,13 @@ ChartJS.register(
     Tooltip,
     Legend
 )
-function PieChart({ChartData}:any) {
+function DoughnutChart({ChartData}:any) {
     const options = {
 
     }
     return (
-        <Pie data={ChartData} options={options}/>
+        <Doughnut data={ChartData} options={options}/>
     )
 }
 
-export default PieChart;
+export default DoughnutChart;

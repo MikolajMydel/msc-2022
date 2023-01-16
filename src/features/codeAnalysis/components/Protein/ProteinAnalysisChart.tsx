@@ -1,15 +1,15 @@
-import PieChart from "../charts/PieChart";
+import DoughnutChart from "../charts/DoughnutChart";
 import { Protein } from "../../utils/protein";
 import { AminoAcid} from "../../../../utils/staticvalues";
+import { ProteinPropertiesProps } from "./ProteinProperties"
 
-
-export function AminoAcidsInProteinChart({ protein }: any){
+export function AminoAcidsInProteinDoughnutChart({protein}: ProteinPropertiesProps){
   const Chartdata = {
     labels: Object.keys(AminoAcid).filter(amin => amin),
     datasets: [
       {
         label: `amount of this amino acid in the protein`,
-        data: Object.keys(AminoAcid).filter(amin => amin).map(amin => protein.aminoAcidCount(amin)), 
+        data: Object.keys(AminoAcid).filter(data => data).map(data => protein.aminoAcidCount(data)), 
         backgroundColor: [
           "#001B2E",
           "#C7DFC5",
@@ -35,12 +35,15 @@ export function AminoAcidsInProteinChart({ protein }: any){
           "#3C6E71",
           "#3C6E71",
         ],
+        borderWidth: 0,
+        cutout: '85%',
+        spacing: 15
       }
     ]
   }
 	return (
-    <div style={{width: '650px'}}>
-      <PieChart ChartData={Chartdata} ></PieChart>
+    <div style={{width: '450px'}}>
+      <DoughnutChart ChartData={Chartdata} ></DoughnutChart>
     </div>
 
 	);

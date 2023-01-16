@@ -1,6 +1,6 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
-import  { AminoAcidsInProteinChart } from "./ProteinAnalysisChart";
+import  { AminoAcidsInProteinChart, AminoAcidsInProteinDoughnutChart } from "./ProteinAnalysisChart";
 
 
 export type ProteinPropertiesProps = {
@@ -22,7 +22,7 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 	return (
 		<div>
 			<p>Number of amino acids: {protein.length}</p>
-			<AminoAcidsInProteinChart protein={protein}></AminoAcidsInProteinChart>
+			<AminoAcidsInProteinDoughnutChart protein={protein}></AminoAcidsInProteinDoughnutChart>
 			<p>Mass: {protein.mass}</p>
 			<p>
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
