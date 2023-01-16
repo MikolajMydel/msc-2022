@@ -52,7 +52,7 @@ export function getAminoAcidCounts(acids: AminoAcid[]) {
 	return counts;
 }
 
-export function getHydropathicityIndex(acids: AminoAcid[]) {
+export function getHydropathyIndex(acids: AminoAcid[]) {
 	if (acids.length == 0) return 0;
 
 	let sum = 0;

@@ -8,8 +8,6 @@ function getLink(codonIndex: number, frame: number): string {
 }
 
 export function getProteinLink(codonIndex: number, frame: number, link = true) {
-	if (link) {
-		return "#" + getLink(codonIndex, frame);
-	}
+	if (link) return "#" + getLink(codonIndex, frame);
 	return getLink(codonIndex, frame);
 }

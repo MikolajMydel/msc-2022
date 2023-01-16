@@ -5,13 +5,11 @@ type ProteinPropertiesProps = {
 };
 
 function ProteinStabilityIndex({ protein }: ProteinPropertiesProps) {
-	const stability = protein.instabilityIndex;
-
-	if (!stability) {
+	if (!protein.instabilityIndex) {
 		return <> Too short to calculate! </>;
 	}
 
-	return <>{stability}</>;
+	return <>{protein.instabilityIndex}</>;
 }
 
 export function ProteinProperties({ protein }: ProteinPropertiesProps) {

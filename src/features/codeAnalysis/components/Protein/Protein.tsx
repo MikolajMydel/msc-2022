@@ -23,18 +23,12 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 		);
 	};
 	const Name = () => {
-		if (protein.length < 30)
-			return (
-				<h5>
-					<span>Peptide</span>
-					<Stable />
-				</h5>
-			);
+		const isProtein = protein.length > 30;
 		return (
-			<h4>
-				<span>Protein</span>
+			<h5 className={isProtein ? styles.protein : styles.peptide}>
+				<span>{isProtein ? "Protein" : "Peptide"}</span>
 				<Stable />
-			</h4>
+			</h5>
 		);
 	};
 

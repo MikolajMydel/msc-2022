@@ -4,7 +4,7 @@ import {
 	getMass,
 	getAtomCount,
 	getAminoAcidCounts,
-	getHydropathicityIndex,
+	getHydropathyIndex,
 	getInstabilityIndex,
 } from "../utils/analysis";
 export class ProteinMetadata {
@@ -47,13 +47,15 @@ export class Protein {
 		return sum;
 	}
 
+	// return array of [string]: [number] values
+	// representing <aminoacid>: <number of that amino acid in the protein>
 	get aminoAcidCounts() {
 		return getAminoAcidCounts(this.acids);
 	}
 
 	// grand average of hydropathy
 	get hydropathicityIndex() {
-		return roundFloat(getHydropathicityIndex(this.acids), 3);
+		return roundFloat(getHydropathyIndex(this.acids), 3);
 	}
 
 	get positivelyChargedAcids() {
@@ -70,6 +72,7 @@ export class Protein {
 		);
 	}
 
+	// returns number of <acid> amino acid in the protein
 	aminoAcidCount(acid: AminoAcid) {
 		const counts = this.aminoAcidCounts;
 		if (acid in counts) return counts[acid];
