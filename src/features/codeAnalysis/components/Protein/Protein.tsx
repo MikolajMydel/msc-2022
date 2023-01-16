@@ -1,4 +1,3 @@
-import { getProteinLink } from "../../../../utils/utils";
 import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
@@ -23,25 +22,16 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 		);
 	};
 	const Name = () => {
-		const isProtein = protein.length > 30;
 		return (
-			<h5 className={isProtein ? styles.protein : styles.peptide}>
-				<span>{isProtein ? "Protein" : "Peptide"}</span>
+			<h5 className={protein.isProtein ? styles.protein : styles.peptide}>
+				<span>{protein.isProtein ? "Protein" : "Peptide"}</span>
 				<Stable />
 			</h5>
 		);
 	};
 
 	const ProteinLink = () => {
-		return (
-			<a
-				id={getProteinLink(
-					protein.metadata.codonIndex,
-					protein.metadata.shift,
-					false
-				)}
-			></a>
-		);
+		return <a id={protein.getLink()}></a>;
 	};
 
 	return (

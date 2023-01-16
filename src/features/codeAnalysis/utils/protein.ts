@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../utils/staticvalues";
-import { roundFloat } from "../../../utils/utils";
+import { roundFloat, getProteinLink } from "../../../utils/utils";
 import {
 	getMass,
 	getAtomCount,
@@ -7,6 +7,7 @@ import {
 	getHydropathyIndex,
 	getInstabilityIndex,
 } from "../utils/analysis";
+
 export class ProteinMetadata {
 	shift = 0;
 	/* index of the start codon */
@@ -25,6 +26,10 @@ export class Protein {
 
 	get length() {
 		return this.acids.length;
+	}
+
+	get isProtein() {
+		return this.length > 30;
 	}
 
 	get mass() {
@@ -88,5 +93,10 @@ export class Protein {
 		return this.instabilityIndex == undefined
 			? undefined
 			: this.instabilityIndex < 40;
+	}
+
+	// ui-related
+	getLink(link = true) {
+		return getProteinLink(this.metadata.codonIndex, this.metadata.shift, link);
 	}
 }
