@@ -9,9 +9,9 @@ import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
 import MessageList from "../../../../components/Message/MessageList";
 import Message from "../../../../components/Message/Message";
+import { allowedCharacters } from "../../utils/validateKeyboardInput";
 
-const ERROR_MESSAGE = "Error message",
-	MESSAGE_DURATION = 2000;
+const MESSAGE_DURATION = 2000;
 
 type InputProps = {
 	value: string;
@@ -56,7 +56,15 @@ export default function Input({
 			</div>
 
 			<MessageList>
-				{error ? <Message>{ERROR_MESSAGE}</Message> : undefined}
+				{error ? (
+					<Message key={"Message"}>
+						Allowed characters:
+						<span style={{ fontWeight: "bold" }}>
+							{" "}
+							{allowedCharacters[sequenceType].join(", ")}
+						</span>
+					</Message>
+				) : undefined}
 			</MessageList>
 
 			<CodonList codons={codonsArray} />

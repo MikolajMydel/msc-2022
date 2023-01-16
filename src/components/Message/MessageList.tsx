@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Message.module.scss";
-import { v4 as uuidv4 } from "uuid";
 import Message, { MessageProps } from "./Message";
 
 type MessageContainerProps = {
@@ -29,7 +28,7 @@ export default function MessageList({ children }: MessageContainerProps) {
 
 					return (
 						<motion.div
-							key={uuidv4()}
+							key={message.key}
 							variants={messageVariants}
 							initial={"hidden"}
 							animate={"visible"}
