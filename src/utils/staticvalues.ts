@@ -167,27 +167,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 2.8,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 33.6, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: -14.03, // K
-				AsparticAcid: 13.34, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 33.6,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: -14.03,
+				AsparticAcid: 13.34,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -204,27 +204,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 3.8,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 33.6, // Q
-				Aspargine: 1.0, // N
-				Lysine: -7.49, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 24.68, // W
-				Arginine: 20.26, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 33.6,
+				Aspargine: 1.0,
+				Lysine: -7.49,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 24.68,
+				Arginine: 20.26,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -241,27 +241,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 4.5,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 20.26, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: -7.49, // V
-				Serine: 1.0, // S
-				Proline: -1.88, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 13.34, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: -7.49, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 44.94, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 20.26,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: -7.49,
+				Serine: 1.0,
+				Proline: -1.88,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 13.34,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: -7.49,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 44.94,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -278,27 +278,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 1.9,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: -1.88, // M
-				Valine: 1.0, // V
-				Serine: 44.94, // S
-				Proline: 44.94, // P
-				Threonine: -1.88, // T
-				Alanine: 13.34, // A
-				Tyrosine: 24.68, // Y
-				Histidine: 58.28, // H
-				Glutamine: -6.54, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: -6.54, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: -1.88,
+				Valine: 1.0,
+				Serine: 44.94,
+				Proline: 44.94,
+				Threonine: -1.88,
+				Alanine: 13.34,
+				Tyrosine: 24.68,
+				Histidine: 58.28,
+				Glutamine: -6.54,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: -6.54,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -315,27 +315,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 4.2,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 20.26, // P
-				Threonine: -7.49, // T
-				Alanine: 1.0, // A
-				Tyrosine: -6.54, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: -1.88, // K
-				AsparticAcid: -14.03, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: -7.49, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 20.26,
+				Threonine: -7.49,
+				Alanine: 1.0,
+				Tyrosine: -6.54,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: -1.88,
+				AsparticAcid: -14.03,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: -7.49,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -352,27 +352,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -0.8,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 20.26, // S
-				Proline: 44.94, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 20.26, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 20.26, // E
-				Cysteine: 33.6, // C
-				Tryptophan: 1.0, // W
-				Arginine: 20.26, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 20.26,
+				Proline: 44.94,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 20.26,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 20.26,
+				Cysteine: 33.6,
+				Tryptophan: 1.0,
+				Arginine: 20.26,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -389,27 +389,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -1.6,
 			DipeptideInstability: {
-				Phenylalanine: 20.26, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: -6.54, // M
-				Valine: 20.26, // V
-				Serine: 20.26, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 20.26, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 20.26, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: -6.54, // D
-				GlutamicAcid: 18.38, // E
-				Cysteine: -6.54, // C
-				Tryptophan: -1.88, // W
-				Arginine: -6.54, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 20.26,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: -6.54,
+				Valine: 20.26,
+				Serine: 20.26,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 20.26,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 20.26,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: -6.54,
+				GlutamicAcid: 18.38,
+				Cysteine: -6.54,
+				Tryptophan: -1.88,
+				Arginine: -6.54,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -426,27 +426,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -0.7,
 			DipeptideInstability: {
-				Phenylalanine: 13.34, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 1.0, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: -6.54, // Q
-				Aspargine: -14.03, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 20.26, // E
-				Cysteine: 1.0, // C
-				Tryptophan: -14.03, // W
-				Arginine: 1.0, // R
-				Glycine: -7.49, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 13.34,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 1.0,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: -6.54,
+				Aspargine: -14.03,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 20.26,
+				Cysteine: 1.0,
+				Tryptophan: -14.03,
+				Arginine: 1.0,
+				Glycine: -7.49,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -463,27 +463,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 1.8,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: -7.49, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: -7.49, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 44.94, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: -7.49,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: -7.49,
+				GlutamicAcid: 1.0,
+				Cysteine: 44.94,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -500,27 +500,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -1.3,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 44.94, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 13.34, // P
-				Threonine: -7.49, // T
-				Alanine: 24.68, // A
-				Tyrosine: 13.34, // Y
-				Histidine: 13.34, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 24.68, // D
-				GlutamicAcid: -6.54, // E
-				Cysteine: 1.0, // C
-				Tryptophan: -9.37, // W
-				Arginine: -15.91, // R
-				Glycine: -7.49, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 44.94,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 13.34,
+				Threonine: -7.49,
+				Alanine: 24.68,
+				Tyrosine: 13.34,
+				Histidine: 13.34,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 24.68,
+				GlutamicAcid: -6.54,
+				Cysteine: 1.0,
+				Tryptophan: -9.37,
+				Arginine: -15.91,
+				Glycine: -7.49,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -537,27 +537,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 0,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 1.0, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 1.0,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -574,27 +574,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.2,
 			DipeptideInstability: {
-				Phenylalanine: -9.37, // F
-				Leucine: 1.0, // L
-				Isoleucine: 44.94, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: -1.88, // P
-				Threonine: -6.54, // T
-				Alanine: 1.0, // A
-				Tyrosine: 44.94, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 24.68, // N
-				Lysine: 24.68, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: -1.88, // W
-				Arginine: 1.0, // R
-				Glycine: -9.37, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: -9.37,
+				Leucine: 1.0,
+				Isoleucine: 44.94,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: -1.88,
+				Threonine: -6.54,
+				Alanine: 1.0,
+				Tyrosine: 44.94,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: 24.68,
+				Lysine: 24.68,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: -1.88,
+				Arginine: 1.0,
+				Glycine: -9.37,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -611,27 +611,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.5,
 			DipeptideInstability: {
-				Phenylalanine: -6.54, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: -6.54, // V
-				Serine: 44.94, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: -6.54, // Y
-				Histidine: 1.0, // H
-				Glutamine: 20.26, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 20.26, // D
-				GlutamicAcid: 20.26, // E
-				Cysteine: -6.54, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: -6.54,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: -6.54,
+				Serine: 44.94,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: -6.54,
+				Histidine: 1.0,
+				Glutamine: 20.26,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 20.26,
+				GlutamicAcid: 20.26,
+				Cysteine: -6.54,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -648,27 +648,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.5,
 			DipeptideInstability: {
-				Phenylalanine: -14.03, // F
-				Leucine: 1.0, // L
-				Isoleucine: 44.94, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: -1.88, // P
-				Threonine: -7.49, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: -6.54, // Q
-				Aspargine: 1.0, // N
-				Lysine: 24.68, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: -1.88, // C
-				Tryptophan: -9.37, // W
-				Arginine: 1.0, // R
-				Glycine: -14.03, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: -14.03,
+				Leucine: 1.0,
+				Isoleucine: 44.94,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: -1.88,
+				Threonine: -7.49,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: -6.54,
+				Aspargine: 1.0,
+				Lysine: 24.68,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: -1.88,
+				Tryptophan: -9.37,
+				Arginine: 1.0,
+				Glycine: -14.03,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -685,27 +685,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.9,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: -7.49, // L
-				Isoleucine: -7.49, // I
-				Methionine: 33.6, // M
-				Valine: -7.49, // V
-				Serine: 1.0, // S
-				Proline: -6.54, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 24.68, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 33.6, // R
-				Glycine: -7.49, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: -7.49,
+				Isoleucine: -7.49,
+				Methionine: 33.6,
+				Valine: -7.49,
+				Serine: 1.0,
+				Proline: -6.54,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 24.68,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 33.6,
+				Glycine: -7.49,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -722,27 +722,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.5,
 			DipeptideInstability: {
-				Phenylalanine: -6.54, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 20.26, // S
-				Proline: 1.0, // P
-				Threonine: -14.03, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 1.0, // N
-				Lysine: -7.49, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: -6.54, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: -6.54,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 20.26,
+				Proline: 1.0,
+				Threonine: -14.03,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: 1.0,
+				Lysine: -7.49,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: -6.54,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -759,27 +759,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -3.5,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 20.26, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 20.26, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: -6.54, // H
-				Glutamine: 20.26, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 20.26, // D
-				GlutamicAcid: 33.6, // E
-				Cysteine: 44.94, // C
-				Tryptophan: -14.03, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 20.26,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 20.26,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: -6.54,
+				Glutamine: 20.26,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 20.26,
+				GlutamicAcid: 33.6,
+				Cysteine: 44.94,
+				Tryptophan: -14.03,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -796,27 +796,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: 2.5,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 20.26, // L
-				Isoleucine: 1.0, // I
-				Methionine: 33.6, // M
-				Valine: -6.54, // V
-				Serine: 1.0, // S
-				Proline: 20.26, // P
-				Threonine: 33.6, // T
-				Alanine: 1.0, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 33.6, // H
-				Glutamine: -6.54, // Q
-				Aspargine: 1.0, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 20.26, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 24.68, // W
-				Arginine: 1.0, // R
-				Glycine: 1.0, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 20.26,
+				Isoleucine: 1.0,
+				Methionine: 33.6,
+				Valine: -6.54,
+				Serine: 1.0,
+				Proline: 20.26,
+				Threonine: 33.6,
+				Alanine: 1.0,
+				Tyrosine: 1.0,
+				Histidine: 33.6,
+				Glutamine: -6.54,
+				Aspargine: 1.0,
+				Lysine: 1.0,
+				AsparticAcid: 20.26,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 24.68,
+				Arginine: 1.0,
+				Glycine: 1.0,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -833,27 +833,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -0.9,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 13.34, // L
-				Isoleucine: 1.0, // I
-				Methionine: 24.68, // M
-				Valine: -7.49, // V
-				Serine: 1.0, // S
-				Proline: 1.0, // P
-				Threonine: -14.03, // T
-				Alanine: -14.03, // A
-				Tyrosine: 1.0, // Y
-				Histidine: 24.68, // H
-				Glutamine: 1.0, // Q
-				Aspargine: 13.34, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 1.0, // W
-				Arginine: 1.0, // R
-				Glycine: -9.37, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 13.34,
+				Isoleucine: 1.0,
+				Methionine: 24.68,
+				Valine: -7.49,
+				Serine: 1.0,
+				Proline: 1.0,
+				Threonine: -14.03,
+				Alanine: -14.03,
+				Tyrosine: 1.0,
+				Histidine: 24.68,
+				Glutamine: 1.0,
+				Aspargine: 13.34,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 1.0,
+				Arginine: 1.0,
+				Glycine: -9.37,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -870,27 +870,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -4.5,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: 1.0, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 44.94, // S
-				Proline: 20.26, // P
-				Threonine: 1.0, // T
-				Alanine: 1.0, // A
-				Tyrosine: -6.54, // Y
-				Histidine: 20.26, // H
-				Glutamine: 20.26, // Q
-				Aspargine: 13.34, // N
-				Lysine: 1.0, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: 1.0, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 58.28, // W
-				Arginine: 58.28, // R
-				Glycine: -7.49, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: 1.0,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 44.94,
+				Proline: 20.26,
+				Threonine: 1.0,
+				Alanine: 1.0,
+				Tyrosine: -6.54,
+				Histidine: 20.26,
+				Glutamine: 20.26,
+				Aspargine: 13.34,
+				Lysine: 1.0,
+				AsparticAcid: 1.0,
+				GlutamicAcid: 1.0,
+				Cysteine: 1.0,
+				Tryptophan: 58.28,
+				Arginine: 58.28,
+				Glycine: -7.49,
+				STOP: 0.0,
 			},
 		},
 	},
@@ -907,27 +907,27 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 			},
 			Hydropathicity: -0.4,
 			DipeptideInstability: {
-				Phenylalanine: 1.0, // F
-				Leucine: 1.0, // L
-				Isoleucine: -7.49, // I
-				Methionine: 1.0, // M
-				Valine: 1.0, // V
-				Serine: 1.0, // S
-				Proline: 1.0, // P
-				Threonine: -7.49, // T
-				Alanine: -7.49, // A
-				Tyrosine: -7.49, // Y
-				Histidine: 1.0, // H
-				Glutamine: 1.0, // Q
-				Aspargine: -7.49, // N
-				Lysine: -7.49, // K
-				AsparticAcid: 1.0, // D
-				GlutamicAcid: -6.54, // E
-				Cysteine: 1.0, // C
-				Tryptophan: 13.34, // W
-				Arginine: 1.0, // R
-				Glycine: 13.34, // G
-				STOP: 0.0, // leave empty
+				Phenylalanine: 1.0,
+				Leucine: 1.0,
+				Isoleucine: -7.49,
+				Methionine: 1.0,
+				Valine: 1.0,
+				Serine: 1.0,
+				Proline: 1.0,
+				Threonine: -7.49,
+				Alanine: -7.49,
+				Tyrosine: -7.49,
+				Histidine: 1.0,
+				Glutamine: 1.0,
+				Aspargine: -7.49,
+				Lysine: -7.49,
+				AsparticAcid: 1.0,
+				GlutamicAcid: -6.54,
+				Cysteine: 1.0,
+				Tryptophan: 13.34,
+				Arginine: 1.0,
+				Glycine: 13.34,
+				STOP: 0.0,
 			},
 		},
 	},
