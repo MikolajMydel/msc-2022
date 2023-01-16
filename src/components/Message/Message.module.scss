@@ -1,0 +1,34 @@
+@use "../../styles/variables.scss" as v;
+
+.MessageList {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.Message {
+	font-family: v.$main-font;
+	// margin: map-get(v.$spacing, "sm");
+
+	border-radius: v.$border-radius;
+	color: map-get(v.$colors, "dark-gray");
+
+	background-color: map-get(v.$colors, "gray");
+
+	&Heading {
+		padding: map-get(v.$spacing, "sm") map-get(v.$spacing, "2xl");
+		font-size: 1.8rem;
+		text-align: center;
+		background-color: map-get(v.$colors, "error");
+		color: map-get(v.$colors, "white");
+		border-top-left-radius: v.$border-radius;
+		border-top-right-radius: v.$border-radius;
+	}
+
+	&Children {
+		text-align: center;
+		padding: map-get(v.$spacing, "xl");
+		padding-top: map-get(v.$spacing, "md");
+	}
+}

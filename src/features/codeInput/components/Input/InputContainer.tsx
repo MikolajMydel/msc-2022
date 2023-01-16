@@ -52,6 +52,7 @@ export default function InputContainer() {
 	const switchSequenceType = () => {
 		setSequenceType((currentType) => {
 			const newSequenceType = getAnotherSequence(currentType);
+			cancelError();
 			return newSequenceType;
 		});
 	};

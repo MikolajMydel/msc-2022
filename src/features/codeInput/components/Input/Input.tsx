@@ -7,6 +7,11 @@ import ControlledInput from "../../../../components/ControlledInput/ControlledIn
 import classNames from "classnames";
 import { splitIntoCodons } from "../../../../utils/codonOperations";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
+import MessageList from "../../../../components/Message/MessageList";
+import Message from "../../../../components/Message/Message";
+import { allowedCharacters } from "../../utils/validateKeyboardInput";
+
+const MESSAGE_DURATION = 3000;
 
 type InputProps = {
 	value: string;
@@ -30,8 +35,21 @@ export default function Input({
 	const codonsArray = splitIntoCodons(value);
 
 	useEffect(() => {
-		if (error) setTimeout(cancelError, 1000);
+		if (error) setTimeout(cancelError, MESSAGE_DURATION);
 	}, [error]);
+
+	const errorMessage = error ? (
+		<Message
+			key={"Message"}
+			title={"Invalid character"}
+			className={styles.Message}
+		>
+			<div>Allowed characters:</div>
+			<div className={styles.AllowedCharacters}>
+				{allowedCharacters[sequenceType].join(", ")}
+			</div>
+		</Message>
+	) : undefined;
 
 	return (
 		<div className={styles.Wrapper}>
@@ -49,6 +67,9 @@ export default function Input({
 					onKeyDown={handleKeyDown}
 				/>
 			</div>
+
+			<MessageList>{errorMessage}</MessageList>
+
 			<CodonList codons={codonsArray} />
 		</div>
 	);
