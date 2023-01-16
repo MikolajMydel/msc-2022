@@ -3,7 +3,7 @@ import { Protein } from "../../utils/protein";
 import { AminoAcid} from "../../../../utils/staticvalues";
 import { ProteinPropertiesProps } from "./ProteinProperties"
 
-export function AminoAcidsInProteinDoughnutChart({protein}: ProteinPropertiesProps){
+export function AminoAcidsInProteinDoughnutChart({protein}: any){
   const Chartdata = {
     labels: Object.keys(AminoAcid).filter(amin => amin),
     datasets: [
