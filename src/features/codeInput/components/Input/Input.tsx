@@ -11,7 +11,7 @@ import MessageList from "../../../../components/Message/MessageList";
 import Message from "../../../../components/Message/Message";
 import { allowedCharacters } from "../../utils/validateKeyboardInput";
 
-const MESSAGE_DURATION = 2000;
+const MESSAGE_DURATION = 3000;
 
 type InputProps = {
 	value: string;
@@ -38,6 +38,19 @@ export default function Input({
 		if (error) setTimeout(cancelError, MESSAGE_DURATION);
 	}, [error]);
 
+	const errorMessage = error ? (
+		<Message
+			key={"Message"}
+			title={"Invalid character"}
+			className={styles.Message}
+		>
+			<div>Allowed characters:</div>
+			<div className={styles.AllowedCharacters}>
+				{allowedCharacters[sequenceType].join(", ")}
+			</div>
+		</Message>
+	) : undefined;
+
 	return (
 		<div className={styles.Wrapper}>
 			<div className={styles.Input}>
@@ -55,17 +68,7 @@ export default function Input({
 				/>
 			</div>
 
-			<MessageList>
-				{error ? (
-					<Message key={"Message"}>
-						Allowed characters:
-						<span style={{ fontWeight: "bold" }}>
-							{" "}
-							{allowedCharacters[sequenceType].join(", ")}
-						</span>
-					</Message>
-				) : undefined}
-			</MessageList>
+			<MessageList>{errorMessage}</MessageList>
 
 			<CodonList codons={codonsArray} />
 		</div>

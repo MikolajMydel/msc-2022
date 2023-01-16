@@ -1,17 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
 $timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
 $animation-duration: 0.4s;
 
+$main-font: "Montserrat", sans-serif;
+
 $colors: (
-	"error": #ff3333,
+	// "error": #ff3333,
+	"error": #b40202,
 	"white": #ffffff,
-	"gray": #999da0,
+	"gray": #d9d9d9,
+	"dark-gray": #2c2c2c,
 	// "green": #32cd32,
 	"green": #4ac957,
-	"red": #fa8072,
+	"red": #fa8072
 );
 
 $spacing: (
 	"sm": 0.5rem,
 	"md": 1rem,
 	"lg": 1.5rem,
+	"xl": 2rem,
+	"2xl": 4rem,
 );
+
+$border-radius: 5px;

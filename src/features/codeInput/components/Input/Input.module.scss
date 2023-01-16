@@ -25,11 +25,28 @@
 		font-size: 3rem;
 		&Error {
 			animation: shake v.$animation-duration v.$timing-function both;
-			background-color: map-get(v.$colors, "error");
 		}
 	}
 
 	&Button {
 		cursor: pointer;
 	}
+}
+
+.Message {
+	margin-top: map-get(v.$spacing, "lg");
+}
+
+.AllowedCharacters {
+	// semibold
+	font-weight: 600;
+
+	background-color: map-get(v.$colors, "dark-gray");
+	color: map-get(v.$colors, "white");
+	text-align: center;
+	font-size: 1.5rem;
+	display: inline-block;
+	margin-top: map-get(v.$spacing, "sm");
+	padding: 0 map-get(v.$spacing, "md");
+	border-radius: v.$border-radius;
 }
