@@ -18,11 +18,29 @@ export default function InputContainer() {
 
 	const [sequenceType, setSequenceType] = useState<sequenceTypes>("RNA");
 
+	// componentDidMount
+	useEffect(() => {
+		const autosavedValue = localStorage?.["inputPage"];
+		if (autosavedValue) {
+			const asObject = JSON.parse(autosavedValue),
+				sequenceType = Object.keys(asObject)[0];
+
+			if (sequenceType === "DNA" || sequenceType === "RNA") {
+				setSequenceType(sequenceType);
+				setValue(asObject[sequenceType]);
+			}
+		}
+	}, []);
+
 	// translate value on sequence type change
 	useEffect(() => {
 		const newSequenceType = sequenceType;
 		convertValue(newSequenceType);
 	}, [sequenceType]);
+
+	useEffect(() => {
+		if (value.length > 0) saveInLocalStorage();
+	}, [value]);
 
 	const convertValue = (newSequenceType: sequenceTypes) => {
 		setValue((currentValue) => {
@@ -55,6 +73,15 @@ export default function InputContainer() {
 			cancelError();
 			return newSequenceType;
 		});
+	};
+
+	const saveInLocalStorage = () => {
+		localStorage.setItem(
+			"inputPage",
+			JSON.stringify({
+				[sequenceType]: value,
+			})
+		);
 	};
 
 	return (
