@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"test": "jest && eslint --fix './src/**/*.{ts,tsx}' --max-warnings=0",
+		"test": "eslint --fix './src/**/*.{ts,tsx}' --max-warnings=0 && jest",
 		"lint": "eslint --fix './src/**/*.{ts,tsx}'",
 		"prepare": "husky install"
 	},
