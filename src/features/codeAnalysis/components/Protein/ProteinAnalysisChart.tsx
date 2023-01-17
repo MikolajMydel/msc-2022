@@ -33,7 +33,12 @@ const chartBackgroundColors = [
 ];
 
 export function AminoAcidsDoughnutChart({ protein }: DoughnutChartProps) {
-	const Chartdata = {
+	// dont render charts for small proteins
+	if (protein.length < 5) {
+		return null;
+	}
+
+	const chartData = {
 		labels: Object.keys(protein.aminoAcidCounts),
 		datasets: [
 			{
@@ -49,7 +54,7 @@ export function AminoAcidsDoughnutChart({ protein }: DoughnutChartProps) {
 
 	return (
 		<div className={styles.doughnutChart}>
-			<DoughnutChart ChartData={Chartdata} />
+			<DoughnutChart ChartData={chartData} />
 		</div>
 	);
 }

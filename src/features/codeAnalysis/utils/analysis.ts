@@ -65,7 +65,7 @@ export function getHydropathyIndex(acids: AminoAcid[]) {
 export function getHydropathyValues(acids: AminoAcid[]) {
 	const values: number[] = [];
 	acids.forEach((acid) => {
-		values.concat(AMINO_ACID_PROPERTIES[acid].Props.Hydropathy);
+		values.push(AMINO_ACID_PROPERTIES[acid].Props.Hydropathy);
 	});
 	return values;
 }

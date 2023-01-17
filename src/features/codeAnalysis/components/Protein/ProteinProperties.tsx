@@ -1,6 +1,7 @@
 import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
 import { AminoAcidsDoughnutChart } from "./ProteinAnalysisChart";
+import { HydropathyChart } from "../Charts/HydropathyChart";
 
 export type ProteinPropertiesProps = {
 	protein: Protein;
@@ -28,7 +29,7 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
 			<p>Grand Average of Hydropathy: {protein.hydropathyIndex}</p>
-
+			<HydropathyChart protein={protein} />
 			<p>Positively charged amino acids: {protein.positivelyChargedAcids}</p>
 			<p>Negatively charged amino acids: {protein.negativelyChargedAcids}</p>
 		</div>
