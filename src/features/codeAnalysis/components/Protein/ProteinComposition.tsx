@@ -24,8 +24,8 @@ function Atom({ symbol, number }: AtomProps) {
 export function ChemicalComposition({ atoms }: ProteinCompositionProps) {
 	return (
 		<span>
-			<Atom symbol={"H"} number={atoms.Hydrogen} />
 			<Atom symbol={"C"} number={atoms.Carbon} />
+			<Atom symbol={"H"} number={atoms.Hydrogen} />
 			<Atom symbol={"N"} number={atoms.Nitrogen} />
 			<Atom symbol={"O"} number={atoms.Oxygen} />
 			<Atom symbol={"S"} number={atoms.Sulphur} />
