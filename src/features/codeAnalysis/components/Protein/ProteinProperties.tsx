@@ -24,7 +24,7 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 				Instability index: <ProteinStabilityIndex protein={protein} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
-			<p>Grand Average of Hydropathy: {protein.hydropathicityIndex}</p>
+			<p>Grand Average of Hydropathy: {protein.hydropathyIndex}</p>
 
 			<p>Positively charged amino acids: {protein.positivelyChargedAcids}</p>
 			<p>Negatively charged amino acids: {protein.negativelyChargedAcids}</p>

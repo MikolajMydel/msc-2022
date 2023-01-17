@@ -5,6 +5,7 @@ import {
 	getAtomCount,
 	getAminoAcidCounts,
 	getHydropathyIndex,
+	getHydropathyValues,
 	getInstabilityIndex,
 } from "../utils/analysis";
 
@@ -59,8 +60,12 @@ export class Protein {
 	}
 
 	// grand average of hydropathy
-	get hydropathicityIndex() {
+	get hydropathyIndex() {
 		return roundFloat(getHydropathyIndex(this.acids), 3);
+	}
+	// returns an array with hydropathy values of amino acids
+	get hydropathyValues() {
+		return getHydropathyValues(this.acids);
 	}
 
 	get positivelyChargedAcids() {

@@ -139,7 +139,7 @@ export interface Atoms {
 interface AcidProps {
 	Mass: number;
 	Atoms: Atoms;
-	Hydropathicity: number;
+	Hydropathy: number;
 	DipeptideInstability: DipeptideInstabilityValue;
 }
 
@@ -165,7 +165,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: 2.8,
+			Hydropathy: 2.8,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -202,7 +202,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: 3.8,
+			Hydropathy: 3.8,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -239,7 +239,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: 4.5,
+			Hydropathy: 4.5,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 20.26,
@@ -276,7 +276,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 1,
 			},
-			Hydropathicity: 1.9,
+			Hydropathy: 1.9,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -313,7 +313,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: 4.2,
+			Hydropathy: 4.2,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -350,7 +350,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -0.8,
+			Hydropathy: -0.8,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -387,7 +387,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -1.6,
+			Hydropathy: -1.6,
 			DipeptideInstability: {
 				Phenylalanine: 20.26,
 				Leucine: 1.0,
@@ -424,7 +424,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -0.7,
+			Hydropathy: -0.7,
 			DipeptideInstability: {
 				Phenylalanine: 13.34,
 				Leucine: 1.0,
@@ -461,7 +461,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: 1.8,
+			Hydropathy: 1.8,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -498,7 +498,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -1.3,
+			Hydropathy: -1.3,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -535,7 +535,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 0,
 				Sulphur: 0,
 			},
-			Hydropathicity: 0,
+			Hydropathy: 0,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -572,7 +572,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 3,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.2,
+			Hydropathy: -3.2,
 			DipeptideInstability: {
 				Phenylalanine: -9.37,
 				Leucine: 1.0,
@@ -609,7 +609,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.5,
+			Hydropathy: -3.5,
 			DipeptideInstability: {
 				Phenylalanine: -6.54,
 				Leucine: 1.0,
@@ -646,7 +646,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.5,
+			Hydropathy: -3.5,
 			DipeptideInstability: {
 				Phenylalanine: -14.03,
 				Leucine: 1.0,
@@ -683,7 +683,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.9,
+			Hydropathy: -3.9,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: -7.49,
@@ -720,7 +720,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.5,
+			Hydropathy: -3.5,
 			DipeptideInstability: {
 				Phenylalanine: -6.54,
 				Leucine: 1.0,
@@ -757,7 +757,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -3.5,
+			Hydropathy: -3.5,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -794,7 +794,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 1,
 			},
-			Hydropathicity: 2.5,
+			Hydropathy: 2.5,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 20.26,
@@ -831,7 +831,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 2,
 				Sulphur: 0,
 			},
-			Hydropathicity: -0.9,
+			Hydropathy: -0.9,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 13.34,
@@ -868,7 +868,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 4,
 				Sulphur: 0,
 			},
-			Hydropathicity: -4.5,
+			Hydropathy: -4.5,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,
@@ -905,7 +905,7 @@ export const AMINO_ACID_PROPERTIES: AcidProperties = {
 				Nitrogen: 1,
 				Sulphur: 0,
 			},
-			Hydropathicity: -0.4,
+			Hydropathy: -0.4,
 			DipeptideInstability: {
 				Phenylalanine: 1.0,
 				Leucine: 1.0,

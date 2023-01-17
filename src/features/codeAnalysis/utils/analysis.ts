@@ -57,9 +57,17 @@ export function getHydropathyIndex(acids: AminoAcid[]) {
 
 	let sum = 0;
 	acids.forEach((acid) => {
-		sum += AMINO_ACID_PROPERTIES[acid].Props.Hydropathicity;
+		sum += AMINO_ACID_PROPERTIES[acid].Props.Hydropathy;
 	});
 	return sum / acids.length;
+}
+
+export function getHydropathyValues(acids: AminoAcid[]) {
+	let values: number[] = [];
+	acids.forEach((acid) => {
+		values.concat(AMINO_ACID_PROPERTIES[acid].Props.Hydropathy);
+	});
+	return values;
 }
 
 function getDipeptideInstabilitySum(acids: AminoAcid[]) {
