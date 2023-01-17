@@ -2,6 +2,22 @@ import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
 import styles from "./proteins.module.scss";
+import { getProteinLink } from "../../../../utils/utils"
+type ProteinLinkProps = {
+	protein: Protein;
+};
+
+function ProteinLink({ protein }: ProteinLinkProps) {
+	return (
+		<a
+			id={getProteinLink(
+				protein.metadata.codonIndex,
+				protein.metadata.shift,
+				false
+			)}
+		></a>
+	);
+}
 
 type ProteinComponentProps = {
 	protein: Protein;
