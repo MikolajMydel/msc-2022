@@ -31,7 +31,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	};
 
 	const ProteinLink = () => {
-		return <a id={protein.getLink()}></a>;
+		return <a id={protein.getLink(false)}></a>;
 	};
 
 	return (
