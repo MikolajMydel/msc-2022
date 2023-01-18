@@ -1,6 +1,7 @@
 import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
+import { Formula } from "./Formula";
 
 type ProteinComponentProps = {
 	protein: Protein;
@@ -14,6 +15,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 			<AminoAcids acids={protein.acids} />
 			<h5>Properties: </h5>
 			<ProteinProperties protein={protein} />
+			<Formula acids={protein.acids} />
 			<h5>Found: </h5>
 			<ProteinPosition protein={protein} />
 		</div>
