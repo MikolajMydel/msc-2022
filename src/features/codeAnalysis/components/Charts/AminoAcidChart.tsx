@@ -1,6 +1,6 @@
-import { DoughnutChart } from "../Charts/DoughnutChart";
+import { DoughnutChart } from "./DoughnutChart";
 import { Protein } from "../../utils/protein";
-import styles from "./proteins.module.scss";
+import styles from "../Protein/proteins.module.scss";
 
 type DoughnutChartProps = {
 	protein: Protein;
@@ -32,7 +32,7 @@ const chartBackgroundColors = [
 	"#3C6E71",
 ];
 
-export function AminoAcidsDoughnutChart({ protein }: DoughnutChartProps) {
+export function AminoAcidsChart({ protein }: DoughnutChartProps) {
 	// dont render charts for small proteins
 	if (protein.length < 5) {
 		return null;
