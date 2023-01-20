@@ -20,6 +20,8 @@ export function Frame({ acids, shift }: FrameProps) {
 						key={uuid()}
 						acids={section.string}
 						isProtein={section.isProtein}
+						startIndex={section.codonIndex}
+						frame={shift}
 					/>
 				))}
 			</span>
