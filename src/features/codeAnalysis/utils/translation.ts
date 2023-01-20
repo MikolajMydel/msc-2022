@@ -54,7 +54,6 @@ function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 				metadata.codonIndex = state.start_index;
 				/* add protein to proteins array */
 				const protein = new Protein(state.buffor, metadata);
-				protein.metadata.codonIndex = state.start_index;
 				proteins.push(protein);
 				state.reset();
 			} else {
@@ -68,9 +67,7 @@ function getProteins(acids: AminoAcid[], shift: number): Protein[] {
 
 export function getAllFrames(code: string): AminoAcid[][] {
 	const frames: AminoAcid[][] = [];
-	for (let i = 0; i < 3; i++) {
-		frames.push(getAminoAcids(code, i));
-	}
+	for (let i = 0; i < 3; i++) frames.push(getAminoAcids(code, i));
 
 	return frames;
 }

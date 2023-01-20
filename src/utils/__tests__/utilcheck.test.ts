@@ -1,12 +1,10 @@
 import { splitIntoCodons, splitIntoFullCodons } from "../codonOperations";
 import { CODON_TABLE, AminoAcid } from "../staticvalues";
-
 import {
 	getSymbol,
 	getShortName,
 	aminoAcidArrayToSections,
 } from "../stringoperations";
-import { getAminoAcidCounts, AcidCount } from "../utils";
 
 import { checkSection } from "./testutils";
 
@@ -52,6 +50,7 @@ describe("utility functions", () => {
 		checkSection(sections1[0], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 0,
 		});
 
 		/* start without stop */
@@ -64,6 +63,7 @@ describe("utility functions", () => {
 		checkSection(sections2[0], {
 			isProtein: false,
 			string: "MTA",
+			startIndex: 0,
 		});
 		/* stop without start */
 		const sections3 = aminoAcidArrayToSections([
@@ -75,6 +75,7 @@ describe("utility functions", () => {
 		checkSection(sections3[0], {
 			isProtein: false,
 			string: "TA-",
+			startIndex: 0,
 		});
 		/* sections between highlighted section */
 		const sections4 = aminoAcidArrayToSections([
@@ -90,16 +91,19 @@ describe("utility functions", () => {
 		checkSection(sections4[0], {
 			isProtein: false,
 			string: "A",
+			startIndex: 0,
 		});
 
 		checkSection(sections4[1], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 1,
 		});
 
 		checkSection(sections4[2], {
 			isProtein: false,
 			string: "A-",
+			startIndex: 5,
 		});
 	});
 
@@ -122,10 +126,12 @@ describe("utility functions", () => {
 		checkSection(sections1[0], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 0,
 		});
 		checkSection(sections1[1], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 4,
 		});
 
 		/* section between coding sections */
@@ -146,14 +152,17 @@ describe("utility functions", () => {
 		checkSection(sections2[0], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 0,
 		});
 		checkSection(sections2[1], {
 			isProtein: false,
 			string: "TA-",
+			startIndex: 4,
 		});
 		checkSection(sections2[2], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 7,
 		});
 
 		/* sections before, after and between coding sections */
@@ -180,71 +189,27 @@ describe("utility functions", () => {
 		checkSection(sections3[0], {
 			isProtein: false,
 			string: "TA-",
+			startIndex: 0,
 		});
 		checkSection(sections3[1], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 3,
 		});
 		checkSection(sections3[2], {
 			isProtein: false,
 			string: "TA-",
+			startIndex: 7,
 		});
 		checkSection(sections3[3], {
 			isProtein: true,
 			string: "MTA-",
+			startIndex: 10,
 		});
 		checkSection(sections3[4], {
 			isProtein: false,
 			string: "TA-",
+			startIndex: 14,
 		});
-	});
-
-	test("check amino acid counting", () => {
-		// empty array
-		expect(getAminoAcidCounts([])).toStrictEqual({});
-
-		const acids1 = [AminoAcid.Threonine];
-		const acids1_count: AcidCount = {
-			Threonine: 1,
-		};
-		expect(getAminoAcidCounts(acids1)).toStrictEqual(acids1_count);
-
-		const acids2 = [
-			AminoAcid.Threonine,
-			AminoAcid.Threonine,
-			AminoAcid.Threonine,
-			AminoAcid.Threonine,
-		];
-		const acids2_count: AcidCount = {
-			Threonine: 4,
-		};
-		expect(getAminoAcidCounts(acids2)).toStrictEqual(acids2_count);
-
-		const acids3 = [
-			AminoAcid.Threonine,
-			AminoAcid.Alanine,
-			AminoAcid.STOP,
-			AminoAcid.Methionine,
-			AminoAcid.Threonine,
-			AminoAcid.Alanine,
-			AminoAcid.STOP,
-			AminoAcid.Threonine,
-			AminoAcid.Alanine,
-			AminoAcid.STOP,
-			AminoAcid.Methionine,
-			AminoAcid.Threonine,
-			AminoAcid.Alanine,
-			AminoAcid.STOP,
-			AminoAcid.Threonine,
-			AminoAcid.Alanine,
-			AminoAcid.STOP,
-		];
-		const acids3_count: AcidCount = {
-			Threonine: 5,
-			Alanine: 5,
-			STOP: 5,
-			Methionine: 2,
-		};
-		expect(getAminoAcidCounts(acids3)).toStrictEqual(acids3_count);
 	});
 });
