@@ -35,6 +35,7 @@ export default function InputContainer() {
 	useEffect(() => {
 		const newSequenceType = sequenceType;
 		convertValue(newSequenceType);
+		if (autosaveEnabled) autosave();
 	}, [sequenceType]);
 
 	useEffect(() => {
