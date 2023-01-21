@@ -8,6 +8,11 @@ import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
 
 import { handleChangeType, handleKeyDownType } from "../../../../types/events";
+import {
+	saveInputValue,
+	AutosavedValueType,
+	retrieveInputValue,
+} from "../../utils/localstorage";
 
 const getAnotherSequence = (currentSequence: sequenceTypes) =>
 	currentSequence === "RNA" ? "DNA" : "RNA";
@@ -20,16 +25,9 @@ export default function InputContainer() {
 
 	// componentDidMount
 	useEffect(() => {
-		const autosavedValue = localStorage?.["inputPage"];
-		if (autosavedValue) {
-			const asObject = JSON.parse(autosavedValue),
-				sequenceType = Object.keys(asObject)[0];
-
-			if (sequenceType === "DNA" || sequenceType === "RNA") {
-				setSequenceType(sequenceType);
-				setValue(asObject[sequenceType]);
-			}
-		}
+		const autosavedValue = retrieveInputValue();
+		setSequenceType(autosavedValue.sequenceType);
+		setValue(autosavedValue.value);
 	}, []);
 
 	// translate value on sequence type change
@@ -39,7 +37,7 @@ export default function InputContainer() {
 	}, [sequenceType]);
 
 	useEffect(() => {
-		if (value.length > 0) saveInLocalStorage();
+		if (value.length > 0) autosave();
 	}, [value]);
 
 	const convertValue = (newSequenceType: sequenceTypes) => {
@@ -75,13 +73,12 @@ export default function InputContainer() {
 		});
 	};
 
-	const saveInLocalStorage = () => {
-		localStorage.setItem(
-			"inputPage",
-			JSON.stringify({
-				[sequenceType]: value,
-			})
-		);
+	const autosave = () => {
+		const data: AutosavedValueType = {
+			sequenceType: sequenceType,
+			value: value,
+		};
+		saveInputValue(data);
 	};
 
 	return (
