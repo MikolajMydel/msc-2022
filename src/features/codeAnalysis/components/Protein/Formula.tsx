@@ -1,6 +1,17 @@
 import styles from "./Formula.module.scss";
-import { AminoAcid } from "../../../../utils/staticvalues";
+import { AminoAcid, svgs } from "../../../../utils/staticvalues";
 import { useRef, useEffect } from "react";
+
+function draw(
+	svg: string,
+	ctx: CanvasRenderingContext2D,
+	x: number,
+	y: number
+) {
+	const image = new Image();
+	image.src = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+	image.addEventListener("load", () => ctx.drawImage(image, x, y));
+}
 
 export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const ref = useRef<HTMLCanvasElement>(null);
@@ -9,13 +20,11 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		const canvas = ref.current;
 		const ctx = canvas?.getContext("2d");
 		if (canvas && ctx) {
+			// set canvas size accordingly to the protein length
 			canvas.setAttribute("width", acids.length * 22 + "px");
-			ctx.font = "20px Arial";
-			ctx.fillText(
-				acids.map((w) => w.charAt(0)).join("-"),
-				10,
-				canvas.height / 2
-			);
+
+			// test draw
+			draw(svgs.circle, ctx, 10, 10);
 		}
 	}, []);
 	return <canvas ref={ref} className={styles.Formula} />;
