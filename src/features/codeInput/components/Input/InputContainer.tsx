@@ -20,6 +20,7 @@ const getAnotherSequence = (currentSequence: sequenceTypes) =>
 export default function InputContainer() {
 	const [value, setValue] = useState<string>("");
 	const [error, setError] = useState<boolean>(false);
+	const [autosaveEnabled, switchAutosave] = useState<boolean>(false);
 
 	const [sequenceType, setSequenceType] = useState<sequenceTypes>("RNA");
 
@@ -37,8 +38,20 @@ export default function InputContainer() {
 	}, [sequenceType]);
 
 	useEffect(() => {
-		if (value.length > 0) autosave();
+		if (autosaveEnabled) autosave();
 	}, [value]);
+
+	const autosave = () => {
+		const data: AutosavedValueType = {
+			sequenceType: sequenceType,
+			value: value,
+		};
+		saveInputValue(data);
+	};
+
+	const enableAutosave = () => {
+		switchAutosave(true);
+	};
 
 	const convertValue = (newSequenceType: sequenceTypes) => {
 		setValue((currentValue) => {
@@ -48,7 +61,9 @@ export default function InputContainer() {
 		});
 	};
 
+	// called only when character is allowed
 	const handleChange: handleChangeType = (event) => {
+		if (!autosaveEnabled) enableAutosave();
 		setValue(event.target.value.toUpperCase());
 	};
 
@@ -66,19 +81,12 @@ export default function InputContainer() {
 	};
 
 	const switchSequenceType = () => {
+		if (!autosaveEnabled) enableAutosave();
 		setSequenceType((currentType) => {
 			const newSequenceType = getAnotherSequence(currentType);
 			cancelError();
 			return newSequenceType;
 		});
-	};
-
-	const autosave = () => {
-		const data: AutosavedValueType = {
-			sequenceType: sequenceType,
-			value: value,
-		};
-		saveInputValue(data);
 	};
 
 	return (

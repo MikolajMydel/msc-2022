@@ -17,7 +17,7 @@ export function retrieveInputValue(): AutosavedValueType {
 	if (autosavedValue) {
 		const asObject: AutosavedValueType = JSON.parse(autosavedValue),
 			sequenceType = asObject["sequenceType"],
-			value = asObject["value"] ?? "";
+			value = asObject["value"];
 
 		const conditions = {
 			correctSequenceType: sequenceType === "RNA" || sequenceType === "DNA",
