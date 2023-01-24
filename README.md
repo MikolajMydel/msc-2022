@@ -21,6 +21,10 @@ npm run dev
 npm test
 ```
 
+## Dokumentacja
+
+Dokumentacja jest dostępna [tutaj](https://github.com/MikolajMydel/msc-2022/wiki)
+
 ## Źródła
 
 - Masa molekularna, wzór chemiczny: https://proteomicsresource.washington.edu/protocols06/masses.php
