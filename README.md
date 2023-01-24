@@ -1,5 +1,7 @@
 # MSC-2022
 
+![Build & Test](https://github.com/MikolajMydel/msc-2022/actions/workflows/node.js.yaml/badge.svg)
+
 ## Pobranie projektu
 
 ```bash
