@@ -34,7 +34,8 @@ export default function MessageList({ children }: MessageContainerProps) {
 							animate={"visible"}
 							exit={"hidden"}
 							transition={{
-								type: "spring",
+								type: "tween",
+								duration: 0.5,
 							}}
 						>
 							<Message {...message.props}>{message.props.children}</Message>
