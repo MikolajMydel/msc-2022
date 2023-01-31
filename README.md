@@ -2,6 +2,10 @@
 
 ![Build & Test](https://github.com/MikolajMydel/msc-2022/actions/workflows/node.js.yaml/badge.svg)
 
+## Strona internetowa
+
+Strona internetowa dostępna jest [tutaj](https://msc-2022.vercel.app/)
+
 ## Pobranie projektu
 
 ```bash
