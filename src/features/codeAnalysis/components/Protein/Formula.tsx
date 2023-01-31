@@ -34,20 +34,20 @@ export const settings = {
 	chainLineHeight: 15,
 	carbonylLineLength: 20,
 	lineStrokeWidth: 2,
-	// fontSize: x
+	fontSize: 16,
 };
 export function Formula({ acids }: { acids: AminoAcid[] }) {
+	const svgStyle = {
+		backgroundColor: "#fff",
+		height: 120,
+		width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
+	};
 	const styles = {
-		svg: {
-			backgroundColor: "#fff",
-			height: 120,
-			width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
-		},
-		stroke: {
-			fill: "none",
-			stroke: "black",
-			strokeWidth: settings.lineStrokeWidth,
-		},
+		fill: "none",
+		stroke: "#111",
+		strokeWidth: settings.lineStrokeWidth,
+		fontSize: settings.fontSize,
+		fontFamily: "Arial",
 	};
 	const makeChain = () => {
 		const ns = []; // Nitrogen symbols
@@ -62,12 +62,15 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 				path += `L ${x} ${y} `;
 				if (j == 3) {
 					ns.push(
-						<text x={x - 5} y={y == 0 ? y - 4 : y + 16}>
+						<text
+							x={x - settings.fontSize * 0.3}
+							y={y == 0 ? y - settings.fontSize * 0.25 : y + settings.fontSize}
+						>
 							N
 						</text>
 					);
 				} else if (j == 2) {
-					carbonyls.push(carbonyl(styles.stroke, x, y));
+					carbonyls.push(carbonyl(x, y));
 				}
 			}
 		}
@@ -75,34 +78,45 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		return (
 			<g
 				transform={`translate(${settings.padding} ${
-					styles.svg.height / 2 - settings.chainLineHeight / 2
+					svgStyle.height / 2 - settings.chainLineHeight / 2
 				})`}
+				style={styles}
 			>
 				( opening H2N )
-				<text x="-30" y="5">
+				<text
+					x={`${-2 * styles.fontSize - 2}`}
+					y={`${styles.fontSize / 4}`}
+					style={{ paintOrder: "fill" }}
+				>
 					<tspan>H</tspan>
 					<tspan dy="5">2</tspan>
 					<tspan dy="-5">N</tspan>
 				</text>
 				( Oxygen at the end )
 				<text
-					x="0"
-					y="5"
-					transform={`translate(${
-						styles.svg.width - settings.padding * 2
-					} ${y})`}
+					x={`2`}
+					y={`${styles.fontSize / 4}`}
+					transform={`translate(${svgStyle.width - settings.padding * 2} ${y})`}
 				>
 					<tspan>OH</tspan>
 				</text>
 				( the path between )
-				<path style={styles.stroke} d={path} />
+				<path d={path} />
 				{ns}
 				{carbonyls}
 			</g>
 		);
 	};
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" style={styles.svg}>
+		<svg xmlns="http://www.w3.org/2000/svg" style={svgStyle}>
+			<style>
+				{`
+                    text {
+                        stroke-width: 1px;
+                        fill: ${styles.stroke};
+                    }
+                `}
+			</style>
 			{makeChain()}
 		</svg>
 	);
