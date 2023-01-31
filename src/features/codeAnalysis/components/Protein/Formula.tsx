@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
-import { carbonyl } from "./svgs";
+import { carbonyl, aminoacids } from "./svgs";
 import { useRef, useEffect } from "react";
 
 function draw(
@@ -55,6 +55,7 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const makeChain = () => {
 		const ns = []; // Nitrogen symbols
 		const carbonyls = [];
+		const rs = []; // R groups with the aminoacids
 		let x = 0;
 		let y = 0;
 		let path = `M ${x} ${y}`;
@@ -74,6 +75,9 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 					);
 				} else if (j == 2) {
 					carbonyls.push(carbonyl(x, y));
+				} else if (j == 1) {
+					// draw aminoacid
+					rs.push(aminoacids(acids[i], x, y));
 				}
 			}
 		}
@@ -107,6 +111,7 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 				<path d={path} />
 				{ns}
 				{carbonyls}
+				{rs}
 			</g>
 		);
 	};

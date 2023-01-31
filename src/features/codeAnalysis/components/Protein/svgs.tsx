@@ -28,6 +28,7 @@ export const carbonyl = (x: number, y: number) => {
 	);
 };
 export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
+	const f = y == 0 ? -1 : 1; // whether to draw up or down
 	switch (acid) {
 		case AminoAcid.Phenylalanine:
 			return <path d={`M ${x} ${y}`} />;
@@ -46,7 +47,7 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 		case AminoAcid.Threonine:
 			return <path d={`M ${x} ${y}`} />;
 		case AminoAcid.Alanine:
-			return <path d={`M ${x} ${y}`} />;
+			return <path d={`M ${x} ${y} L ${x} ${y + f * 20}`} />;
 		case AminoAcid.Tyrosine:
 			return <path d={`M ${x} ${y}`} />;
 		case AminoAcid.Histidine:
