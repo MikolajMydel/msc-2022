@@ -34,6 +34,8 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		padding: 40,
 		chainLineWidth: 20,
 		chainLineHeight: 15,
+		carbonylLineLength: 20,
+		lineStrokeWidth: 2,
 		// fontSize: x
 	};
 	const styles = {
@@ -43,10 +45,15 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 			width:
 				properties.padding * 2 + acids.length * properties.chainLineWidth * 3,
 		},
-		stroke: { fill: "none", stroke: "black", strokeWidth: "2" },
+		stroke: {
+			fill: "none",
+			stroke: "black",
+			strokeWidth: properties.lineStrokeWidth,
+		},
 	};
 	const makeChain = () => {
 		const ns = []; // Nitrogen symbols
+		const carbonyls = [];
 		let x = 0;
 		let y = 0;
 		let path = `M ${x} ${y}`;
@@ -60,6 +67,27 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 						<text x={x - 5} y={y == 0 ? y - 4 : y + 16}>
 							N
 						</text>
+					);
+				} else if (j == 2) {
+					const f = y == 0 ? -1 : 1;
+					carbonyls.push(
+						<>
+							<path
+								style={styles.stroke}
+								d={`M ${x - 2} ${y - 2 * f} L ${x - 2} ${
+									y + properties.carbonylLineLength * f
+								}`}
+							/>
+							<path
+								style={styles.stroke}
+								d={`M ${x + 2} ${y - 2 * f} L ${x + 2} ${
+									y + properties.carbonylLineLength * f
+								}`}
+							/>
+							<text x={x - 5} y={y == 0 ? y - 23 : y + 34}>
+								O
+							</text>
+						</>
 					);
 				}
 			}
@@ -90,6 +118,7 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 				( the path between )
 				<path style={styles.stroke} d={path} />
 				{ns}
+				{carbonyls}
 			</g>
 		);
 	};
