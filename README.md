@@ -31,7 +31,4 @@ Dokumentacja jest dostępna [tutaj](https://github.com/MikolajMydel/msc-2022/wik
 
 ## Źródła
 
-- Masa molekularna, wzór chemiczny: https://proteomicsresource.washington.edu/protocols06/masses.php
-- Indeks hydrofobowy: https://web.expasy.org/protscale/pscale/Hphob.Doolittle.html
-- DIWV (stabilność dipeptydów): Guruprasad, K., Reddy, B.V.B. and Pandit, M.W. (1990) Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence. Protein Eng. 4,155-161.
-- Wzory: https://web.expasy.org/protparam/protparam-doc.html
+Źródła dostępne są na stronie [wiki](https://github.com/MikolajMydel/msc-2022/wiki/%C5%B9r%C3%B3d%C5%82a)
