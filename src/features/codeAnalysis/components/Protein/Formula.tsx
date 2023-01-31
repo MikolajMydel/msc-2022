@@ -1,4 +1,5 @@
-import { AminoAcid, svgs } from "../../../../utils/staticvalues";
+import { AminoAcid } from "../../../../utils/staticvalues";
+import { carbonyl } from "./svgs";
 import { useRef, useEffect } from "react";
 
 function draw(
@@ -22,33 +23,30 @@ export function canvasFormula({ acids }: { acids: AminoAcid[] }) {
 			// set canvas size accordingly to the protein length
 			canvas.setAttribute("width", acids.length * 22 + "px");
 
-			// test draw
-			draw(svgs.circle, ctx, 10, 10);
+			draw("<svg></svg>", ctx, 10, 10);
 		}
 	}, []);
 	return <canvas ref={ref} />;
 }
-
+export const settings = {
+	padding: 40,
+	chainLineWidth: 20,
+	chainLineHeight: 15,
+	carbonylLineLength: 20,
+	lineStrokeWidth: 2,
+	// fontSize: x
+};
 export function Formula({ acids }: { acids: AminoAcid[] }) {
-	const properties = {
-		padding: 40,
-		chainLineWidth: 20,
-		chainLineHeight: 15,
-		carbonylLineLength: 20,
-		lineStrokeWidth: 2,
-		// fontSize: x
-	};
 	const styles = {
 		svg: {
 			backgroundColor: "#fff",
 			height: 120,
-			width:
-				properties.padding * 2 + acids.length * properties.chainLineWidth * 3,
+			width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
 		},
 		stroke: {
 			fill: "none",
 			stroke: "black",
-			strokeWidth: properties.lineStrokeWidth,
+			strokeWidth: settings.lineStrokeWidth,
 		},
 	};
 	const makeChain = () => {
@@ -59,8 +57,8 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		let path = `M ${x} ${y}`;
 		for (let i = 0; i < acids.length; i++) {
 			for (let j = 1; j <= 3; j++) {
-				x += properties.chainLineWidth;
-				y = y == 0 ? properties.chainLineHeight : 0;
+				x += settings.chainLineWidth;
+				y = y == 0 ? settings.chainLineHeight : 0;
 				path += `L ${x} ${y} `;
 				if (j == 3) {
 					ns.push(
@@ -69,34 +67,15 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 						</text>
 					);
 				} else if (j == 2) {
-					const f = y == 0 ? -1 : 1;
-					carbonyls.push(
-						<>
-							<path
-								style={styles.stroke}
-								d={`M ${x - 2} ${y - 2 * f} L ${x - 2} ${
-									y + properties.carbonylLineLength * f
-								}`}
-							/>
-							<path
-								style={styles.stroke}
-								d={`M ${x + 2} ${y - 2 * f} L ${x + 2} ${
-									y + properties.carbonylLineLength * f
-								}`}
-							/>
-							<text x={x - 5} y={y == 0 ? y - 23 : y + 34}>
-								O
-							</text>
-						</>
-					);
+					carbonyls.push(carbonyl(styles.stroke, x, y));
 				}
 			}
 		}
 		ns.pop(); // get rid of the last one
 		return (
 			<g
-				transform={`translate(${properties.padding} ${
-					styles.svg.height / 2 - properties.chainLineHeight / 2
+				transform={`translate(${settings.padding} ${
+					styles.svg.height / 2 - settings.chainLineHeight / 2
 				})`}
 			>
 				( opening H2N )
@@ -110,7 +89,7 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 					x="0"
 					y="5"
 					transform={`translate(${
-						styles.svg.width - properties.padding * 2
+						styles.svg.width - settings.padding * 2
 					} ${y})`}
 				>
 					<tspan>OH</tspan>

@@ -28,17 +28,6 @@ type CodonTable = {
 	[key: string]: AminoAcid;
 };
 
-export const svgs = {
-	circle: `
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-            <circle cx="25" cy="25" r="25"/>
-        </svg>`,
-	square: `
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-            <rect width="50" height="50"/>
-        </svg>`,
-};
-
 export const CODON_TABLE: CodonTable = {
 	UUU: AminoAcid.Phenylalanine,
 	UUC: AminoAcid.Phenylalanine,
