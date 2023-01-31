@@ -31,20 +31,25 @@ export function canvasFormula({ acids }: { acids: AminoAcid[] }) {
 
 export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const properties = {
+		padding: 40,
 		chainLineWidth: 20,
 		chainLineHeight: 15,
+		// fontSize: x
 	};
 	const styles = {
 		svg: {
 			backgroundColor: "#fff",
 			height: 120,
-			width: 100 + acids.length * properties.chainLineWidth * 3,
+			width:
+				properties.padding * 2 +
+				properties.chainLineWidth +
+				acids.length * properties.chainLineWidth * 3,
 		},
 		stroke: { fill: "none", stroke: "black", strokeWidth: "2" },
 	};
 	const makeChain = () => {
 		const ns = []; // Nitrogen symbols
-		let x = 30 + properties.chainLineWidth;
+		let x = properties.chainLineWidth;
 		let y = properties.chainLineHeight;
 		let path = `M ${x} ${y}`;
 		for (let i = 0; i < acids.length; i++) {
@@ -63,12 +68,12 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		}
 		return (
 			<g
-				transform={`translate(${12} ${
+				transform={`translate(${properties.padding} ${
 					styles.svg.height / 2 - properties.chainLineHeight / 2
 				})`}
 			>
 				( opening H2N )
-				<text x="0" y="5">
+				<text x="-30" y="5">
 					<tspan>H</tspan>
 					<tspan dy="5">2</tspan>
 					<tspan dy="-5">N</tspan>
@@ -76,15 +81,15 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 				( first Carbon )
 				<path
 					style={styles.stroke}
-					d={`M 30 0 L ${30 + properties.chainLineWidth} ${
-						properties.chainLineHeight
-					}`}
+					d={`M 0 0 L ${properties.chainLineWidth} ${properties.chainLineHeight}`}
 				/>
 				( Oxygen at the end )
 				<text
 					x="0"
 					y="5"
-					transform={`translate(${styles.svg.width - 36} ${0})`}
+					transform={`translate(${
+						styles.svg.width - properties.padding * 2
+					} ${y})`}
 				>
 					<tspan>O</tspan>
 				</text>
