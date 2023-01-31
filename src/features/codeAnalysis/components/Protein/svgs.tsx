@@ -1,5 +1,25 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
 import { settings } from "./Formula";
+export const h2n = () => (
+	<text
+		x={`${-2 * settings.fontSize - 2}`}
+		y={`${settings.fontSize / 4}`}
+		style={{ paintOrder: "fill" }}
+	>
+		<tspan>H</tspan>
+		<tspan dy="5">2</tspan>
+		<tspan dy="-5">N</tspan>
+	</text>
+);
+export const oh = (svgWidth: number, y: number) => (
+	<text
+		x={`2`}
+		y={`${settings.fontSize / 4}`}
+		transform={`translate(${svgWidth - settings.padding * 2} ${y})`}
+	>
+		<tspan>OH</tspan>
+	</text>
+);
 export const carbonyl = (x: number, y: number) => {
 	const f = y == 0 ? -1 : 1;
 	return (
@@ -27,6 +47,15 @@ export const carbonyl = (x: number, y: number) => {
 		</>
 	);
 };
+export const nitrogen = (x: number, y: number) => (
+	<text
+		x={x - settings.fontSize * 0.3}
+		y={y == 0 ? y - settings.fontSize * 0.25 : y + settings.fontSize}
+	>
+		N
+	</text>
+);
+
 export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 	const f = y == 0 ? -1 : 1; // whether to draw up or down
 	switch (acid) {

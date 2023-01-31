@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
-import { carbonyl, aminoacids } from "./svgs";
+import { carbonyl, aminoacids, nitrogen, h2n, oh } from "./svgs";
 import { useRef, useEffect } from "react";
 
 function draw(
@@ -52,69 +52,32 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 		fontSize: settings.fontSize,
 		fontFamily: settings.fontFamily,
 	};
-	const makeChain = () => {
-		const ns = []; // Nitrogen symbols
-		const carbonyls = [];
-		const rs = []; // R groups with the aminoacids
-		let x = 0;
-		let y = 0;
-		let path = `M ${x} ${y}`;
-		for (let i = 0; i < acids.length; i++) {
-			for (let j = 1; j <= 3; j++) {
-				x += settings.chainLineWidth;
-				y = y == 0 ? settings.chainLineHeight : 0;
-				path += `L ${x} ${y} `;
-				if (j == 3) {
-					ns.push(
-						<text
-							x={x - settings.fontSize * 0.3}
-							y={y == 0 ? y - settings.fontSize * 0.25 : y + settings.fontSize}
-						>
-							N
-						</text>
-					);
-				} else if (j == 2) {
-					carbonyls.push(carbonyl(x, y));
-				} else if (j == 1) {
-					// draw aminoacid
+	const ns = []; // Nitrogen symbols
+	const carbonyls = [];
+	const rs = []; // R groups with the aminoacids
+
+	let x = 0;
+	let y = 0;
+	let path = `M ${x} ${y}`;
+	for (let i = 0; i < acids.length; i++) {
+		for (let j = 1; j <= 3; j++) {
+			x += settings.chainLineWidth;
+			y = y == 0 ? settings.chainLineHeight : 0;
+			path += `L ${x} ${y} `;
+			switch (j) {
+				case 1:
 					rs.push(aminoacids(acids[i], x, y));
-				}
+					break;
+				case 2:
+					carbonyls.push(carbonyl(x, y));
+					break;
+				case 3:
+					ns.push(nitrogen(x, y));
+					break;
 			}
 		}
-		ns.pop(); // get rid of the last one
-		return (
-			<g
-				transform={`translate(${settings.padding} ${
-					svgStyle.height / 2 - settings.chainLineHeight / 2
-				})`}
-				style={styles}
-			>
-				( opening H2N )
-				<text
-					x={`${-2 * styles.fontSize - 2}`}
-					y={`${styles.fontSize / 4}`}
-					style={{ paintOrder: "fill" }}
-				>
-					<tspan>H</tspan>
-					<tspan dy="5">2</tspan>
-					<tspan dy="-5">N</tspan>
-				</text>
-				( Oxygen at the end )
-				<text
-					x={`2`}
-					y={`${styles.fontSize / 4}`}
-					transform={`translate(${svgStyle.width - settings.padding * 2} ${y})`}
-				>
-					<tspan>OH</tspan>
-				</text>
-				( the path between )
-				<path d={path} />
-				{ns}
-				{carbonyls}
-				{rs}
-			</g>
-		);
-	};
+	}
+	ns.pop(); // get rid of the last one
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" style={svgStyle}>
 			<style>
@@ -125,7 +88,20 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
                     }
                 `}
 			</style>
-			{makeChain()}
+			<g
+				transform={`translate(${settings.padding} ${
+					svgStyle.height / 2 - settings.chainLineHeight / 2
+				})`}
+				style={styles}
+			>
+				{h2n()}
+				{oh(svgStyle.width, y)}
+				( the path between )
+				<path d={path} />
+				{ns}
+				{carbonyls}
+				{rs}
+			</g>
 		</svg>
 	);
 }
