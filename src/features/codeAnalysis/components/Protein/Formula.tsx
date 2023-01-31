@@ -35,19 +35,22 @@ export const settings = {
 	carbonylLineLength: 20,
 	lineStrokeWidth: 2,
 	fontSize: 16,
+	fontFamily: "Arial",
+	backgroundColor: "#eee",
+	color: "#111",
 };
 export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const svgStyle = {
-		backgroundColor: "#fff",
+		backgroundColor: settings.backgroundColor,
 		height: 120,
 		width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
 	};
 	const styles = {
 		fill: "none",
-		stroke: "#111",
+		stroke: settings.color,
 		strokeWidth: settings.lineStrokeWidth,
 		fontSize: settings.fontSize,
-		fontFamily: "Arial",
+		fontFamily: settings.fontFamily,
 	};
 	const makeChain = () => {
 		const ns = []; // Nitrogen symbols
