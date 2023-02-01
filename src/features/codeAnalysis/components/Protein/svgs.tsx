@@ -40,12 +40,20 @@ export const carbonyl = (x: number, y: number) => {
 	);
 };
 export const nitrogen = (x: number, y: number) => (
-	<text
-		x={x - settings.fontSize * 0.3}
-		y={y == 0 ? y - settings.fontSize * 0.25 : y + settings.fontSize}
-	>
-		N
-	</text>
+	<>
+		<text
+			x={x - settings.fontSize * 0.3}
+			y={y == 0 ? y - settings.fontSize * 0.25 : y + settings.fontSize}
+		>
+			N
+		</text>
+		<text
+			x={x - settings.fontSize * 0.3}
+			y={y == 0 ? y - settings.fontSize * 1.25 : y + 2 * settings.fontSize}
+		>
+			H
+		</text>
+	</>
 );
 
 export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
@@ -85,7 +93,6 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
                         l ${d} ${f(d)}
                     `}
 					/>
-					;
 					<text x={`${x + d - fs * 0.33}`} y={`${y + f(c + c + d + t)}`}>
 						S
 					</text>
@@ -101,7 +108,7 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 		default:
 			return (
 				<>
-					<path d={`M ${x} ${y}`} />;
+					<path d={`M ${x} ${y}`} />
 				</>
 			);
 	}
