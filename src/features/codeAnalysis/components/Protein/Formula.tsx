@@ -42,7 +42,7 @@ export const settings = {
 export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const svgStyle = {
 		backgroundColor: settings.backgroundColor,
-		height: 120,
+		height: 500,
 		width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
 	};
 	const styles = {

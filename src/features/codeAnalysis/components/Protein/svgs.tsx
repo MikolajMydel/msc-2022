@@ -21,19 +21,11 @@ export const oh = (svgWidth: number, y: number) => (
 	</text>
 );
 export const carbonyl = (x: number, y: number) => {
-	const f = y == 0 ? -1 : 1;
+	const f = (e: number) => (y == 0 ? -1 * e : 1 * e); // whether to draw up or down
 	return (
 		<>
-			<path
-				d={`M ${x - 2} ${y - 2 * f} L ${x - 2} ${
-					y + settings.carbonylLineLength * f
-				}`}
-			/>
-			<path
-				d={`M ${x + 2} ${y - 2 * f} L ${x + 2} ${
-					y + settings.carbonylLineLength * f
-				}`}
-			/>
+			<path d={`M ${x - 2} ${y - f(2)} v ${f(settings.carbonylLineLength)}`} />
+			<path d={`M ${x + 2} ${y - f(2)} v ${f(settings.carbonylLineLength)}`} />
 			<text
 				x={x - settings.fontSize / 2.5}
 				y={
@@ -57,47 +49,60 @@ export const nitrogen = (x: number, y: number) => (
 );
 
 export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
-	const f = y == 0 ? -1 : 1; // whether to draw up or down
+	const fs = settings.fontSize;
+	const c = settings.carbonylLineLength;
+	const d = c / Math.sqrt(2); // for diagonal lines
+	const f = (e: number) => (y == 0 ? -1 * e : 1 * e); // whether to draw up or down
+	const t = y == 0 ? fs * 0.25 : fs; // for vertical text adjustment
 	switch (acid) {
 		case AminoAcid.Alanine:
-			return <path d={`M ${x} ${y} L ${x} ${y + f * 20}`} />;
-		case AminoAcid.Arginine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Aspargine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.AsparticAcid:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Cysteine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.GlutamicAcid:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Glutamine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Glycine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Histidine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Isoleucine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Leucine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Lysine:
-			return <path d={`M ${x} ${y}`} />;
+			return (
+				<>
+					<path d={`M ${x} ${y} v ${f(c)}`} />;
+				</>
+			);
+		//case AminoAcid.Arginine:
+		//case AminoAcid.Aspargine:
+		//case AminoAcid.AsparticAcid:
+		//case AminoAcid.Cysteine:
+		//case AminoAcid.GlutamicAcid:
+		//case AminoAcid.Glutamine:
+		//case AminoAcid.Glycine:
+		//case AminoAcid.Histidine:
+		//case AminoAcid.Isoleucine:
+		//case AminoAcid.Leucine:
+		//case AminoAcid.Lysine:
 		case AminoAcid.Methionine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Phenylalanine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Proline:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Serine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Threonine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Tryptophan:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Tyrosine:
-			return <path d={`M ${x} ${y}`} />;
-		case AminoAcid.Valine:
-			return <path d={`M ${x} ${y}`} />;
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        m ${fs * 0.33} ${f(fs + 2)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					;
+					<text x={`${x + d - fs * 0.33}`} y={`${y + f(c + c + d + t)}`}>
+						S
+					</text>
+				</>
+			);
+		//case AminoAcid.Phenylalanine:
+		//case AminoAcid.Proline:
+		//case AminoAcid.Serine:
+		//case AminoAcid.Threonine:
+		//case AminoAcid.Tryptophan:
+		//case AminoAcid.Tyrosine:
+		//case AminoAcid.Valine:
+		default:
+			return (
+				<>
+					<path d={`M ${x} ${y}`} />;
+				</>
+			);
 	}
 };
