@@ -158,7 +158,22 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 					</text>
 				</>
 			);
-		//case AminoAcid.Cysteine:
+		case AminoAcid.Cysteine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					;
+					<text x={`${x + d + 2}`} y={`${y + f(c + d + t)}`}>
+						SH
+					</text>
+				</>
+			);
 		//case AminoAcid.GlutamicAcid:
 		//case AminoAcid.Glutamine:
 		//case AminoAcid.Glycine:
