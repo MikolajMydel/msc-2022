@@ -134,7 +134,30 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 					</text>
 				</>
 			);
-		//case AminoAcid.AsparticAcid:
+		case AminoAcid.AsparticAcid:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        m ${0} ${-f(c)}
+                        m ${0} ${f(1.5)}
+                        h ${c}
+                        m ${-c - 1.5} ${-f(3)}
+                        h ${c + 1.5}
+                    `}
+					/>
+					<text x={`${x + d - fs * 0.4}`} y={`${y + f(c + d + c + t)}`}>
+						OH
+					</text>
+					<text x={`${x + d + c + 2}`} y={`${y + f(c + d) + fs * 0.4}`}>
+						O
+					</text>
+				</>
+			);
 		//case AminoAcid.Cysteine:
 		//case AminoAcid.GlutamicAcid:
 		//case AminoAcid.Glutamine:
