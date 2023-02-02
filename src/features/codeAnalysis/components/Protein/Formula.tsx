@@ -29,7 +29,7 @@ export function canvasFormula({ acids }: { acids: AminoAcid[] }) {
 	return <canvas ref={ref} />;
 }
 export const settings = {
-	padding: 40,
+	padding: 20,
 	chainLineWidth: 20,
 	chainLineHeight: 15,
 	carbonylLineLength: 30,
@@ -43,7 +43,10 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 	const svgStyle = {
 		backgroundColor: settings.backgroundColor,
 		height: 500,
-		width: settings.padding * 2 + acids.length * settings.chainLineWidth * 3,
+		width:
+			settings.fontSize * 3.6 +
+			settings.padding * 2 +
+			acids.length * settings.chainLineWidth * 3,
 	};
 	const styles = {
 		fill: "none",
@@ -89,9 +92,11 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
                 `}
 			</style>
 			<g
-				transform={`translate(${settings.padding} ${
-					svgStyle.height / 2 - settings.chainLineHeight / 2
-				})`}
+				transform={`
+                    translate(
+                        ${settings.fontSize * 2 + settings.padding}
+                        ${svgStyle.height / 2 - settings.chainLineHeight / 2}
+                    )`}
 				style={styles}
 			>
 				{h2n()}

@@ -10,8 +10,12 @@ export const h2n = () => (
 export const oh = (svgWidth: number, y: number) => (
 	<text
 		x={`2`}
-		y={`${settings.fontSize / 4}`}
-		transform={`translate(${svgWidth - settings.padding * 2} ${y})`}
+		y={`${settings.fontSize * 0.25}`}
+		transform={`
+            translate(
+                ${svgWidth - settings.padding * 2 - settings.fontSize * 3.6}
+                ${y}
+            )`}
 	>
 		<tspan>OH</tspan>
 	</text>
