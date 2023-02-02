@@ -1,11 +1,7 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
 import { settings } from "./Formula";
 export const h2n = () => (
-	<text
-		x={`${-2 * settings.fontSize - 2}`}
-		y={`${settings.fontSize / 4}`}
-		style={{ paintOrder: "fill" }}
-	>
+	<text x={`${-2 * settings.fontSize - 2}`} y={`${settings.fontSize / 4}`}>
 		<tspan>H</tspan>
 		<tspan dy="5">2</tspan>
 		<tspan dy="-5">N</tspan>
@@ -24,8 +20,12 @@ export const carbonyl = (x: number, y: number) => {
 	const f = (e: number) => (y == 0 ? -1 * e : 1 * e); // whether to draw up or down
 	return (
 		<>
-			<path d={`M ${x - 2} ${y - f(2)} v ${f(settings.carbonylLineLength)}`} />
-			<path d={`M ${x + 2} ${y - f(2)} v ${f(settings.carbonylLineLength)}`} />
+			<path
+				d={`M ${x - 1.5} ${y - f(1.5)} v ${f(settings.carbonylLineLength)}`}
+			/>
+			<path
+				d={`M ${x + 1.5} ${y - f(1.5)} v ${f(settings.carbonylLineLength)}`}
+			/>
 			<text
 				x={x - settings.fontSize / 2.5}
 				y={
@@ -69,7 +69,49 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 					<path d={`M ${x} ${y} v ${f(c)}`} />;
 				</>
 			);
-		//case AminoAcid.Arginine:
+		case AminoAcid.Arginine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        m ${fs * 0.5} ${f(fs + 3)}
+                        v ${f(c)}
+                        l ${-d} ${f(d)}
+                        m ${d} ${-f(d)}
+                        m ${-3 / Math.sqrt(2)} ${0}
+                        l ${d} ${f(d)}
+                        m ${-d + 3 / Math.sqrt(2)} ${-f(d + 3 / Math.sqrt(2))}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					;
+					<text
+						x={`${x + d + d + fs * 0.15}`}
+						y={`${y + f(c + c + d + d + t)}`}
+					>
+						NH
+					</text>
+					<text
+						x={`${x + d + fs * 0.5 - 2 * fs}`}
+						y={`${y + f(c + d + c + d + t + fs + 3 + c + d)}`}
+					>
+						<tspan>H</tspan>
+						<tspan dy="5">2</tspan>
+						<tspan dy="-5">N</tspan>
+					</text>
+					<text
+						x={`${x + d + d + fs * 0.2 + d + fs * 0.5}`}
+						y={`${y + f(c + c + d + d + t + fs + c + d)}`}
+					>
+						NH
+					</text>
+				</>
+			);
 		//case AminoAcid.Aspargine:
 		//case AminoAcid.AsparticAcid:
 		//case AminoAcid.Cysteine:
