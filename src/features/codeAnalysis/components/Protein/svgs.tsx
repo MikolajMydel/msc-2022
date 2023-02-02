@@ -79,7 +79,7 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
                         l ${d} ${f(d)}
                         v ${f(c)}
                         l ${d} ${f(d)}
-                        m ${fs * 0.5} ${f(fs + 3)}
+                        m ${2 + fs * 0.4} ${f(fs + 3)}
                         v ${f(c)}
                         l ${-d} ${f(d)}
                         m ${d} ${-f(d)}
@@ -90,29 +90,50 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
                     `}
 					/>
 					;
-					<text
-						x={`${x + d + d + fs * 0.15}`}
-						y={`${y + f(c + c + d + d + t)}`}
-					>
+					<text x={`${x + d + d + 2}`} y={`${y + f(c + c + d + d + t)}`}>
 						NH
 					</text>
 					<text
 						x={`${x + d + fs * 0.5 - 2 * fs}`}
-						y={`${y + f(c + d + c + d + t + fs + 3 + c + d)}`}
+						y={`${y + f(c + d + c + d + t + fs + 2 + c + d)}`}
 					>
 						<tspan>H</tspan>
 						<tspan dy="5">2</tspan>
 						<tspan dy="-5">N</tspan>
 					</text>
 					<text
-						x={`${x + d + d + fs * 0.2 + d + fs * 0.5}`}
+						x={`${x + d + d + d + 2 + fs * 0.4}`}
 						y={`${y + f(c + c + d + d + t + fs + c + d)}`}
 					>
 						NH
 					</text>
 				</>
 			);
-		//case AminoAcid.Aspargine:
+		case AminoAcid.Aspargine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        m ${0} ${-f(c)}
+                        m ${0} ${f(1.5)}
+                        h ${c}
+                        m ${-c - 1.5} ${-f(3)}
+                        h ${c + 1.5}
+                    `}
+					/>
+					<text x={`${x + d - fs * 0.3}`} y={`${y + f(c + d + c + t)}`}>
+						NH
+						<tspan dy="5">2</tspan>
+					</text>
+					<text x={`${x + d + c + 2}`} y={`${y + f(c + d) + fs * 0.4}`}>
+						O
+					</text>
+				</>
+			);
 		//case AminoAcid.AsparticAcid:
 		//case AminoAcid.Cysteine:
 		//case AminoAcid.GlutamicAcid:
@@ -150,7 +171,11 @@ export const aminoacids = (acid: AminoAcid, x: number, y: number) => {
 		default:
 			return (
 				<>
-					<path d={`M ${x} ${y}`} />
+					<path
+						d={`
+                        M ${x} ${y}
+                    `}
+					/>
 				</>
 			);
 	}

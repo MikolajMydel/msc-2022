@@ -32,7 +32,7 @@ export const settings = {
 	padding: 40,
 	chainLineWidth: 20,
 	chainLineHeight: 15,
-	carbonylLineLength: 20,
+	carbonylLineLength: 30,
 	lineStrokeWidth: 2,
 	fontSize: 16,
 	fontFamily: "Arial",
