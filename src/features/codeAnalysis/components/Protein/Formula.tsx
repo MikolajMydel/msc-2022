@@ -1,5 +1,5 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
-import { carbonyl, aminoacids, nitrogen, h2n, oh } from "./svgs";
+import { carbonyl, aminoacid, nitrogen, h2n, oh } from "./svgs";
 import { useRef, useEffect } from "react";
 
 function draw(
@@ -69,7 +69,7 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 			path += `L ${x} ${y} `;
 			switch (j) {
 				case 1:
-					rs.push(aminoacids(acids[i], x, y));
+					rs.push(aminoacid(acids[i], x, y));
 					break;
 				case 2:
 					carbonyls.push(carbonyl(x, y));
@@ -83,6 +83,15 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 	ns.pop(); // get rid of the last one
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" style={svgStyle}>
+			<defs>
+				<filter x="-0.1" y="0" width="1.3" height="1" id="textbg">
+					<feFlood floodColor={settings.backgroundColor} result="bg" />
+					<feMerge>
+						<feMergeNode in="bg" />
+						<feMergeNode in="SourceGraphic" />
+					</feMerge>
+				</filter>
+			</defs>
 			<style>
 				{`
                     text {
