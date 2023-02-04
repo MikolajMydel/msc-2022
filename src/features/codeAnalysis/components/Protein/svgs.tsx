@@ -78,7 +78,7 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 		a: number,
 		v: number[]
 	) => {
-		const margin = 3;
+		const m = settings.polygonMargin;
 		let path = "",
 			inner = "";
 		let angle = 0;
@@ -88,13 +88,13 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 		}
 		for (let i = 0; i < n; i++) {
 			inner += `${v.includes(i) ? "l" : "m"} ${
-				anglePos(c - margin * 2, angle + a).x
-			} ${f(anglePos(c - margin * 2, angle + a).y)} `;
+				anglePos(c - m * 2, angle + a).x
+			} ${f(anglePos(c - m * 2, angle + a).y)} `;
 			angle += 360 / n;
 		}
 		const z = n <= 5 ? 1.4 : 1.6;
-		const xx = anglePos(margin, a).x - anglePos(margin * z, a).y;
-		const yy = f(anglePos(margin, a).y + anglePos(margin * z, a).x);
+		const xx = anglePos(m, a).x - anglePos(m * z, a).y;
+		const yy = f(anglePos(m, a).y + anglePos(m * z, a).x);
 		return (
 			<g>
 				<path d={`M ${ox} ${oy} ${path}`} />
@@ -231,10 +231,10 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
                         l ${d} ${f(d)}
                     `}
 					/>
-					<text x={`${x - fs * 1.5}`} y={`${y + f(c + d + c + d + t - 3)}`}>
+					<text x={`${x - fs * 1.5 - 2}`} y={`${y + f(c + d + c + d + t)}`}>
 						HO
 					</text>
-					<text x={`${x + d + d + 2}`} y={`${y + f(c + d + c + d + t - 3)}`}>
+					<text x={`${x + d + d + 2}`} y={`${y + f(c + d + c + d + t)}`}>
 						O
 					</text>
 				</>
@@ -256,12 +256,12 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
                         l ${d} ${f(d)}
                     `}
 					/>
-					<text x={`${x - fs * 2}`} y={`${y + f(c + d + c + d + t - 3)}`}>
+					<text x={`${x - fs * 2 - 2}`} y={`${y + f(c + d + c + d + t)}`}>
 						<tspan>H</tspan>
 						<tspan dy="5">2</tspan>
 						<tspan dy="-5">N</tspan>
 					</text>
-					<text x={`${x + d + d + 2}`} y={`${y + f(c + d + c + d + t - 3)}`}>
+					<text x={`${x + d + d + 2}`} y={`${y + f(c + d + c + d + t)}`}>
 						O
 					</text>
 				</>
@@ -303,9 +303,75 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 					</text>
 				</>
 			);
-		//case AminoAcid.Isoleucine:
-		//case AminoAcid.Leucine:
-		//case AminoAcid.Lysine:
+		case AminoAcid.Isoleucine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${-d} ${f(d)}
+                        m ${d} ${-f(d)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                    `}
+					/>
+					<text x={`${x - d - fs * 2}`} y={`${y + f(c + d + t)}`}>
+						<tspan>H</tspan>
+						<tspan dy="5">3</tspan>
+						<tspan dy="-5">C</tspan>
+					</text>
+					<text x={`${x + d - fs * 0.3}`} y={`${y + f(c + d + c + t)}`}>
+						CH
+						<tspan dy="5">3</tspan>
+					</text>
+				</>
+			);
+		case AminoAcid.Leucine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        m ${0} ${-f(c)}
+                        h ${c}
+                    `}
+					/>
+					<text x={`${x + d + c + 3}`} y={`${y + f(c + d + t - fs * 0.6)}`}>
+						CH
+						<tspan dy="5">3</tspan>
+					</text>
+					<text x={`${x + d - fs * 0.3}`} y={`${y + f(c + d + c + t)}`}>
+						CH
+						<tspan dy="5">3</tspan>
+					</text>
+				</>
+			);
+		case AminoAcid.Lysine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        v ${f(c)}
+                    `}
+					/>
+					<text
+						x={`${x + d + d - fs * 0.33}`}
+						y={`${y + f(c + d + c + d + c + t)}`}
+					>
+						NH
+						<tspan dy="5">2</tspan>
+					</text>
+				</>
+			);
 		case AminoAcid.Methionine:
 			return (
 				<>
@@ -324,13 +390,127 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 					</text>
 				</>
 			);
-		//case AminoAcid.Phenylalanine:
+		case AminoAcid.Phenylalanine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					{polygon(6, x + d, f(y + c + d), -15, [1, 3, 5])}
+				</>
+			);
 		//case AminoAcid.Proline:
-		//case AminoAcid.Serine:
-		//case AminoAcid.Threonine:
-		//case AminoAcid.Tryptophan:
-		//case AminoAcid.Tyrosine:
-		//case AminoAcid.Valine:
+		case AminoAcid.Serine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					<text x={`${x + d + 3}`} y={`${y + f(c + d + t - 3)}`}>
+						OH
+					</text>
+				</>
+			);
+		case AminoAcid.Threonine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        m ${-d} ${-f(d)}
+                        l ${-d} ${f(d)}
+                    `}
+					/>
+					<text x={`${x + d + 3}`} y={`${y + f(c + d + t - 3)}`}>
+						OH
+					</text>
+					<text x={`${x - d - fs * 2}`} y={`${y + f(c + d + t)}`}>
+						H<tspan dy="5">3</tspan>
+						<tspan dy="-5">C</tspan>
+					</text>
+				</>
+			);
+		case AminoAcid.Tryptophan:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					{polygon(5, x + d, f(y + c + d), 0, [0])}
+					<text
+						x={`${x + d + anglePos(c * 1.618, 36).x - fs * 0.3}`}
+						y={`${y + f(c + d + anglePos(c * 1.618, 36).y + t - fs * 0.5)}`}
+						filter="url(#textbg)"
+					>
+						NH
+					</text>
+					{polygon(
+						6,
+						x + d + anglePos(c, 108).x,
+						y + f(c + d + anglePos(c, 108).y),
+						36,
+						[0, 2, 4]
+					)}
+				</>
+			);
+		case AminoAcid.Tyrosine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${d} ${f(d)}
+                        m ${2 * d} ${f(2 * d)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					{polygon(6, x + d, f(y + c + d), -15, [1, 3, 5])}
+					<text
+						x={`${x + d + d + d + d + 3}`}
+						y={`${y + f(c + d + d + d + d + t - fs * 0.5)}`}
+					>
+						OH
+					</text>
+				</>
+			);
+		case AminoAcid.Valine:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c)}
+                        l ${-d} ${f(d)}
+                        m ${d} ${-f(d)}
+                        l ${d} ${f(d)}
+                    `}
+					/>
+					<text x={`${x - d - fs * 2}`} y={`${y + f(c + d + t)}`}>
+						<tspan>H</tspan>
+						<tspan dy="5">3</tspan>
+						<tspan dy="-5">C</tspan>
+					</text>
+					<text x={`${x + d + 3}`} y={`${y + f(c + d + t)}`}>
+						CH
+						<tspan dy="5">3</tspan>
+					</text>
+				</>
+			);
 		default:
 			return (
 				<>

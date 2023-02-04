@@ -30,11 +30,12 @@ export function canvasFormula({ acids }: { acids: AminoAcid[] }) {
 }
 export const settings = {
 	padding: 20,
-	chainLineWidth: 20,
+	chainLineWidth: 25,
 	chainLineHeight: 15,
 	carbonylLineLength: 30,
 	lineStrokeWidth: 2,
-	fontSize: 16,
+	polygonMargin: 2.5,
+	fontSize: 12,
 	fontFamily: "Arial",
 	backgroundColor: "#eee",
 	color: "#111",
