@@ -403,7 +403,22 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 					{polygon(6, x + d, f(y + c + d), -15, [1, 3, 5])}
 				</>
 			);
-		//case AminoAcid.Proline:
+		case AminoAcid.Proline:
+			return (
+				<>
+					<path
+						d={`
+                        M ${x} ${y}
+                        v ${f(c * 0.7)}
+                        l ${-d * 0.7} ${f(d * 0.7)}
+                        l ${-d * 0.7} ${-f(d * 0.7)}
+                        L ${x - settings.chainLineWidth} ${
+							y - f(settings.chainLineHeight)
+						}
+                    `}
+					/>
+				</>
+			);
 		case AminoAcid.Serine:
 			return (
 				<>
