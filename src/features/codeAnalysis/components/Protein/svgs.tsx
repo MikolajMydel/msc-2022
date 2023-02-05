@@ -1,13 +1,17 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
 import { settings } from "./Formula";
 export const h2n = () => (
+	// the H2N text at the beginning
 	<text x={`${-2 * settings.fontSize - 2}`} y={`${settings.fontSize / 4}`}>
 		<tspan>H</tspan>
 		<tspan dy="5">2</tspan>
 		<tspan dy="-5">N</tspan>
 	</text>
 );
-export const oh = (svgWidth: number, y: number) => (
+export const oh = (
+	svgWidth: number,
+	y: number // the OH text at the end
+) => (
 	<text
 		x={`2`}
 		y={`${settings.fontSize * 0.25}`}
@@ -17,7 +21,7 @@ export const oh = (svgWidth: number, y: number) => (
                 ${y}
             )`}
 	>
-		<tspan>OH</tspan>
+		OH
 	</text>
 );
 export const carbonyl = (x: number, y: number) => {
@@ -31,7 +35,7 @@ export const carbonyl = (x: number, y: number) => {
 				d={`M ${x + 1.5} ${y - f(1.5)} v ${f(settings.carbonylLineLength)}`}
 			/>
 			<text
-				x={x - settings.fontSize / 2.5}
+				x={x - settings.fontSize * 0.4}
 				y={
 					y == 0
 						? y - settings.carbonylLineLength - settings.fontSize * 0.25
@@ -43,7 +47,10 @@ export const carbonyl = (x: number, y: number) => {
 		</>
 	);
 };
-export const nitrogen = (x: number, y: number) => (
+export const nitrogen = (
+	x: number,
+	y: number // the NH bits
+) => (
 	<>
 		<text
 			x={x - settings.fontSize * 0.3}
@@ -67,20 +74,21 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 	const d = c / Math.sqrt(2); // for diagonal lines
 	const f = (e: number) => (y == 0 ? -1 * e : 1 * e); // whether to draw up or down
 	const t = y == 0 ? fs * 0.25 : fs; // for vertical text adjustment
-	const anglePos = (l: number, a: number): coordinates => ({
-		x: l * Math.cos(a * (Math.PI / 180)),
-		y: l * Math.sin(a * (Math.PI / 180)),
+	const anglePos = (distance: number, angle: number): coordinates => ({
+		// calculate coordinates for a skewed path
+		x: distance * Math.cos(angle * (Math.PI / 180)),
+		y: distance * Math.sin(angle * (Math.PI / 180)),
 	});
 	const polygon = (
-		n: number,
-		ox: number,
-		oy: number,
-		a: number,
-		v: number[]
+		n: number, // number of sides
+		ox: number, // x position
+		oy: number, // y position
+		a: number, // angle
+		v: number[] // which inner sides should be visible
 	) => {
 		const m = settings.polygonMargin;
-		let path = "",
-			inner = "";
+		let path = "";
+		let inner = "";
 		let angle = 0;
 		for (let i = 0; i < n; i++) {
 			path += `l ${anglePos(c, angle + a).x} ${f(anglePos(c, angle + a).y)} `;
@@ -92,7 +100,7 @@ export const aminoacid = (acid: AminoAcid, x: number, y: number) => {
 			} ${f(anglePos(c - m * 2, angle + a).y)} `;
 			angle += 360 / n;
 		}
-		const z = n <= 5 ? 1.4 : 1.6;
+		const z = n <= 5 ? 1.4 : 1.6; // this factor depends on the size of the polygon
 		const xx = anglePos(m, a).x - anglePos(m * z, a).y;
 		const yy = f(anglePos(m, a).y + anglePos(m * z, a).x);
 		return (

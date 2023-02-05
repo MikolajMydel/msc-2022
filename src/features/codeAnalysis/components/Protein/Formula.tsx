@@ -27,9 +27,9 @@ function Formula({ acids }: { acids: AminoAcid[] }) {
 		backgroundColor: settings.backgroundColor,
 		height: settings.height,
 		width:
-			settings.fontSize * 3.6 +
-			settings.padding * 2 +
-			acids.length * settings.chainLineWidth * 3,
+			settings.fontSize * 3.6 + // +/- all text width
+			settings.padding * 2 + // padding on both sides
+			acids.length * settings.chainLineWidth * 3, // each segment takes 3 of theese lengths
 	};
 	const styles = {
 		fill: "none",
@@ -45,12 +45,15 @@ function Formula({ acids }: { acids: AminoAcid[] }) {
 	let x = 0;
 	let y = 0;
 	let path = `M ${x} ${y}`;
+	// draw 3-piece segments
 	for (let i = 0; i < acids.length; i++) {
 		for (let j = 1; j <= 3; j++) {
 			x += settings.chainLineWidth;
 			y = y == 0 ? settings.chainLineHeight : 0;
 			path += `L ${x} ${y} `;
-			switch (j) {
+			switch (
+				j // each piece of the segment
+			) {
 				case 1:
 					rs.push(aminoacid(acids[i], x, y));
 					break;
@@ -63,7 +66,7 @@ function Formula({ acids }: { acids: AminoAcid[] }) {
 			}
 		}
 	}
-	ns.pop(); // get rid of the last one
+	ns.pop(); // the last one overlaps with the ending OH
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
