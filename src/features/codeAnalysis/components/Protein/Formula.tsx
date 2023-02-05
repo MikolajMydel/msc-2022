@@ -1,35 +1,10 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
 import { carbonyl, aminoacid, nitrogen, h2n, oh } from "./svgs";
-import { useRef, useEffect } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
-function draw(
-	svg: string,
-	ctx: CanvasRenderingContext2D,
-	x: number,
-	y: number
-) {
-	const image = new Image();
-	image.src = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
-	image.addEventListener("load", () => ctx.drawImage(image, x, y));
-}
-
-export function canvasFormula({ acids }: { acids: AminoAcid[] }) {
-	const ref = useRef<HTMLCanvasElement>(null);
-
-	useEffect(() => {
-		const canvas = ref.current;
-		const ctx = canvas?.getContext("2d");
-		if (canvas && ctx) {
-			// set canvas size accordingly to the protein length
-			canvas.setAttribute("width", acids.length * 22 + "px");
-
-			draw("<svg></svg>", ctx, 10, 10);
-		}
-	}, []);
-	return <canvas ref={ref} />;
-}
 export const settings = {
 	padding: 20,
+	height: 400,
 	chainLineWidth: 25,
 	chainLineHeight: 15,
 	carbonylLineLength: 30,
@@ -40,10 +15,17 @@ export const settings = {
 	backgroundColor: "#eee",
 	color: "#111",
 };
-export function Formula({ acids }: { acids: AminoAcid[] }) {
+export function FormulaImage({ acids }: { acids: AminoAcid[] }) {
+	const string = renderToStaticMarkup(<Formula acids={acids} />);
+	const src = URL.createObjectURL(
+		new Blob([string], { type: "image/svg+xml" })
+	);
+	return <img src={src} height={settings.height} />;
+}
+function Formula({ acids }: { acids: AminoAcid[] }) {
 	const svgStyle = {
 		backgroundColor: settings.backgroundColor,
-		height: 500,
+		height: settings.height,
 		width:
 			settings.fontSize * 3.6 +
 			settings.padding * 2 +
@@ -83,7 +65,11 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 	}
 	ns.pop(); // get rid of the last one
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" style={svgStyle}>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			style={svgStyle}
+			viewBox={`0 0 ${svgStyle.width} ${svgStyle.height}`}
+		>
 			<defs>
 				<filter x="-0.1" y="0" width="1.3" height="1" id="textbg">
 					<feFlood floodColor={settings.backgroundColor} result="bg" />
@@ -111,7 +97,6 @@ export function Formula({ acids }: { acids: AminoAcid[] }) {
 			>
 				{h2n()}
 				{oh(svgStyle.width, y)}
-				( the path between )
 				<path d={path} />
 				{ns}
 				{carbonyls}

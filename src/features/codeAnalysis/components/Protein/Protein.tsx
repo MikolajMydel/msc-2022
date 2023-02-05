@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
-import { Formula } from "./Formula";
+import { FormulaImage } from "./Formula";
 import styles from "./proteins.module.scss";
 
 type ProteinComponentProps = {
@@ -50,7 +50,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 				<Name />
 				<h5>Amino acids: </h5>
 				<AminoAcids acids={protein.acids} />
-				<Formula acids={protein.acids} />
+				<FormulaImage acids={protein.acids} />
 			</>
 		);
 	};
