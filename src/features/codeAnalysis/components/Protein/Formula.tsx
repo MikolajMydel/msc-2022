@@ -1,16 +1,17 @@
 import { AminoAcid } from "../../../../utils/staticvalues";
 import { carbonyl, aminoacid, nitrogen, h2n, oh } from "./svgs";
 import { renderToStaticMarkup } from "react-dom/server";
+import styles from "./proteins.module.scss";
 
 export const settings = {
 	padding: 20,
-	height: 400,
+	height: 300,
 	chainLineWidth: 25,
 	chainLineHeight: 15,
-	carbonylLineLength: 30,
+	carbonylLineLength: 22,
 	lineStrokeWidth: 2,
 	polygonMargin: 2.5,
-	fontSize: 12,
+	fontSize: 10,
 	fontFamily: "Arial",
 	backgroundColor: "#eee",
 	color: "#111",
@@ -20,7 +21,11 @@ export function FormulaImage({ acids }: { acids: AminoAcid[] }) {
 	const src = URL.createObjectURL(
 		new Blob([string], { type: "image/svg+xml" })
 	);
-	return <img src={src} height={settings.height} />;
+	return (
+		<div className={styles.Formula}>
+			<img src={src} style={{ height: settings.height }} />
+		</div>
+	);
 }
 function Formula({ acids }: { acids: AminoAcid[] }) {
 	const svgStyle = {

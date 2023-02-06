@@ -27,3 +27,12 @@
 	width: 1200px;
 	height: 400px;
 }
+
+.Formula {
+	width: 100%;
+	text-align: center;
+	overflow-x: scroll;
+}
+.Formula::-webkit-scrollbar-track {
+	background-color: red;
+}
