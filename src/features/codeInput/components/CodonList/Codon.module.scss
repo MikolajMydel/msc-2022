@@ -26,7 +26,10 @@ $codon-list-height: 4rem;
 }
 
 .Codon {
-	font-size: 2rem;
+	font-family: "Lato";
+	font-weight: 300;
+
+	font-size: 2.2rem;
 	color: map-get(v.$colors, "white");
 
 	&Start {
@@ -39,6 +42,8 @@ $codon-list-height: 4rem;
 }
 
 .Name {
-	font-size: 1.5rem;
-	color: map-get(v.$colors, "gray");
+	font-size: 1.2rem;
+	font-family: "Lato";
+	font-weight: thin;
+	color: map-get(v.$colors, "wgreen");
 }

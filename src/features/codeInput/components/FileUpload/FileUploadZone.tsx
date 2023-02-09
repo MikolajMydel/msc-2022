@@ -30,7 +30,11 @@ export default function FileUploadZone({
 				[styles.ZoneActive]: dragActive,
 			})}
 		>
-			<input type={"file"} onChange={handleChange} multiple={false} />
+			<div className={styles.GrayDiv}></div>
+			<label className={styles.InputButton}>
+				Choose File
+				<input type={"file"} onChange={handleChange} multiple={false} />
+			</label>
 		</div>
 	);
 }

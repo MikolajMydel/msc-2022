@@ -1,13 +1,15 @@
 @use "../../../../styles/variables.scss" as v;
 .Wrapper {
 	margin: 0 auto;
-	width: 100px;
-	height: 100px;
+	width: 36vw;
+	height: 12vw;
+	margin-top: map-get(v.$spacing, "3xl");
 }
 .Zone {
 	width: 100%;
 	height: 100%;
-	border: 1px solid red;
+	background-color: map-get(v.$colors, "dark-gray");
+	border-radius: v.$border-radius;
 	margin: 0 auto;
 	&Active {
 		border: 1px solid green;
@@ -17,4 +19,31 @@
 .FileName {
 	text-align: left;
 	color: map-get(v.$colors, "white");
+}
+.GrayDiv {
+	background-color: map-get(v.$colors, "gray");
+	width: 18vw;
+	height: 12vw;
+	border-radius: v.$border-radius;
+}
+.InputButton {
+	font-family: v.$main-font !important;
+	position: relative;
+	font-size: 20px;
+	font-weight: 600;
+	padding: 0.6vw;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	background-color: map-get(v.$colors, "green");
+	border-radius: v.$border-radius;
+	color: map-get(v.$colors, "white");
+	z-index: 222;
+	border: none;
+	bottom: calc(6vw + 12px);
+	left: calc(36vw - 20vw - 59px);
+	margin: 0 auto;
+	cursor: pointer;
+	input {
+		display: none;
+	}
 }

@@ -47,7 +47,7 @@ export default function FileUploadContainer() {
 
 	return (
 		<div className={styles.Wrapper}>
-			<h2 className={styles.FileName}>Current file: {fileName}</h2>
+			<h2 className={styles.FileName}>{fileName}</h2>
 
 			<FileUploadZone
 				handleDrop={handleDrop}

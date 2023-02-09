@@ -53,10 +53,10 @@ export default function Input({
 
 	return (
 		<div className={styles.Wrapper}>
+			<button onClick={switchSequenceType} className={styles.InputButton}>
+				{sequenceType}
+			</button>
 			<div className={styles.Input}>
-				<button onClick={switchSequenceType} className={styles.InputButton}>
-					{sequenceType}
-				</button>
 				<ControlledInput
 					className={classNames(styles.InputHTMLElement, {
 						[styles.InputHTMLElementError]: error,
