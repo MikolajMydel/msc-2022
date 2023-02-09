@@ -47,11 +47,11 @@
 		transition: background-color v.$animation-duration v.$timing-function;
 		&Error {
 			animation: shake v.$animation-duration v.$timing-function both;
-			transition: 1s;
+			transition: transform 1s;
 		}
 
 		&:focus {
-			transition: 1s;
+			transition: transform 1s;
 
 			border-bottom: 1px solid map-get(v.$colors, "green");
 		}
