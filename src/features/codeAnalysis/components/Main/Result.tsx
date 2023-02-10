@@ -9,11 +9,7 @@ type AnalysisResultProps = {
 export function AnalysisResult({ proteins }: AnalysisResultProps) {
 	return (
 		<div className={Styles.Wrapper}>
-			<div>
-				<h1 className={Styles.Title}>
-					Found {proteins.length} protein(s)/peptide(s):{" "}
-				</h1>
-			</div>
+			<div></div>
 			<div>
 				{proteins.map((protein) => (
 					<ProteinComponent key={uuid()} protein={protein} />

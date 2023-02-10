@@ -1,15 +1,16 @@
 @use "../../../../styles/variables.scss" as v;
 
 .Wrapper {
-	width: 85%;
+	width: 80%;
 	margin: auto;
 }
 .MiniTitle {
 	margin-top: map-get(v.$spacing, "md");
-	margin-bottom: map-get(v.$spacing, "sm");
+	margin-bottom: map-get(v.$spacing, "md");
+
 	font-family: v.$main-font;
-	text-align: center;
-	font-size: 35px;
+	text-align: left;
+	font-size: 2.2rem;
 	font-weight: 500;
 }
 .Table {

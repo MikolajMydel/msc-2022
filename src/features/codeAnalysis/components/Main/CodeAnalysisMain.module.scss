@@ -1,0 +1,10 @@
+@use "../../../../styles/variables.scss" as v;
+
+.Title {
+	margin-top: map-get(v.$spacing, "2xl");
+	margin-bottom: map-get(v.$spacing, "md");
+	font-family: v.$main-font;
+	text-align: center;
+	font-size: 3rem;
+	font-weight: 600;
+}

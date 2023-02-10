@@ -22,7 +22,7 @@
 
 .peptide {
 	margin-top: map-get(v.$spacing, "md");
-	margin-bottom: map-get(v.$spacing, "sm");
+	margin-bottom: map-get(v.$spacing, "esm");
 	font-family: v.$main-font;
 	font-size: 35px;
 	font-weight: 500;
@@ -32,8 +32,9 @@
 }
 
 .doughnutChart {
-	width: 450px;
-	margin: 0 auto;
+	margin-top: map-get(v.$spacing, "sm");
+	margin-bottom: map-get(v.$spacing, "sm");
+	width: 550px;
 }
 .hydropathyChart {
 	width: 800px;
@@ -48,8 +49,7 @@
 }
 .SmallerFont {
 	color: map-get(v.$colors, "white");
-	margin-bottom: map-get(v.$spacing, "sm");
-
+	margin-bottom: map-get(v.$spacing, "esm");
 	font-size: 1.2rem;
 	font-family: v.$main-font;
 	font-weight: 400;

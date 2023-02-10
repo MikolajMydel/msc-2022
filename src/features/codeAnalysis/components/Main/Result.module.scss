@@ -1,16 +1,8 @@
 @use "../../../../styles/variables.scss" as v;
 .Wrapper {
-	margin-top: map-get(v.$spacing, "xl");
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-}
-.Title {
-	margin-top: map-get(v.$spacing, "md");
-	font-family: v.$main-font;
-	text-align: center;
-	font-size: 3rem;
-	font-weight: 600;
+	width: 80%;
+	margin: auto;
 }
