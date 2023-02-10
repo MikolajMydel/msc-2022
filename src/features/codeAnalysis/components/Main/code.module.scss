@@ -1,0 +1,24 @@
+@use "../../../../styles/variables.scss" as v;
+
+.Wrapper {
+	width: 85%;
+	margin: auto;
+}
+.MiniTitle {
+	margin-top: map-get(v.$spacing, "md");
+	margin-bottom: map-get(v.$spacing, "sm");
+	font-family: v.$main-font;
+	text-align: center;
+	font-size: 35px;
+	font-weight: 500;
+}
+.Table {
+	padding: 0.4rem;
+	border-radius: v.$border-radius;
+	color: map-get(v.$colors, "white");
+	margin-bottom: map-get(v.$spacing, "sm");
+
+	font-size: 1rem;
+	font-family: v.$main-font;
+	font-weight: 200;
+}

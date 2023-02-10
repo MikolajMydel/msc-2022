@@ -1,29 +1,57 @@
+@use "../../../../styles/variables.scss" as v;
 .sub {
 	vertical-align: sub;
 	font-size: smaller;
 }
 
 .stable {
-	color: forestgreen;
+	color: map-get(v.$colors, "green");
 }
 
 .unstable {
-	color: red;
+	color: map-get(v.$colors, "red");
 }
 
 .protein {
-	font-size: 1.2em;
+	margin-top: map-get(v.$spacing, "md");
+	margin-bottom: map-get(v.$spacing, "sm");
+	font-family: v.$main-font;
+	font-size: 35px;
+	font-weight: 500;
 }
 
 .peptide {
-	font-size: 1em;
+	margin-top: map-get(v.$spacing, "md");
+	margin-bottom: map-get(v.$spacing, "sm");
+	font-family: v.$main-font;
+	font-size: 35px;
+	font-weight: 500;
+	//font-size: 2rem;
+	//font-family: v.$main-font;
+	//font-weight: 600;
 }
 
 .doughnutChart {
 	width: 450px;
+	margin: 0 auto;
 }
-
 .hydropathyChart {
-	width: 1200px;
+	width: 800px;
 	height: 400px;
+}
+.BiggerFont {
+	font-size: 1.3rem;
+	font-family: v.$main-font;
+	font-weight: 600;
+	padding-left: 1rem;
+	margin-bottom: map-get(v.$spacing, "esm");
+}
+.SmallerFont {
+	color: map-get(v.$colors, "white");
+	margin-bottom: map-get(v.$spacing, "sm");
+
+	font-size: 1.2rem;
+	font-family: v.$main-font;
+	font-weight: 400;
+	padding-left: 2rem;
 }
