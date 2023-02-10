@@ -11,7 +11,7 @@ export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 	const frames = getAllFrames(rna);
 	const proteins = getAllProteins(frames);
 	return (
-		<div style={{ color: "#fff", overflowWrap: "anywhere" }}>
+		<div>
 			<Header></Header>
 			<h1 className={Styles.Title}>
 				Found {proteins.length} protein(s)/peptide(s){" "}

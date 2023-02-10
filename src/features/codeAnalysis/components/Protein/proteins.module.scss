@@ -16,16 +16,18 @@
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "sm");
 	font-family: v.$main-font;
-	font-size: 35px;
+	font-size: 2rem;
+	color: map-get(v.$colors, "gray");
 	font-weight: 500;
 }
 
 .peptide {
 	margin-top: map-get(v.$spacing, "md");
-	margin-bottom: map-get(v.$spacing, "esm");
+	margin-bottom: map-get(v.$spacing, "xsm");
 	font-family: v.$main-font;
-	font-size: 35px;
+	font-size: 2rem;
 	font-weight: 500;
+	color: map-get(v.$colors, "gray");
 	//font-size: 2rem;
 	//font-family: v.$main-font;
 	//font-weight: 600;
@@ -41,17 +43,40 @@
 	height: 400px;
 }
 .BiggerFont {
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	font-family: v.$main-font;
 	font-weight: 600;
 	padding-left: 1rem;
 	margin-bottom: map-get(v.$spacing, "esm");
+	color: map-get(v.$colors, "gray");
 }
 .SmallerFont {
+	color: map-get(v.$colors, "gray");
+
 	color: map-get(v.$colors, "white");
-	margin-bottom: map-get(v.$spacing, "esm");
+	margin-bottom: map-get(v.$spacing, "xsm");
 	font-size: 1.2rem;
 	font-family: v.$main-font;
 	font-weight: 400;
 	padding-left: 2rem;
+}
+.ShowMoreButton {
+	background-color: map-get(v.$colors, "gray");
+	border: none;
+	border-radius: 0.3rem;
+	padding: 0.3rem;
+	padding-left: 0.7rem;
+	padding-right: 0.7rem;
+	margin-top: map-get(v.$spacing, "xsm");
+	margin-left: map-get(v.$spacing, "xl");
+	cursor: pointer;
+	font-family: "Lato";
+	font-size: 20px;
+	font-weight: 100;
+	transition: 0.6s;
+
+	&:hover {
+		transition: 0.6s;
+		background-color: #cdc9c9;
+	}
 }

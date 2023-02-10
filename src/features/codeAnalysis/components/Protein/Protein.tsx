@@ -75,7 +75,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	return (
 		<div>
 			<BasicInfo />
-			<button onClick={() => expand(true)}>
+			<button className={styles.ShowMoreButton} onClick={() => expand(true)}>
 				<span>Show more</span>
 			</button>
 		</div>

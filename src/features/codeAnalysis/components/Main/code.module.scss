@@ -3,6 +3,7 @@
 .Wrapper {
 	width: 80%;
 	margin: auto;
+	color: map-get(v.$colors, "gray");
 }
 .MiniTitle {
 	margin-top: map-get(v.$spacing, "md");
@@ -10,10 +11,13 @@
 
 	font-family: v.$main-font;
 	text-align: left;
-	font-size: 2.2rem;
+	font-size: 2rem;
 	font-weight: 500;
 }
 .Table {
+	word-break: break-all;
+
+	overflow: hidden;
 	padding: 0.4rem;
 	border-radius: v.$border-radius;
 	color: map-get(v.$colors, "white");
