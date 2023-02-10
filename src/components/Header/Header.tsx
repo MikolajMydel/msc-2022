@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
 
-export default function Header() {
+export function Header() {
 	return (
 		<div className={styles.HeaderClass}>
 			<img src="../../../../../img/trophy.png" alt="" />

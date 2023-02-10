@@ -1,7 +1,6 @@
 import { getAllFrames, getAllProteins } from "../../utils/translation";
 import { CodeAndFrames } from "./Code";
 import { AnalysisResult } from "./Result";
-
 type CodeAnalysisParams = {
 	rna: string;
 };

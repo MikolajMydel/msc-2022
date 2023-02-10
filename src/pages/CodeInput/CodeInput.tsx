@@ -1,7 +1,7 @@
 import FileUploadContainer from "../../features/codeInput/components/FileUpload/FileUploadContainer";
 import InputContainer from "../../features/codeInput/components/Input/InputContainer";
 import styles from "./CodeInput.module.scss";
-import Header from "../../features/codeInput/components/Header/Header";
+import { Header } from "../../components/Header/Header";
 export default function CodeInput() {
 	return (
 		<div>

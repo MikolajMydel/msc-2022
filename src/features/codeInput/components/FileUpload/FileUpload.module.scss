@@ -17,8 +17,12 @@
 }
 
 .FileName {
-	text-align: left;
+	text-align: center;
 	color: map-get(v.$colors, "white");
+	width: 100%;
+	font-family: "Lato";
+	padding: 1rem;
+	font-weight: 100;
 }
 .GrayDiv {
 	background-color: map-get(v.$colors, "gray");
