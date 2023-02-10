@@ -44,9 +44,9 @@
 }
 .BiggerFont {
 	font-size: 1.2rem;
-	font-family: v.$main-font;
+	font-family: "Lato";
 	font-weight: 600;
-	padding-left: 1rem;
+	padding-left: 1.6rem;
 	margin-bottom: map-get(v.$spacing, "esm");
 	color: map-get(v.$colors, "gray");
 }
@@ -55,9 +55,9 @@
 
 	color: map-get(v.$colors, "white");
 	margin-bottom: map-get(v.$spacing, "xsm");
-	font-size: 1.2rem;
-	font-family: v.$main-font;
-	font-weight: 400;
+	font-size: 1.4rem;
+	font-family: "Lato";
+	font-weight: 200;
 	padding-left: 2rem;
 }
 .ShowMoreButton {

@@ -25,7 +25,7 @@ const chartOptions: object = {
 			labels: {
 				color: "white",
 				font: {
-					size: 12,
+					size: 14,
 					weight: 100,
 				},
 			},
