@@ -1,29 +1,82 @@
+@use "../../../../styles/variables.scss" as v;
 .sub {
 	vertical-align: sub;
 	font-size: smaller;
 }
 
 .stable {
-	color: forestgreen;
+	color: map-get(v.$colors, "green");
 }
 
 .unstable {
-	color: red;
+	color: map-get(v.$colors, "red");
 }
 
 .protein {
-	font-size: 1.2em;
+	margin-top: map-get(v.$spacing, "md");
+	margin-bottom: map-get(v.$spacing, "sm");
+	font-family: v.$main-font;
+	font-size: 2rem;
+	color: map-get(v.$colors, "gray");
+	font-weight: 500;
 }
 
 .peptide {
-	font-size: 1em;
+	margin-top: map-get(v.$spacing, "md");
+	margin-bottom: map-get(v.$spacing, "xsm");
+	font-family: v.$main-font;
+	font-size: 2rem;
+	font-weight: 500;
+	color: map-get(v.$colors, "gray");
+	//font-size: 2rem;
+	//font-family: v.$main-font;
+	//font-weight: 600;
 }
 
 .doughnutChart {
-	width: 450px;
+	margin-top: map-get(v.$spacing, "sm");
+	margin-bottom: map-get(v.$spacing, "sm");
+	width: 550px;
 }
-
 .hydropathyChart {
-	width: 1200px;
+	width: 800px;
 	height: 400px;
+}
+.BiggerFont {
+	font-size: 1.2rem;
+	font-family: "Lato";
+	font-weight: 600;
+	padding-left: 1.6rem;
+	margin-bottom: map-get(v.$spacing, "esm");
+	color: map-get(v.$colors, "gray");
+}
+.SmallerFont {
+	color: map-get(v.$colors, "gray");
+
+	color: map-get(v.$colors, "white");
+	margin-bottom: map-get(v.$spacing, "xsm");
+	font-size: 1.4rem;
+	font-family: "Lato";
+	font-weight: 200;
+	padding-left: 2rem;
+}
+.ShowMoreButton {
+	background-color: map-get(v.$colors, "gray");
+	border: none;
+	border-radius: 0.3rem;
+	padding: 0.3rem;
+	padding-left: 0.7rem;
+	padding-right: 0.7rem;
+	margin-top: map-get(v.$spacing, "xsm");
+	margin-left: map-get(v.$spacing, "xl");
+	cursor: pointer;
+	font-family: "Lato";
+	font-size: 20px;
+	font-weight: 100;
+	transition: 0.6s;
+
+	&:hover {
+		transition: 0.6s;
+		background-color: #cdc9c9;
+	}
 }

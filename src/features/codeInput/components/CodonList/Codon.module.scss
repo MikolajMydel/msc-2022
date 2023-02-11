@@ -13,7 +13,6 @@ $codon-list-height: 4rem;
 	font-size: 2rem;
 	margin: 1rem;
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,9 +25,10 @@ $codon-list-height: 4rem;
 }
 
 .Codon {
-	font-size: 2rem;
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 2.2rem;
 	color: map-get(v.$colors, "white");
-
 	&Start {
 		color: map-get(v.$colors, "green");
 	}
@@ -39,6 +39,8 @@ $codon-list-height: 4rem;
 }
 
 .Name {
-	font-size: 1.5rem;
-	color: map-get(v.$colors, "gray");
+	font-size: 1.2rem;
+	font-family: "Lato";
+	font-weight: thin;
+	color: map-get(v.$colors, "wgreen");
 }

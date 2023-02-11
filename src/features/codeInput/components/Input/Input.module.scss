@@ -8,35 +8,45 @@
 	justify-content: center;
 }
 .Input {
-	width: 80%;
+	margin-top: map-get(v.$spacing, "md");
+	width: 97%;
+	transition: 0.5s;
 	display: flex;
 	align-items: stretch;
 	justify-content: center;
 
 	&Button {
-		border: 2px solid green;
+		background-color: map-get(v.$colors, "gray");
+		border: none;
+		border-radius: v.$border-radius;
+		padding: map-get(v.$spacing, "sm");
+		padding-left: map-get(v.$spacing, "xl");
+		padding-right: map-get(v.$spacing, "xl");
+		font-size: bold;
+		font-size: 20px;
 	}
 
 	&HTMLElement {
 		border: none;
 		outline: none;
-
+		padding: map-get(v.$spacing, "sm");
+		padding-right: map-get(v.$spacing, "md");
+		padding-left: map-get(v.$spacing, "md");
+		margin-bottom: map-get(v.$spacing, "2xl");
 		width: 100%;
 		background-color: map-get(v.$colors, "dark-gray");
 		border-radius: v.$border-radius;
-
 		color: map-get(v.$colors, "white");
-		font-size: 3rem;
+		font-size: 2rem;
 		font-family: v.$main-font;
-		letter-spacing: map-get(v.$spacing, "sm");
-
+		letter-spacing: map-get(v.$spacing, "xsm");
 		transition: background-color v.$animation-duration v.$timing-function;
 		&Error {
 			animation: shake v.$animation-duration v.$timing-function both;
 		}
 
 		&:focus {
-			border: 1px solid map-get(v.$colors, "green");
+			border-bottom: 1px solid map-get(v.$colors, "green");
 		}
 	}
 
@@ -52,7 +62,6 @@
 .AllowedCharacters {
 	// semibold
 	font-weight: 600;
-
 	background-color: map-get(v.$colors, "dark-gray");
 	color: map-get(v.$colors, "white");
 	text-align: center;
