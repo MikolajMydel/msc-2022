@@ -6,14 +6,12 @@ import { useState, useEffect } from "react";
 import Input from "./Input";
 import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
-
 import { handleChangeType, handleKeyDownType } from "../../../../types/events";
 import {
 	saveInputValue,
 	AutosavedValueType,
 	retrieveInputValue,
 } from "../../utils/localstorage";
-
 const getAnotherSequence = (currentSequence: sequenceTypes) =>
 	currentSequence === "RNA" ? "DNA" : "RNA";
 

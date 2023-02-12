@@ -8,9 +8,6 @@ export default function CodeInput() {
 			<Header></Header>
 			<div className={styles.InputContainer}>
 				<InputContainer />
-				<a href="/analysis/">
-					<button className={styles.Button}>Check Analyse</button>
-				</a>
 			</div>
 			<FileUploadContainer />
 		</div>

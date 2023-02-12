@@ -10,7 +10,7 @@ import { sequenceTypes } from "../../../../types/biology/codeSequence";
 import MessageList from "../../../../components/Message/MessageList";
 import Message from "../../../../components/Message/Message";
 import { allowedCharacters } from "../../utils/validateKeyboardInput";
-
+import { Link } from "react-router-dom";
 const MESSAGE_DURATION = 3000;
 
 type InputProps = {
@@ -67,10 +67,16 @@ export default function Input({
 					onKeyDown={handleKeyDown}
 				/>
 			</div>
-
 			<MessageList>{errorMessage}</MessageList>
-
 			<CodonList codons={codonsArray} />
+			<div className={styles.ButtonWrapper}>
+				<Link to={`/analysis/${value}`}>
+					<button className={styles.AnalysisButton}>Analysis</button>
+				</Link>
+				<Link to={`/visualization/${value}`}>
+					<button className={styles.VisualizationButton}>Visualization</button>
+				</Link>
+			</div>
 		</div>
 	);
 }
