@@ -10,6 +10,8 @@
 	color: map-get(v.$colors, "gray");
 }
 .Wrapper {
+	word-break: break-all;
+
 	margin: 0 auto;
 	padding-bottom: 3rem;
 }
