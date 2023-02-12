@@ -68,7 +68,9 @@ export default function Input({
 				/>
 			</div>
 			<MessageList>{errorMessage}</MessageList>
-			<CodonList codons={codonsArray} />
+			<div className={styles.CodonsWrapper}>
+				<CodonList codons={codonsArray} />
+			</div>
 			<div className={styles.ButtonWrapper}>
 				<Link to={`/analysis/${value}`}>
 					<button className={styles.AnalysisButton}>Analysis</button>

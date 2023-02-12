@@ -8,7 +8,7 @@
 	justify-content: center;
 }
 .Input {
-	margin-top: map-get(v.$spacing, "md");
+	margin-top: map-get(v.$spacing, "lg");
 	width: 97%;
 	transition: 0.5s;
 	display: flex;
@@ -35,7 +35,7 @@
 		padding: map-get(v.$spacing, "sm");
 		padding-right: map-get(v.$spacing, "md");
 		padding-left: map-get(v.$spacing, "md");
-		margin-bottom: map-get(v.$spacing, "2xl");
+		margin-bottom: map-get(v.$spacing, "lg");
 		width: 100%;
 		background-color: map-get(v.$colors, "dark-gray");
 		border-radius: v.$border-radius;
@@ -100,11 +100,15 @@
 }
 .ButtonWrapper {
 	border-radius: v.$border-radius;
-	margin-top: map-get(v.$spacing, "sm");
+	margin-top: map-get(v.$spacing, "xl");
 
 	height: 36px;
 	width: 400px;
-	margin-top: map-get(v.$spacing, "2xl");
 	background-color: map-get(v.$colors, "dark-gray");
 	display: flex;
+}
+.CodonsWrapper {
+	margin: auto;
+	height: auto;
+	width: 90%;
 }
