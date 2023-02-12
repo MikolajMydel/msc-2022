@@ -14,6 +14,7 @@
 	padding: map-get(v.$spacing, "sm");
 	padding-left: map-get(v.$spacing, "xl");
 	padding-right: map-get(v.$spacing, "xl");
-	font-size: bold;
-	font-size: 20px;
+	font-weight: 500;
+	font-size: 19px;
+	font-family: v.$main-font;
 }

@@ -16,14 +16,16 @@
 	justify-content: center;
 
 	&Button {
+		font-family: v.$main-font;
+
 		background-color: map-get(v.$colors, "gray");
 		border: none;
 		border-radius: v.$border-radius;
 		padding: map-get(v.$spacing, "sm");
 		padding-left: map-get(v.$spacing, "xl");
 		padding-right: map-get(v.$spacing, "xl");
-		font-size: bold;
-		font-size: 20px;
+		font-weight: 500;
+		font-size: 16px;
 	}
 
 	&HTMLElement {
