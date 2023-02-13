@@ -1,0 +1,21 @@
+@use "../../styles/variables.scss" as v;
+
+.HeaderClass {
+	font-family: "Lato";
+	padding-top: 1rem;
+	padding-left: 25px;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: map-get(v.$spacing, "sm");
+	img {
+		width: 30px;
+		height: 30px;
+	}
+	p {
+		margin-left: 0.6rem;
+		font-weight: 100;
+		font-size: 19px;
+		margin-top: 0.4rem;
+		color: white;
+	}
+}

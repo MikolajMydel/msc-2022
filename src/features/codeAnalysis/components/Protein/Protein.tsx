@@ -45,13 +45,15 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	// returns a link, name and amino acids
 	const BasicInfo = () => {
 		return (
-			<>
+			<div>
 				<ProteinLink />
 				<Name />
-				<h5>Amino acids: </h5>
-				<AminoAcids acids={protein.acids} />
+				<h5 className={styles.BiggerFont}>Amino acids: </h5>
+				<div className={styles.SmallerFont}>
+					<AminoAcids acids={protein.acids} />
+				</div>
 				<FormulaImage acids={protein.acids} />
-			</>
+			</div>
 		);
 	};
 
@@ -59,10 +61,15 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 		return (
 			<div>
 				<BasicInfo />
-				<h5>Properties: </h5>
-				<ProteinProperties protein={protein} />
-				<h5>Found: </h5>
-				<ProteinPosition protein={protein} />
+				<h5 className={styles.BiggerFont}>Properties: </h5>
+				<div className={styles.SmallerFont}>
+					<ProteinProperties protein={protein} />
+				</div>
+
+				<h5 className={styles.BiggerFont}>Found: </h5>
+				<div className={styles.SmallerFont}>
+					<ProteinPosition protein={protein} />
+				</div>
 			</div>
 		);
 	}
@@ -70,7 +77,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	return (
 		<div>
 			<BasicInfo />
-			<button onClick={() => expand(true)}>
+			<button className={styles.ShowMoreButton} onClick={() => expand(true)}>
 				<span>Show more</span>
 			</button>
 		</div>

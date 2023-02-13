@@ -6,5 +6,7 @@ type AminoAcidsProps = {
 };
 
 export function AminoAcids({ acids }: AminoAcidsProps) {
-	return <p>{aminoAcidArrayToString(acids)}</p>;
+	return (
+		<p style={{ wordWrap: "break-word" }}>{aminoAcidArrayToString(acids)}</p>
+	);
 }

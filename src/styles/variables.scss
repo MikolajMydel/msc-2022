@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 $timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
 $animation-duration: 0.4s;
 
@@ -13,15 +15,18 @@ $colors: (
 	"dark-gray": #2c2c2c,
 	// "green": #32cd32,
 	"green": #4ac957,
+	"wgreen": #62c16b,
 	"red": #fa8072
 );
 
 $spacing: (
+	"xsm": 0.3rem,
 	"sm": 0.5rem,
 	"md": 1rem,
 	"lg": 1.5rem,
 	"xl": 2rem,
 	"2xl": 4rem,
+	"3xl": 6rem,
 );
 
 $border-radius: 5px;
