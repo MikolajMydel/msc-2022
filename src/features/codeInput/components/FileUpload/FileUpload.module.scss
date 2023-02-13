@@ -14,7 +14,31 @@
 		border: 1px solid green;
 	}
 }
-
+.AnalysisButton {
+	text-align: center;
+	margin: auto;
+	border-radius: v.$border-radius;
+	background-color: map-get(v.$colors, "dark-gray");
+	cursor: pointer;
+	border: none;
+	width: 200px;
+	height: 36px;
+	font-weight: 500;
+	font-size: 19px;
+	font-family: v.$main-font;
+	color: map-get(v.$colors, "gray");
+}
+.ButtonWrapper {
+	width: 200px;
+	height: 36px;
+	margin-bottom: 2rem !important;
+	border-radius: v.$border-radius;
+	margin-top: map-get(v.$spacing, "xl");
+	display: flex;
+	align-items: center;
+	margin: auto;
+	text-align: center;
+}
 .FileName {
 	text-align: center;
 	color: map-get(v.$colors, "white");
