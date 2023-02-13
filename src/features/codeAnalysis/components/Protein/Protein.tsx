@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Protein } from "../../utils/protein";
 import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
+import { FormulaImage } from "./Formula";
 import styles from "./proteins.module.scss";
 
 type ProteinComponentProps = {
@@ -51,6 +52,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 				<div className={styles.SmallerFont}>
 					<AminoAcids acids={protein.acids} />
 				</div>
+				<FormulaImage acids={protein.acids} />
 			</div>
 		);
 	};
