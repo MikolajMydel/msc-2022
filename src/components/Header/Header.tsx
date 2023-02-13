@@ -1,19 +1,19 @@
 import styles from "./Header.module.scss";
-
+import { Link } from "react-router-dom";
 export function Header() {
 	return (
 		<div className={styles.HeaderClass}>
-			<a href="/">
+			<Link to={"/"}>
 				<img src="../../../../../img/trophy.png" alt="" />
 				<p>Motorola Science Cup 2022</p>
-			</a>
+			</Link>
 			<div className={styles.Nav}>
-				<a href="/">
+				<Link to={"/"}>
 					<p>Home</p>
-				</a>
-				<a href="/about">
+				</Link>
+				<Link to={"/about"}>
 					<p>About</p>
-				</a>
+				</Link>
 				<a href="https://github.com/MikolajMydel/msc-2022">
 					<p>GitHub</p>
 				</a>

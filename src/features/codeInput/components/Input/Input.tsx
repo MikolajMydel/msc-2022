@@ -10,7 +10,8 @@ import { sequenceTypes } from "../../../../types/biology/codeSequence";
 import MessageList from "../../../../components/Message/MessageList";
 import Message from "../../../../components/Message/Message";
 import { allowedCharacters } from "../../utils/validateKeyboardInput";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const MESSAGE_DURATION = 3000;
 
 type InputProps = {
@@ -33,6 +34,7 @@ export default function Input({
 	switchSequenceType,
 }: InputProps) {
 	const codonsArray = splitIntoCodons(value);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (error) setTimeout(cancelError, MESSAGE_DURATION);
@@ -71,14 +73,12 @@ export default function Input({
 			<div className={styles.CodonsWrapper}>
 				<CodonList codons={codonsArray} />
 			</div>
-			<div className={styles.ButtonWrapper}>
-				<Link to={`/analysis/${value}`}>
-					<button className={styles.AnalysisButton}>Analysis</button>
-				</Link>
-				<Link to={`/visualization/${value}`}>
-					<button className={styles.VisualizationButton}>Visualization</button>
-				</Link>
-			</div>
+			<button
+				className={styles.AnalysisButton}
+				onClick={() => navigate(`/analysis/${value}`)}
+			>
+				Analysis
+			</button>
 		</div>
 	);
 }

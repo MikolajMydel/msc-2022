@@ -1,8 +1,7 @@
 import { useState } from "react";
 import FileUploadZone from "./FileUploadZone";
 import styles from "./FileUpload.module.scss";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import {
 	handleChangeType,
 	handleDropType,
@@ -12,8 +11,8 @@ import {
 export default function FileUploadContainer() {
 	const [file, setFile] = useState<File | null>(null);
 	const [dragActive, setDragActive] = useState(false);
-	const [fileContent, setFileContent] = useState();
 	const fileName = file?.name ?? "";
+	const navigate = useNavigate();
 
 	const handleDrop: handleDropType = (event) => {
 		event.preventDefault();
@@ -48,20 +47,13 @@ export default function FileUploadContainer() {
 		const reader = new FileReader();
 		reader.readAsText(file);
 		reader.onload = () => {
-			setFileContent(reader.result);
-			<Link to={`/analysis/${fileContent}`}></Link>;
+			navigate(`/analysis/${reader.result}`);
 		};
 	};
+
 	return (
 		<div className={styles.Wrapper}>
 			<h2 className={styles.FileName}>{fileName}</h2>
-			<div className={styles.ButtonWrapper}>
-				<Link to={`/analysis/${fileContent}`}>
-					<button className={styles.AnalysisButton}>
-						Analysis [file data]
-					</button>
-				</Link>
-			</div>
 			<FileUploadZone
 				handleDrop={handleDrop}
 				handleDrag={handleDrag}

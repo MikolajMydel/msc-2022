@@ -76,6 +76,7 @@
 }
 .AnalysisButton {
 	background-color: map-get(v.$colors, "gray");
+	margin-top: map-get(v.$spacing, "md");
 	cursor: pointer;
 	border: none;
 	height: 36px;
@@ -84,31 +85,4 @@
 	font-size: 19px;
 	font-family: v.$main-font;
 	border-radius: v.$border-radius;
-}
-.VisualizationButton {
-	border-top-right-radius: v.$border-radius;
-	border-bottom-right-radius: v.$border-radius;
-	background-color: map-get(v.$colors, "dark-gray");
-	cursor: pointer;
-	border: none;
-	width: 200px;
-	height: 36px;
-	font-weight: 500;
-	font-size: 19px;
-	font-family: v.$main-font;
-	color: map-get(v.$colors, "gray");
-}
-.ButtonWrapper {
-	border-radius: v.$border-radius;
-	margin-top: map-get(v.$spacing, "xl");
-
-	height: 36px;
-	width: 400px;
-	background-color: map-get(v.$colors, "dark-gray");
-	display: flex;
-}
-.CodonsWrapper {
-	margin: auto;
-	height: auto;
-	width: 90%;
 }
