@@ -17,7 +17,7 @@
 
 	&Button {
 		font-family: v.$main-font;
-
+		color: map-get(v.$colors, "dark-gray");
 		background-color: map-get(v.$colors, "gray");
 		border: none;
 		border-radius: v.$border-radius;
@@ -75,11 +75,25 @@
 	border-radius: v.$border-radius;
 }
 .AnalysisButton {
-	background-color: map-get(v.$colors, "gray");
+	background-color: map-get(v.$colors, "button-disabled");
 	margin-top: map-get(v.$spacing, "md");
+	color: map-get(v.$colors, "dark-gray");
 	cursor: pointer;
 	border: none;
 	height: 36px;
+	width: 200px;
+	font-weight: 500;
+	font-size: 19px;
+	font-family: v.$main-font;
+	border-radius: v.$border-radius;
+}
+.AnalysisButton:disabled {
+	background-color: map-get(v.$colors, "button-disabled");
+	margin-top: map-get(v.$spacing, "md");
+	color: map-get(v.$colors, "dark-gray");
+	border: none;
+	height: 36px;
+	cursor: not-allowed;
 	width: 200px;
 	font-weight: 500;
 	font-size: 19px;

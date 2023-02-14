@@ -25,7 +25,7 @@
 	margin-bottom: map-get(v.$spacing, "sm");
 	font-family: v.$main-font;
 	font-size: 2rem;
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 	font-weight: 500;
 }
 
@@ -35,7 +35,7 @@
 	font-family: v.$main-font;
 	font-size: 2rem;
 	font-weight: 500;
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 	//font-size: 2rem;
 	//font-family: v.$main-font;
 	//font-weight: 600;
@@ -61,12 +61,10 @@
 	font-weight: 600;
 	padding-left: 1.6rem;
 	margin-bottom: map-get(v.$spacing, "esm");
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 }
 .SmallerFont {
-	color: map-get(v.$colors, "gray");
-
-	color: map-get(v.$colors, "white");
+	color: map-get(v.$colors, "font-color");
 	margin-bottom: map-get(v.$spacing, "xsm");
 	font-size: 1.4rem;
 	font-family: "Lato";
