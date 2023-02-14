@@ -10,6 +10,7 @@ import { sequenceTypes } from "../../../../types/biology/codeSequence";
 import MessageList from "../../../../components/Message/MessageList";
 import Message from "../../../../components/Message/Message";
 import { allowedCharacters } from "../../utils/validateKeyboardInput";
+import { useNavigate } from "react-router-dom";
 
 const MESSAGE_DURATION = 3000;
 
@@ -33,6 +34,7 @@ export default function Input({
 	switchSequenceType,
 }: InputProps) {
 	const codonsArray = splitIntoCodons(value);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (error) setTimeout(cancelError, MESSAGE_DURATION);
@@ -67,10 +69,16 @@ export default function Input({
 					onKeyDown={handleKeyDown}
 				/>
 			</div>
-
 			<MessageList>{errorMessage}</MessageList>
-
-			<CodonList codons={codonsArray} />
+			<div className={styles.CodonsWrapper}>
+				<CodonList codons={codonsArray} />
+			</div>
+			<button
+				className={styles.AnalysisButton}
+				onClick={() => navigate(`/analysis/${value}`)}
+			>
+				Analysis
+			</button>
 		</div>
 	);
 }

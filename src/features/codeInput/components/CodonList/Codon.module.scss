@@ -1,13 +1,12 @@
 @use "../../../../styles/variables.scss" as v;
 
 // tmp
-$codon-list-height: 4rem;
 
 .CodonList {
 	display: flex;
 	align-items: center;
 	justify-content: left;
-	height: $codon-list-height;
+	flex-wrap: wrap;
 }
 .Wrapper {
 	font-size: 2rem;
@@ -18,7 +17,6 @@ $codon-list-height: 4rem;
 	align-items: center;
 	justify-content: space-between;
 }
-
 .Name,
 .Codon {
 	text-align: center;
