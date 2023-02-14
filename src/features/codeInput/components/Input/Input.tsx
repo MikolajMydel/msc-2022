@@ -76,6 +76,7 @@ export default function Input({
 			<button
 				className={styles.AnalysisButton}
 				onClick={() => navigate(`/analysis/${value}`)}
+				disabled
 			>
 				Analysis
 			</button>

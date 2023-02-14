@@ -3,7 +3,15 @@
 	vertical-align: sub;
 	font-size: smaller;
 }
+.Formula::-webkit-scrollbar {
+	background-color: rgb(241, 243, 241);
+	border-radius: 10px;
+}
 
+.Formula::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 22px 22px 22px map-get(v.$colors, "green");
+}
 .stable {
 	color: map-get(v.$colors, "green");
 }
@@ -84,4 +92,10 @@
 		transition: 0.6s;
 		background-color: #d1cfcf;
 	}
+}
+.FormulaWrapper {
+	width: 95%;
+	margin: auto;
+	margin-bottom: map-get(v.$spacing, "md");
+	margin-top: map-get(v.$spacing, "md");
 }
