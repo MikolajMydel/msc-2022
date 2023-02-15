@@ -95,6 +95,11 @@ function Formula({ acids }: { acids: AminoAcid[] }) {
                     }
                 `}
 			</style>
+			<rect
+				width={svgStyle.width}
+				height={svgStyle.height}
+				fill={svgStyle.backgroundColor}
+			></rect>
 			<g
 				transform={`
                     translate(
