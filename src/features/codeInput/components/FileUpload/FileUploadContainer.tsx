@@ -17,6 +17,8 @@ export default function FileUploadContainer() {
 	const handleDrop: handleDropType = (event) => {
 		event.preventDefault();
 		event.stopPropagation();
+		setDragActive(false);
+
 		const file = event.dataTransfer?.files[0];
 		updateFile(file);
 	};
