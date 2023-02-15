@@ -3,23 +3,13 @@
 	vertical-align: sub;
 	font-size: smaller;
 }
-.Formula::-webkit-scrollbar {
-	background-color: rgb(241, 243, 241);
-	border-radius: 10px;
-}
 
-.Formula::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 22px 22px 22px map-get(v.$colors, "green");
-}
 .stable {
 	color: map-get(v.$colors, "green");
 }
-
 .unstable {
 	color: map-get(v.$colors, "red");
 }
-
 .protein {
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "sm");
@@ -28,7 +18,6 @@
 	color: map-get(v.$colors, "font-color");
 	font-weight: 500;
 }
-
 .peptide {
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "xsm");
@@ -40,7 +29,6 @@
 	//font-family: v.$main-font;
 	//font-weight: 600;
 }
-
 .doughnutChart {
 	margin-top: map-get(v.$spacing, "sm");
 	margin-bottom: map-get(v.$spacing, "sm");
@@ -77,6 +65,7 @@
 	border-radius: 0.3rem;
 	padding: 0.3rem;
 	padding-left: 0.7rem;
+	color: black;
 	padding-right: 0.7rem;
 	margin-top: map-get(v.$spacing, "xsm");
 	margin-left: map-get(v.$spacing, "xl");

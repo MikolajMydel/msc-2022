@@ -17,10 +17,8 @@ export default function FileUploadContainer() {
 	const handleDrop: handleDropType = (event) => {
 		event.preventDefault();
 		event.stopPropagation();
-
 		const file = event.dataTransfer?.files[0];
-		if (file) updateFile(file);
-		setDragActive(false);
+		updateFile(file);
 	};
 
 	const handleDrag: handleDragType = (event) => {
@@ -43,14 +41,12 @@ export default function FileUploadContainer() {
 	const updateFile = (file: File) => {
 		// TODO: validation
 		setFile(file);
-
 		const reader = new FileReader();
 		reader.readAsText(file);
 		reader.onload = () => {
 			navigate(`/analysis/${reader.result}`);
 		};
 	};
-
 	return (
 		<div className={styles.Wrapper}>
 			<h2 className={styles.FileName}>{fileName}</h2>
