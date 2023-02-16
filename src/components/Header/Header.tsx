@@ -14,7 +14,11 @@ export function Header() {
 				<Link to={"/about"}>
 					<p>About</p>
 				</Link>
-				<a href="https://github.com/MikolajMydel/msc-2022">
+				<a
+					href="https://github.com/MikolajMydel/msc-2022"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					<p>GitHub</p>
 				</a>
 			</div>

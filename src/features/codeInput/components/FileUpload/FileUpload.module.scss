@@ -11,7 +11,7 @@
 	border-radius: v.$border-radius;
 	margin: 0 auto;
 	&Active {
-		border: 1px solid green;
+		outline: 2px dashed map-get(v.$colors, "green");
 	}
 }
 .FileName {
@@ -28,6 +28,9 @@
 	height: 12vw;
 	border-radius: v.$border-radius;
 	animation: left-to-right 2.5s Ease-out forwards;
+}
+.Hide {
+	display: none;
 }
 .InputButton {
 	font-family: v.$main-font !important;

@@ -7,32 +7,28 @@
 .stable {
 	color: map-get(v.$colors, "green");
 }
-
 .unstable {
 	color: map-get(v.$colors, "red");
 }
-
 .protein {
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "sm");
 	font-family: v.$main-font;
 	font-size: 2rem;
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 	font-weight: 500;
 }
-
 .peptide {
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "xsm");
 	font-family: v.$main-font;
 	font-size: 2rem;
 	font-weight: 500;
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 	//font-size: 2rem;
 	//font-family: v.$main-font;
 	//font-weight: 600;
 }
-
 .doughnutChart {
 	margin-top: map-get(v.$spacing, "sm");
 	margin-bottom: map-get(v.$spacing, "sm");
@@ -53,12 +49,10 @@
 	font-weight: 600;
 	padding-left: 1.6rem;
 	margin-bottom: map-get(v.$spacing, "esm");
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
 }
 .SmallerFont {
-	color: map-get(v.$colors, "gray");
-
-	color: map-get(v.$colors, "white");
+	color: map-get(v.$colors, "font-color");
 	margin-bottom: map-get(v.$spacing, "xsm");
 	font-size: 1.4rem;
 	font-family: "Lato";
@@ -71,6 +65,7 @@
 	border-radius: 0.3rem;
 	padding: 0.3rem;
 	padding-left: 0.7rem;
+	color: black;
 	padding-right: 0.7rem;
 	margin-top: map-get(v.$spacing, "xsm");
 	margin-left: map-get(v.$spacing, "xl");
@@ -84,4 +79,10 @@
 		transition: 0.6s;
 		background-color: #d1cfcf;
 	}
+}
+.FormulaWrapper {
+	width: 95%;
+	margin: auto;
+	margin-bottom: map-get(v.$spacing, "md");
+	margin-top: map-get(v.$spacing, "md");
 }

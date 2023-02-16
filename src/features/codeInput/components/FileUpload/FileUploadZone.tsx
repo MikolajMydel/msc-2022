@@ -30,8 +30,16 @@ export default function FileUploadZone({
 				[styles.ZoneActive]: dragActive,
 			})}
 		>
-			<div className={styles.GrayDiv}></div>
-			<label className={styles.InputButton}>
+			<div
+				className={classNames(styles.GrayDiv, {
+					[styles.Hide]: dragActive,
+				})}
+			></div>
+			<label
+				className={classNames(styles.InputButton, {
+					[styles.Hide]: dragActive,
+				})}
+			>
 				Choose File
 				<input type={"file"} onChange={handleChange} multiple={false} />
 			</label>

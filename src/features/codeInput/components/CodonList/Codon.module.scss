@@ -1,7 +1,4 @@
 @use "../../../../styles/variables.scss" as v;
-
-// tmp
-
 .CodonList {
 	display: flex;
 	align-items: center;
@@ -21,23 +18,20 @@
 .Codon {
 	text-align: center;
 }
-
 .Codon {
 	font-family: "Lato";
 	font-weight: 300;
-	font-size: 2.2rem;
+	font-size: 1.8rem;
 	color: map-get(v.$colors, "white");
 	&Start {
 		color: map-get(v.$colors, "green");
 	}
-
 	&Stop {
 		color: map-get(v.$colors, "red");
 	}
 }
-
 .Name {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-family: "Lato";
 	font-weight: thin;
 	color: map-get(v.$colors, "wgreen");
