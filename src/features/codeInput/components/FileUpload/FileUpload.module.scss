@@ -55,6 +55,36 @@
 		display: none;
 	}
 }
+@media (max-width: 1300px) {
+	.Wrapper {
+		margin: 0 auto;
+		width: 60vw;
+		height: 18vw;
+	}
+	.GrayDiv {
+		width: 30vw;
+		height: 18vw;
+	}
+	.InputButton {
+		bottom: calc(9vw + 12px);
+		left: calc(60vw - 32vw - 59px);
+	}
+}
+@media (max-width: 700px) {
+	.Wrapper {
+		margin: 0 auto;
+		width: 80vw;
+		height: 24vw;
+	}
+	.GrayDiv {
+		width: 40vw;
+		height: 24vw;
+	}
+	.InputButton {
+		bottom: calc(12vw + 12px);
+		left: calc(80vw - 42vw - 59px);
+	}
+}
 @keyframes left-to-right {
 	50% {
 		transform: translateX(150%);
