@@ -86,3 +86,8 @@
 	margin-bottom: map-get(v.$spacing, "md");
 	margin-top: map-get(v.$spacing, "md");
 }
+@media (max-width: 600px) {
+	.doughnutChart {
+		width: 420px;
+	}
+}

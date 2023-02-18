@@ -43,7 +43,7 @@
 	background-color: map-get(v.$colors, "green");
 	border-radius: v.$border-radius;
 	color: map-get(v.$colors, "white");
-	z-index: 222;
+	z-index: 5;
 	border: none;
 	bottom: calc(6vw + 12px);
 	left: calc(36vw - 20vw - 59px);

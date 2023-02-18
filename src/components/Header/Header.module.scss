@@ -1,7 +1,6 @@
 @use "../../styles/variables.scss" as v;
 
 .HeaderClass {
-	background-color: b;
 	font-family: "Lato", sans-serif;
 	padding-top: 1rem;
 	padding-left: 25px;
@@ -10,7 +9,6 @@
 	margin-bottom: map-get(v.$spacing, "md");
 	margin: auto;
 	color: white;
-	//color: map-get(v.$colors, "font-color");
 
 	a {
 		display: flex;
@@ -48,19 +46,18 @@
 		}
 	}
 }
+.MobileMenu {
+	display: none;
+}
 .Hamburger {
 	display: none;
 }
 @media (max-width: 600px) {
 	.HeaderClass {
-		padding-left: 15px;
+		padding-left: 12px;
 		a {
-			img {
-				width: 24px;
-				height: 24px;
-			}
 			p {
-				margin-left: 0.6rem;
+				margin-left: 8px;
 				font-weight: 300;
 				font-size: 18px;
 				margin-top: 0.4rem;
@@ -78,5 +75,50 @@
 		display: block !important;
 		height: 54px;
 		width: 54px;
+		cursor: pointer;
+	}
+
+	.MobileMenu {
+		display: flex;
+		position: fixed;
+		z-index: 10;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.716);
+		top: 0;
+		left: 5;
+		right: 0;
+		bottom: 0;
+		.MobileNav {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: map-get(v.$colors, "gray");
+			height: 100%;
+			width: 35%;
+			color: map-get(v.$colors, "dark-gray");
+			a {
+				margin-bottom: 1rem;
+				p {
+					font-weight: 300;
+					font-size: 20px;
+					color: map-get(v.$colors, "dark-gray");
+				}
+			}
+			img {
+				cursor: pointer;
+				height: 32px;
+				width: 32px;
+				position: absolute;
+				right: 5px;
+				top: 5px;
+			}
+		}
+		.Empty {
+			height: 100%;
+			width: 65%;
+			backdrop-filter: blur(3px);
+		}
 	}
 }
