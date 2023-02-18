@@ -35,13 +35,24 @@
 	width: 550px;
 }
 .hydropathyChart {
-	width: 800px;
-	height: 400px;
+	width: 1000px;
 }
 .Formula {
 	width: 100%;
 	text-align: center;
 	overflow-x: scroll;
+	scrollbar-color: map-get(v.$colors, "green") rgb(36, 36, 36);
+	scrollbar-width: thin;
+	&::-webkit-scrollbar {
+		background-color: rgb(36, 36, 36);
+		height: 6px;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		height: 6px;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 22px 22px 22px map-get(v.$colors, "green");
+	}
 }
 .BiggerFont {
 	font-size: 1.2rem;
@@ -86,6 +97,27 @@
 	margin-bottom: map-get(v.$spacing, "md");
 	margin-top: map-get(v.$spacing, "md");
 }
+
+@media (max-width: 1600px) {
+	.Chart {
+		scrollbar-color: map-get(v.$colors, "green") rgb(36, 36, 36);
+		text-align: center;
+		overflow-x: scroll;
+		scrollbar-width: thin;
+		padding-bottom: 1rem;
+		&::-webkit-scrollbar {
+			height: 6px;
+			background-color: rgb(36, 36, 36);
+			border-radius: 10px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			height: 6px;
+			-webkit-box-shadow: inset 22px 22px 22px map-get(v.$colors, "green");
+		}
+	}
+}
+
 @media (max-width: 600px) {
 	.doughnutChart {
 		width: 420px;

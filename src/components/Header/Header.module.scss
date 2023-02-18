@@ -77,7 +77,6 @@
 		width: 54px;
 		cursor: pointer;
 	}
-
 	.MobileMenu {
 		display: flex;
 		position: fixed;
@@ -94,7 +93,8 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			background-color: map-get(v.$colors, "gray");
+			background-color: rgb(232, 234, 232);
+			//background-color: map-get(v.$colors, "gray");
 			height: 100%;
 			width: 35%;
 			color: map-get(v.$colors, "dark-gray");
@@ -102,7 +102,7 @@
 				margin-bottom: 1rem;
 				p {
 					font-weight: 300;
-					font-size: 20px;
+					font-size: 22px;
 					color: map-get(v.$colors, "dark-gray");
 				}
 			}
