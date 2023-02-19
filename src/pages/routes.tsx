@@ -3,7 +3,7 @@ import { RouteObject } from "react-router-dom";
 import Root from "./Root/Root";
 import CodeAnalysis from "./CodeAnalysis/CodeAnalysis";
 import CodeInput from "./CodeInput/CodeInput";
-import Visualization from "./Visualization/Visualization";
+import About from "./About/About";
 
 export const routes: RouteObject[] = [
 	{
@@ -19,8 +19,8 @@ export const routes: RouteObject[] = [
 				element: <CodeAnalysis />,
 			},
 			{
-				path: "/visualization/:sequence",
-				element: <Visualization />,
+				path: "/about",
+				element: <About />,
 			},
 		],
 	},
