@@ -2,6 +2,7 @@ import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
 import { AminoAcidsChart } from "../Charts/AminoAcidChart";
 import { HydropathyChart } from "../Charts/HydropathyChart";
+import styles from "./proteins.module.scss";
 export type ProteinPropertiesProps = {
 	protein: Protein;
 };
@@ -18,7 +19,9 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 	return (
 		<div>
 			<p>Number of amino acids: {protein.length}</p>
-			<AminoAcidsChart protein={protein} />
+			<div className={styles.Chart}>
+				<AminoAcidsChart protein={protein} />
+			</div>
 			<p>Mass: {protein.mass}</p>
 			<p>
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
@@ -28,7 +31,9 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
 			<p>TGrand Average of Hydropathy: {protein.hydropathyIndex}</p>
-			<HydropathyChart protein={protein} />
+			<div className={styles.Chart}>
+				<HydropathyChart protein={protein} />
+			</div>
 			<p>Positively charged amino acids: {protein.positivelyChargedAcids}</p>
 			<p>Negatively charged amino acids: {protein.negativelyChargedAcids}</p>
 		</div>

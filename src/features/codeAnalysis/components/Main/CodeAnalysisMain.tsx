@@ -14,7 +14,8 @@ export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 		<div className={Styles.Wrapper}>
 			<Header></Header>
 			<h1 className={Styles.Title}>
-				Found {proteins.length} protein(s)/peptide(s){" "}
+				Found <span className={Styles.TitleNumber}>{proteins.length}</span>{" "}
+				protein(s)/peptide(s){" "}
 			</h1>
 			<CodeAndFrames rna={rna} frames={frames} />
 

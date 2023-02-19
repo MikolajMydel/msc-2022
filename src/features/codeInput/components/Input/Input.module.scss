@@ -8,7 +8,7 @@
 	justify-content: center;
 }
 .Input {
-	margin-top: map-get(v.$spacing, "lg");
+	margin-top: map-get(v.$spacing, "xl");
 	width: 97%;
 	transition: 0.5s;
 	display: flex;
@@ -26,7 +26,8 @@
 		padding-right: map-get(v.$spacing, "xl");
 		font-weight: 500;
 		font-size: 16px;
-		margin-top: map-get(v.$spacing, "md");
+		margin-top: map-get(v.$spacing, "xl");
+		cursor: pointer;
 	}
 
 	&HTMLElement {
@@ -51,10 +52,6 @@
 		&:focus {
 			border-bottom: 1px solid map-get(v.$colors, "green");
 		}
-	}
-
-	&Button {
-		cursor: pointer;
 	}
 }
 
@@ -99,4 +96,11 @@
 	font-size: 19px;
 	font-family: v.$main-font;
 	border-radius: v.$border-radius;
+}
+@media (max-width: 700px) {
+	.Input {
+		&Button {
+			margin-top: map-get(v.$spacing, "2xl");
+		}
+	}
 }

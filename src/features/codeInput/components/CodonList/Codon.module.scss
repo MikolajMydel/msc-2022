@@ -4,10 +4,13 @@
 	align-items: center;
 	justify-content: left;
 	flex-wrap: wrap;
+	width: auto;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 .Wrapper {
 	font-size: 2rem;
-	margin: 1rem;
+	margin: 0.4rem;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -35,4 +38,13 @@
 	font-family: "Lato";
 	font-weight: thin;
 	color: map-get(v.$colors, "wgreen");
+}
+@media (max-width: 700px) {
+	.CodonList {
+		width: 80%;
+		margin: auto;
+	}
+	.Wrapper {
+		margin: 0.4rem;
+	}
 }

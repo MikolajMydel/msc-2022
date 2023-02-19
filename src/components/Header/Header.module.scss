@@ -8,7 +8,7 @@
 	justify-content: space-between;
 	margin-bottom: map-get(v.$spacing, "md");
 	margin: auto;
-	color: map-get(v.$colors, "font-color");
+	color: white;
 
 	a {
 		display: flex;
@@ -38,11 +38,87 @@
 			font-weight: 300;
 			font-size: 18px;
 			margin-top: 0.4rem;
-			color: map-get(v.$colors, "font-color");
+			color: white;
 			&:hover {
 				transition: 0.6s;
-				color: rgb(255, 255, 255);
+				color: rgb(211, 215, 209);
 			}
+		}
+	}
+}
+.MobileMenu {
+	display: none;
+}
+.Hamburger {
+	display: none;
+}
+@media (max-width: 600px) {
+	.HeaderClass {
+		padding-left: 12px;
+		a {
+			p {
+				margin-left: 8px;
+				font-weight: 300;
+				font-size: 18px;
+				margin-top: 0.4rem;
+				color: white;
+			}
+		}
+	}
+	.Nav {
+		display: none;
+	}
+	.Hamburger {
+		position: absolute;
+		right: 3px;
+		top: 5px;
+		display: block !important;
+		height: 54px;
+		width: 54px;
+		cursor: pointer;
+	}
+	.MobileMenu {
+		display: flex;
+		position: fixed;
+		z-index: 10;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.716);
+		top: 0;
+		left: 5;
+		right: 0;
+		bottom: 0;
+		.MobileNav {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: rgb(232, 234, 232);
+			//background-color: map-get(v.$colors, "gray");
+			height: 100%;
+			width: 35%;
+			color: map-get(v.$colors, "dark-gray");
+			a {
+				margin-bottom: 1rem;
+				p {
+					font-weight: 300;
+					font-size: 22px;
+					color: map-get(v.$colors, "dark-gray");
+				}
+			}
+			img {
+				cursor: pointer;
+				height: 32px;
+				width: 32px;
+				position: absolute;
+				right: 5px;
+				top: 5px;
+			}
+		}
+		.Empty {
+			height: 100%;
+			width: 65%;
+			backdrop-filter: blur(3px);
 		}
 	}
 }

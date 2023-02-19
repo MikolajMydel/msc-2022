@@ -6,3 +6,8 @@
 	width: 80%;
 	margin: auto;
 }
+@media (max-width: 500px) {
+	.Wrapper {
+		width: 96%;
+	}
+}
