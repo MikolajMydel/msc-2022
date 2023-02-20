@@ -10,10 +10,9 @@
 	text-align: center;
 	font-size: 3.2rem;
 	font-weight: 500;
-	color: map-get(v.$colors, "font-color");
 	width: 70%;
 	margin: auto;
-	.TitleNumber {
+	.SecondPart {
 		color: map-get(v.$colors, "green");
 	}
 }
@@ -23,7 +22,6 @@
 	font-weight: 400;
 	padding-left: 1.8rem;
 	margin-bottom: map-get(v.$spacing, "esm");
-	color: map-get(v.$colors, "font-color");
 }
 .SmallerFont {
 	color: map-get(v.$colors, "font-color");
@@ -32,4 +30,67 @@
 	font-family: "Lato";
 	font-weight: 200;
 	padding-left: 2rem;
+}
+.Visualization {
+	margin-top: map-get(v.$spacing, "md");
+	display: flex;
+	padding-left: 1.2rem;
+	img {
+		height: 300px;
+	}
+	ul {
+		color: map-get(v.$colors, "font-color");
+		margin-bottom: map-get(v.$spacing, "xsm");
+		font-size: 1.3rem;
+		font-family: "Lato";
+		font-weight: 200;
+		margin-left: 2rem;
+		.UlPhosphoricAcid {
+			display: flex;
+			li {
+				margin-left: 2rem;
+			}
+		}
+	}
+	.Important {
+		font-weight: 800;
+		color: map-get(v.$colors, "green");
+	}
+}
+
+.Types {
+	margin-top: map-get(v.$spacing, "md");
+	table,
+	th,
+	td {
+		border: 1.5px solid rgb(142, 137, 137);
+		font-size: 1.3rem;
+		font-family: "Lato";
+		font-weight: 300;
+	}
+
+	table {
+		border-spacing: 0;
+	}
+	th,
+	td {
+		padding: 5px 10px;
+		border-top-width: 0;
+		border-left-width: 0;
+	}
+
+	thead {
+		tr {
+			th {
+				font-size: 1.3rem;
+				font-family: "Lato";
+				font-weight: 400;
+			}
+		}
+	}
+
+	th:last-child,
+	td:last-child {
+		border-right-width: 0;
+	}
 }
