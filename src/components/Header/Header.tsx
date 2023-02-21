@@ -27,7 +27,7 @@ export function Header() {
 			</div>
 			<img
 				className={styles.Hamburger}
-				src="../../../../../img/menu.png"
+				src={"../../../../../img/menu.png"}
 				alt="menu"
 				onClick={() => setOpen(true)}
 			/>
@@ -36,7 +36,7 @@ export function Header() {
 					<div className={styles.Empty}></div>
 					<div className={styles.MobileNav}>
 						<img
-							src="../../../../../img/close.png"
+							src={"../../../../../img/close.png"}
 							alt=""
 							onClick={() => setOpen(false)}
 						/>

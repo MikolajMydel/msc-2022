@@ -30,6 +30,14 @@
 	font-family: "Lato";
 	font-weight: 200;
 	padding-left: 2rem;
+	.Start {
+		color: map-get(v.$colors, "green");
+		font-weight: 800;
+	}
+	.Stop {
+		color: map-get(v.$colors, "red");
+		font-weight: 800;
+	}
 }
 .Visualization {
 	margin-top: map-get(v.$spacing, "md");
@@ -93,4 +101,7 @@
 	td:last-child {
 		border-right-width: 0;
 	}
+}
+.MiniWrapper {
+	margin-top: map-get(v.$spacing, "md");
 }
