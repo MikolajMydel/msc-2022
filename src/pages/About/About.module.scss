@@ -1,7 +1,8 @@
 @use "../../styles/variables.scss" as v;
 .Wrapper {
-	width: 80%;
+	width: 85%;
 	margin: auto;
+	padding-right: 1rem;
 }
 .Title {
 	margin-top: map-get(v.$spacing, "2xl") !important;
@@ -17,11 +18,18 @@
 	}
 }
 .BiggerFont {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	font-family: "Lato";
 	font-weight: 400;
-	padding-left: 1.8rem;
+	margin-left: 1.8rem;
+
 	margin-bottom: map-get(v.$spacing, "esm");
+	.Red {
+		color: map-get(v.$colors, "red");
+	}
+	.Green {
+		color: map-get(v.$colors, "green");
+	}
 }
 .SmallerFont {
 	color: map-get(v.$colors, "font-color");
@@ -29,7 +37,8 @@
 	font-size: 1.4rem;
 	font-family: "Lato";
 	font-weight: 200;
-	padding-left: 2rem;
+	margin-left: 2rem;
+
 	.Start {
 		color: map-get(v.$colors, "green");
 		font-weight: 800;
@@ -42,9 +51,10 @@
 .Visualization {
 	margin-top: map-get(v.$spacing, "md");
 	display: flex;
-	padding-left: 1.2rem;
 	img {
 		height: 300px;
+		margin-left: 2.6rem;
+		margin-right: 0.5rem;
 	}
 	ul {
 		color: map-get(v.$colors, "font-color");
@@ -71,18 +81,20 @@
 	table,
 	th,
 	td {
-		border: 1.5px solid rgb(142, 137, 137);
-		font-size: 1.3rem;
+		border: 1.5px solid rgb(59, 58, 58);
+		font-size: 1.2rem;
 		font-family: "Lato";
 		font-weight: 300;
 	}
 
 	table {
+		width: 70%;
 		border-spacing: 0;
+		margin-left: 2rem;
 	}
 	th,
 	td {
-		padding: 5px 10px;
+		padding: 2px 5px;
 		border-top-width: 0;
 		border-left-width: 0;
 	}
@@ -90,7 +102,7 @@
 	thead {
 		tr {
 			th {
-				font-size: 1.3rem;
+				font-size: 1.2rem;
 				font-family: "Lato";
 				font-weight: 400;
 			}
@@ -104,4 +116,79 @@
 }
 .MiniWrapper {
 	margin-top: map-get(v.$spacing, "md");
+}
+.Sequencing {
+	margin-top: map-get(v.$spacing, "md");
+	display: flex;
+	align-items: center;
+
+	.BiggerFont {
+		text-align: right;
+		width: 220px;
+		font-size: 1.9rem;
+		margin-right: 1.4rem;
+		font-family: "Lato";
+		font-weight: 400;
+		margin-bottom: map-get(v.$spacing, "esm");
+		.Red {
+			color: map-get(v.$colors, "red");
+		}
+		.Green {
+			color: map-get(v.$colors, "green");
+		}
+	}
+
+	.Sequence {
+		color: map-get(v.$colors, "font-color");
+		font-size: 1.5rem;
+		font-family: v.$main-font;
+		font-weight: 300;
+
+		.Red {
+			color: map-get(v.$colors, "red");
+			font-weight: 800;
+		}
+	}
+}
+.Arrow {
+	margin-top: 0.5rem;
+	margin-left: 180px;
+	height: 40px;
+}
+@media (max-width: 900px) {
+	.Sequencing {
+		text-align: left;
+		flex-direction: column;
+		align-items: flex-start;
+		.BiggerFont {
+			text-align: left !important;
+		}
+	}
+	.Sequence {
+		margin-left: 2.4rem;
+	}
+	.Arrow {
+		margin-top: 0.5rem;
+		margin-left: 40px;
+		height: 35px;
+	}
+}
+@media (max-width: 580px) {
+	.Wrapper {
+		width: 90%;
+		margin: auto;
+	}
+	.Visualization {
+		flex-direction: column-reverse;
+		ul {
+			margin-left: 1rem;
+			.UlPhosphoricAcid {
+				display: flex;
+				flex-direction: column;
+				li {
+					margin-left: 1rem;
+				}
+			}
+		}
+	}
 }

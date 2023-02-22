@@ -62,7 +62,7 @@ export default function About() {
 					<h5 className={styles.BiggerFont}>Functions and Types of RNA:</h5>
 					<p className={styles.SmallerFont}>
 						RNA takes part primarily in the biosynthesis of proteins. There are
-						three main types of RNA: RRNA, MRNA and TRNA
+						three main types of RNA: rRNA, mRNA and tRNA
 					</p>
 					<br />
 					<table>
@@ -107,7 +107,7 @@ export default function About() {
 					</h5>
 					<p className={styles.SmallerFont}>
 						First, DNA is transcribed into RNA. Only one of the strands that
-						make up the DNA molecule (the noncoding strand) undergoes the
+						make up the DNA molecule (the template strand) undergoes the
 						rewriting process. The second strand of DNA is the coding strand,
 						that is the gene sequence with information about a given protein. On
 						the basis of the information contained in the mRNA, a protein is
@@ -125,6 +125,46 @@ export default function About() {
 					<h5 className={styles.BiggerFont}>
 						How to determine the sequence of amino acids in a protein?
 					</h5>
+					<p className={styles.SmallerFont}>
+						The mRNA sequence must first be determined. For this purpose, it is
+						necessary to read the nucleotides complementary to the DNA template
+						strand.Then the amino acid sequence must be determined. For this
+						purpose, subsequent mRNA codons must be read. Amino acid names are
+						determined from the genetic code table
+					</p>
+					<div className={styles.Sequencing}>
+						<h5 className={styles.BiggerFont}>
+							<span className={styles.Red}>Coding </span>Strand
+						</h5>
+						<p className={styles.Sequence}>C-G-G-A-G-C-G-C-A-T-G-A</p>
+					</div>
+					<div className={styles.Sequencing}>
+						<h5 className={styles.BiggerFont}>
+							<span className={styles.Green}>Template </span>Strand
+						</h5>
+						<p className={styles.Sequence}>C-G-G-A-G-C-G-C-A-T-G-A</p>
+					</div>
+					<img
+						src={"../../../../../img/arrow.png"}
+						className={styles.Arrow}
+						alt=""
+					/>
+					<div className={styles.Sequencing}>
+						<h5 className={styles.BiggerFont}>mRNA</h5>
+						<p className={styles.Sequence}>
+							AGG-AGC-GCA-<span className={styles.Red}>UGA</span>
+						</p>
+					</div>
+					<img
+						src={"../../../../../img/arrow.png"}
+						className={styles.Arrow}
+						alt=""
+					/>
+
+					<div className={styles.Sequencing}>
+						<h5 className={styles.BiggerFont}>Polypeptide</h5>
+						<p className={styles.Sequence}>Arginine-Serine-Alanine</p>
+					</div>
 				</div>
 			</div>
 		</div>
