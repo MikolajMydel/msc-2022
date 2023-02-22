@@ -1,5 +1,5 @@
 @use "../../styles/variables.scss" as v;
-.Wrapper {
+main {
 	width: 85%;
 	margin: auto;
 	padding-right: 1rem;
@@ -22,7 +22,6 @@
 	font-family: "Lato";
 	font-weight: 400;
 	margin-left: 1.8rem;
-
 	margin-bottom: map-get(v.$spacing, "esm");
 	.Red {
 		color: map-get(v.$colors, "red");
@@ -38,7 +37,6 @@
 	font-family: "Lato";
 	font-weight: 200;
 	margin-left: 2rem;
-
 	.Start {
 		color: map-get(v.$colors, "green");
 		font-weight: 800;
@@ -62,7 +60,7 @@
 		font-size: 1.3rem;
 		font-family: "Lato";
 		font-weight: 200;
-		margin-left: 2rem;
+		margin-left: 1rem;
 		.UlPhosphoricAcid {
 			display: flex;
 			li {
@@ -98,7 +96,6 @@
 		border-top-width: 0;
 		border-left-width: 0;
 	}
-
 	thead {
 		tr {
 			th {
@@ -108,7 +105,6 @@
 			}
 		}
 	}
-
 	th:last-child,
 	td:last-child {
 		border-right-width: 0;
@@ -120,15 +116,11 @@
 .Sequencing {
 	margin-top: map-get(v.$spacing, "md");
 	display: flex;
-	align-items: center;
-
+	flex-direction: column;
 	.BiggerFont {
-		text-align: right;
+		margin-left: 2rem;
 		width: 220px;
 		font-size: 1.9rem;
-		margin-right: 1.4rem;
-		font-family: "Lato";
-		font-weight: 400;
 		margin-bottom: map-get(v.$spacing, "esm");
 		.Red {
 			color: map-get(v.$colors, "red");
@@ -137,13 +129,12 @@
 			color: map-get(v.$colors, "green");
 		}
 	}
-
 	.Sequence {
 		color: map-get(v.$colors, "font-color");
 		font-size: 1.5rem;
 		font-family: v.$main-font;
 		font-weight: 300;
-
+		margin-left: 2.4rem;
 		.Red {
 			color: map-get(v.$colors, "red");
 			font-weight: 800;
@@ -152,43 +143,20 @@
 }
 .Arrow {
 	margin-top: 0.5rem;
-	margin-left: 180px;
-	height: 40px;
+	margin-left: 40px;
+	height: 35px;
 }
-@media (max-width: 900px) {
-	.Sequencing {
-		text-align: left;
-		flex-direction: column;
-		align-items: flex-start;
-		.BiggerFont {
-			text-align: left !important;
-		}
-	}
-	.Sequence {
-		margin-left: 2.4rem;
-	}
-	.Arrow {
-		margin-top: 0.5rem;
-		margin-left: 40px;
-		height: 35px;
-	}
-}
+
 @media (max-width: 580px) {
-	.Wrapper {
+	main {
 		width: 90%;
 		margin: auto;
 	}
 	.Visualization {
 		flex-direction: column-reverse;
-		ul {
-			margin-left: 1rem;
-			.UlPhosphoricAcid {
-				display: flex;
-				flex-direction: column;
-				li {
-					margin-left: 1rem;
-				}
-			}
+		.UlPhosphoricAcid {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }

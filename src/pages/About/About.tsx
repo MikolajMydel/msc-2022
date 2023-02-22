@@ -5,7 +5,7 @@ export default function About() {
 	return (
 		<div>
 			<Header></Header>
-			<div className={styles.Wrapper}>
+			<main>
 				<h1 className={styles.Title}>
 					Biology <span className={styles.SecondPart}>basics</span>
 				</h1>
@@ -17,7 +17,7 @@ export default function About() {
 					form double-stranded fragments, joined by hydrogen bonds. Cytosine is
 					complementary to guanine and adenine is complementary to uracil
 				</p>
-				<div className={styles.Visualization}>
+				<article className={styles.Visualization}>
 					<div>
 						<img src={"../../../../../img/img.png"} alt="" />
 					</div>
@@ -57,8 +57,8 @@ export default function About() {
 							</li>
 						</ul>
 					</div>
-				</div>
-				<div className={styles.Types}>
+				</article>
+				<article className={styles.Types}>
 					<h5 className={styles.BiggerFont}>Functions and Types of RNA:</h5>
 					<p className={styles.SmallerFont}>
 						RNA takes part primarily in the biosynthesis of proteins. There are
@@ -87,8 +87,8 @@ export default function About() {
 							</tr>
 						</tbody>
 					</table>
-				</div>
-				<div className={styles.MiniWrapper}>
+				</article>
+				<article className={styles.MiniWrapper}>
 					<h5 className={styles.BiggerFont}>What is the genetic code?</h5>
 					<p className={styles.SmallerFont}>
 						genetic code is a way of storing information about the structure of
@@ -100,8 +100,8 @@ export default function About() {
 						be far too little, so if the code is ternary then the number of
 						possible codons of 64 is sufficient
 					</p>
-				</div>
-				<div className={styles.MiniWrapper}>
+				</article>
+				<article className={styles.MiniWrapper}>
 					<h5 className={styles.BiggerFont}>
 						How genetic information is read?
 					</h5>
@@ -120,8 +120,8 @@ export default function About() {
 						<span className={styles.Stop}>UAG</span>,{" "}
 						<span className={styles.Stop}>UGA</span>, ending this process
 					</p>
-				</div>
-				<div className={styles.MiniWrapper}>
+				</article>
+				<article className={styles.MiniWrapper}>
 					<h5 className={styles.BiggerFont}>
 						How to determine the sequence of amino acids in a protein?
 					</h5>
@@ -165,8 +165,8 @@ export default function About() {
 						<h5 className={styles.BiggerFont}>Polypeptide</h5>
 						<p className={styles.Sequence}>Arginine-Serine-Alanine</p>
 					</div>
-				</div>
-			</div>
+				</article>
+			</main>
 		</div>
 	);
 }
