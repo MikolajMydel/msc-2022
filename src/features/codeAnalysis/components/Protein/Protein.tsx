@@ -52,7 +52,9 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 				<div className={styles.SmallerFont}>
 					<AminoAcids acids={protein.acids} />
 				</div>
-				<FormulaImage acids={protein.acids} />
+				<div className={styles.FormulaWrapper}>
+					<FormulaImage acids={protein.acids} />
+				</div>
 			</div>
 		);
 	};

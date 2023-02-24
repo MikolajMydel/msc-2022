@@ -35,7 +35,6 @@ export default function Input({
 }: InputProps) {
 	const codonsArray = splitIntoCodons(value);
 	const navigate = useNavigate();
-
 	useEffect(() => {
 		if (error) setTimeout(cancelError, MESSAGE_DURATION);
 	}, [error]);
@@ -74,6 +73,7 @@ export default function Input({
 				<CodonList codons={codonsArray} sequenceType={sequenceType} />
 			</div>
 			<button
+				disabled={!value}
 				className={styles.AnalysisButton}
 				onClick={() => navigate(`/analysis/${value}`)}
 			>

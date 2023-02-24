@@ -8,6 +8,7 @@
 .MiniTitle {
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "md");
+	color: map-get(v.$colors, "font-color");
 
 	font-family: v.$main-font;
 	text-align: left;
@@ -17,10 +18,16 @@
 .Table {
 	padding: 0.4rem;
 	border-radius: v.$border-radius;
-	color: map-get(v.$colors, "white");
+	color: map-get(v.$colors, "font-color");
 	margin-bottom: map-get(v.$spacing, "sm");
 	padding-left: 1rem;
 	font-size: 1.2rem;
 	font-family: "Lato";
 	font-weight: 200;
+}
+@media (max-width: 1200px) {
+	.MiniTitle {
+		font-size: 1.7rem;
+		font-weight: 500;
+	}
 }

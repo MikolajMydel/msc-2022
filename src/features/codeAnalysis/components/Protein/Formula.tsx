@@ -5,16 +5,16 @@ import styles from "./proteins.module.scss";
 
 export const settings = {
 	padding: 20,
-	height: 300,
+	height: 350,
 	chainLineWidth: 25,
 	chainLineHeight: 15,
 	carbonylLineLength: 22,
 	lineStrokeWidth: 2,
 	polygonMargin: 2.5,
-	fontSize: 10,
-	fontFamily: "Arial",
-	backgroundColor: "#eee",
-	color: "#111",
+	fontSize: 15,
+	fontFamily: "Lato",
+	backgroundColor: "#black",
+	color: "#d9d9d9",
 };
 export function FormulaImage({ acids }: { acids: AminoAcid[] }) {
 	const string = renderToStaticMarkup(<Formula acids={acids} />);
@@ -95,6 +95,11 @@ function Formula({ acids }: { acids: AminoAcid[] }) {
                     }
                 `}
 			</style>
+			<rect
+				width={svgStyle.width}
+				height={svgStyle.height}
+				fill={svgStyle.backgroundColor}
+			></rect>
 			<g
 				transform={`
                     translate(

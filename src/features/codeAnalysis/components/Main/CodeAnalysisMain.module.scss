@@ -1,13 +1,18 @@
 @use "../../../../styles/variables.scss" as v;
 
 .Title {
-	margin-top: map-get(v.$spacing, "2xl");
-	margin-bottom: map-get(v.$spacing, "md");
+	margin-top: map-get(v.$spacing, "2xl") !important;
+	margin-bottom: map-get(v.$spacing, "xl") !important;
 	font-family: v.$main-font;
 	text-align: center;
 	font-size: 3.2rem;
 	font-weight: 500;
-	color: map-get(v.$colors, "gray");
+	color: map-get(v.$colors, "font-color");
+	width: 70%;
+	margin: auto;
+	.TitleNumber {
+		color: map-get(v.$colors, "green");
+	}
 }
 
 .Tip {
@@ -22,4 +27,10 @@
 
 	margin: 0 auto;
 	padding-bottom: 3rem;
+}
+@media (max-width: 1200px) {
+	.Title {
+		font-size: 2.8rem;
+		margin-bottom: map-get(v.$spacing, "xl") !important;
+	}
 }

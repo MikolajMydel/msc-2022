@@ -8,7 +8,7 @@
 	justify-content: center;
 }
 .Input {
-	margin-top: map-get(v.$spacing, "lg");
+	margin-top: map-get(v.$spacing, "xl");
 	width: 97%;
 	transition: 0.5s;
 	display: flex;
@@ -17,7 +17,7 @@
 
 	&Button {
 		font-family: v.$main-font;
-
+		color: map-get(v.$colors, "dark-gray");
 		background-color: map-get(v.$colors, "gray");
 		border: none;
 		border-radius: v.$border-radius;
@@ -26,7 +26,8 @@
 		padding-right: map-get(v.$spacing, "xl");
 		font-weight: 500;
 		font-size: 16px;
-		margin-top: map-get(v.$spacing, "md");
+		margin-top: map-get(v.$spacing, "xl");
+		cursor: pointer;
 	}
 
 	&HTMLElement {
@@ -52,10 +53,6 @@
 			border-bottom: 1px solid map-get(v.$colors, "green");
 		}
 	}
-
-	&Button {
-		cursor: pointer;
-	}
 }
 
 .Message {
@@ -75,8 +72,9 @@
 	border-radius: v.$border-radius;
 }
 .AnalysisButton {
-	background-color: map-get(v.$colors, "gray");
+	background-color: map-get(v.$colors, "button-disabled");
 	margin-top: map-get(v.$spacing, "md");
+	color: map-get(v.$colors, "dark-gray");
 	cursor: pointer;
 	border: none;
 	height: 36px;
@@ -85,4 +83,24 @@
 	font-size: 19px;
 	font-family: v.$main-font;
 	border-radius: v.$border-radius;
+}
+.AnalysisButton:disabled {
+	background-color: map-get(v.$colors, "button-disabled");
+	margin-top: map-get(v.$spacing, "md");
+	color: map-get(v.$colors, "dark-gray");
+	border: none;
+	height: 36px;
+	cursor: not-allowed;
+	width: 200px;
+	font-weight: 500;
+	font-size: 19px;
+	font-family: v.$main-font;
+	border-radius: v.$border-radius;
+}
+@media (max-width: 700px) {
+	.Input {
+		&Button {
+			margin-top: map-get(v.$spacing, "2xl");
+		}
+	}
 }
