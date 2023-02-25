@@ -1,0 +1,162 @@
+@use "../../styles/variables.scss" as v;
+main {
+	width: 85%;
+	margin: auto;
+	padding-right: 1rem;
+}
+.Title {
+	margin-top: map-get(v.$spacing, "2xl") !important;
+	margin-bottom: map-get(v.$spacing, "xl") !important;
+	font-family: v.$main-font;
+	text-align: center;
+	font-size: 3.2rem;
+	font-weight: 500;
+	width: 70%;
+	margin: auto;
+	.SecondPart {
+		color: map-get(v.$colors, "green");
+	}
+}
+.BiggerFont {
+	font-size: 1.6rem;
+	font-family: "Lato";
+	font-weight: 400;
+	margin-left: 1.8rem;
+	margin-bottom: map-get(v.$spacing, "esm");
+	.Red {
+		color: map-get(v.$colors, "red");
+	}
+	.Green {
+		color: map-get(v.$colors, "green");
+	}
+}
+.SmallerFont {
+	color: map-get(v.$colors, "font-color");
+	margin-bottom: map-get(v.$spacing, "xsm");
+	font-size: 1.4rem;
+	font-family: "Lato";
+	font-weight: 200;
+	margin-left: 2rem;
+	.Start {
+		color: map-get(v.$colors, "green");
+		font-weight: 800;
+	}
+	.Stop {
+		color: map-get(v.$colors, "red");
+		font-weight: 800;
+	}
+}
+.Visualization {
+	margin-top: map-get(v.$spacing, "md");
+	display: flex;
+	img {
+		height: 300px;
+		margin-left: 2.6rem;
+		margin-right: 0.5rem;
+	}
+	ul {
+		color: map-get(v.$colors, "font-color");
+		margin-bottom: map-get(v.$spacing, "xsm");
+		font-size: 1.3rem;
+		font-family: "Lato";
+		font-weight: 200;
+		margin-left: 1rem;
+		.UlPhosphoricAcid {
+			display: flex;
+			li {
+				margin-left: 2rem;
+			}
+		}
+	}
+	.Important {
+		font-weight: 800;
+		color: map-get(v.$colors, "green");
+	}
+}
+
+.Types {
+	margin-top: map-get(v.$spacing, "md");
+	table,
+	th,
+	td {
+		border: 1.5px solid rgb(59, 58, 58);
+		font-size: 1.2rem;
+		font-family: "Lato";
+		font-weight: 300;
+	}
+
+	table {
+		width: 70%;
+		border-spacing: 0;
+		margin-left: 2rem;
+	}
+	th,
+	td {
+		padding: 2px 5px;
+		border-top-width: 0;
+		border-left-width: 0;
+	}
+	thead {
+		tr {
+			th {
+				font-size: 1.2rem;
+				font-family: "Lato";
+				font-weight: 400;
+			}
+		}
+	}
+	th:last-child,
+	td:last-child {
+		border-right-width: 0;
+	}
+}
+.MiniWrapper {
+	margin-top: map-get(v.$spacing, "md");
+}
+.Sequencing {
+	margin-top: map-get(v.$spacing, "md");
+	display: flex;
+	flex-direction: column;
+	.BiggerFont {
+		margin-left: 2rem;
+		width: 220px;
+		font-size: 1.9rem;
+		margin-bottom: map-get(v.$spacing, "esm");
+		.Red {
+			color: map-get(v.$colors, "red");
+		}
+		.Green {
+			color: map-get(v.$colors, "green");
+		}
+	}
+	.Sequence {
+		color: map-get(v.$colors, "font-color");
+		font-size: 1.5rem;
+		font-family: v.$main-font;
+		font-weight: 300;
+		margin-left: 2.4rem;
+		.Red {
+			color: map-get(v.$colors, "red");
+			font-weight: 800;
+		}
+	}
+}
+.Arrow {
+	margin-top: 0.5rem;
+	margin-left: 40px;
+	height: 35px;
+}
+
+@media (max-width: 580px) {
+	main {
+		width: 90%;
+		margin: auto;
+	}
+	.Visualization {
+		flex-direction: column-reverse;
+		.UlPhosphoricAcid {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
