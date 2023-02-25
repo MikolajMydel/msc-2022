@@ -70,7 +70,7 @@ export default function Input({
 			</div>
 			<MessageList>{errorMessage}</MessageList>
 			<div className={styles.CodonsWrapper}>
-				<CodonList codons={codonsArray} />
+				<CodonList codons={codonsArray} sequenceType={sequenceType} />
 			</div>
 			<button
 				disabled={!value}

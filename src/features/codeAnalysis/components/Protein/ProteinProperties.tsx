@@ -2,7 +2,9 @@ import { Protein } from "../../utils/protein";
 import { ChemicalComposition } from "./ProteinComposition";
 import { AminoAcidsChart } from "../Charts/AminoAcidChart";
 import { HydropathyChart } from "../Charts/HydropathyChart";
+import { Tooltip } from "./Tooltip";
 import styles from "./proteins.module.scss";
+
 export type ProteinPropertiesProps = {
 	protein: Protein;
 };
@@ -22,20 +24,44 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			<div className={styles.Chart}>
 				<AminoAcidsChart protein={protein} />
 			</div>
-			<p>Mass: {protein.mass}</p>
+			<p>
+				<Tooltip tooltip="Mass:" tooltiptext="Molecular mass" /> {protein.mass}
+			</p>
 			<p>
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
 			</p>
 			<p>
-				Instability index: <ProteinStabilityIndex protein={protein} />
+				<Tooltip
+					tooltip="Instability index:"
+					tooltiptext="Estimate of the stabilty of the protein. Values higher than 40 predict that the protein is unstable."
+				/>
+				<ProteinStabilityIndex protein={protein} />
 			</p>
 			<p>Total atom count: {protein.totalAtomCount}</p>
-			<p>TGrand Average of Hydropathy: {protein.hydropathyIndex}</p>
+			<p>
+				<Tooltip
+					tooltip="TGrand Average of Hydropathy:"
+					tooltiptext="Average hydropathy value of all amino acids"
+				/>
+				{protein.hydropathyIndex}
+			</p>
 			<div className={styles.Chart}>
 				<HydropathyChart protein={protein} />
 			</div>
-			<p>Positively charged amino acids: {protein.positivelyChargedAcids}</p>
-			<p>Negatively charged amino acids: {protein.negativelyChargedAcids}</p>
+			<p>
+				<Tooltip
+					tooltip="Positively charged amino acids:"
+					tooltiptext="Number of Arginine and Lysine residues"
+				/>
+				{protein.positivelyChargedAcids}
+			</p>
+			<p>
+				<Tooltip
+					tooltip="Negatively charged amino acids:"
+					tooltiptext="Number of Glutamic acid and Aspartic acid residues"
+				/>
+				{protein.negativelyChargedAcids}
+			</p>
 		</div>
 	);
 }

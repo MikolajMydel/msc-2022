@@ -10,16 +10,36 @@ type CodeAnalysisParams = {
 export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 	const frames = getAllFrames(rna);
 	const proteins = getAllProteins(frames);
+
+	const AnalysisBody = () => {
+		if (proteins.length == 0) {
+			return (
+				<>
+					<h1 className={Styles.Title}>Found no proteins</h1>
+					<p className={Styles.Tip}>
+						Tip: START codon is AUG (DNA) or ATG (DNA) and one of the STOP
+						codons is UAA (RNA) or TAA (DNA)
+					</p>
+				</>
+			);
+		}
+
+		return (
+			<>
+				<h1 className={Styles.Title}>
+					Found {proteins.length} protein(s)/peptide(s){" "}
+				</h1>
+				<CodeAndFrames rna={rna} frames={frames} />
+
+				<AnalysisResult proteins={proteins} />
+			</>
+		);
+	};
+
 	return (
 		<div className={Styles.Wrapper}>
 			<Header></Header>
-			<h1 className={Styles.Title}>
-				Found <span className={Styles.TitleNumber}>{proteins.length}</span>{" "}
-				protein(s)/peptide(s){" "}
-			</h1>
-			<CodeAndFrames rna={rna} frames={frames} />
-
-			<AnalysisResult proteins={proteins} />
+			<AnalysisBody />
 		</div>
 	);
 }

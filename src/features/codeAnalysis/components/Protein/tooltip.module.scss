@@ -1,0 +1,25 @@
+@use "../../../../styles/variables.scss" as v;
+
+.Tooltip {
+	text-decoration: underline dotted map-get(v.$colors, "green") 20%;
+}
+.Tooltiptext {
+	visibility: hidden;
+	height: fit-content;
+	width: fit-content;
+	max-width: 25em;
+	background-color: black;
+	color: #fff;
+	text-align: justify;
+	padding: 5px;
+	border-radius: 6px;
+	border: 2px solid map-get(v.$colors, "dark-gray");
+	position: absolute;
+	z-index: 1;
+	transform: translate(-50%, -100%);
+}
+.Tooltip:hover {
+	.Tooltiptext {
+		visibility: visible;
+	}
+}
