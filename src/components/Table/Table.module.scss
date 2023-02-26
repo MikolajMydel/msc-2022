@@ -1,14 +1,15 @@
-@use "../../../../styles/variables.scss" as v;
+@use "../../styles/variables.scss" as v;
 .Table {
 	border-collapse: collapse;
 	border: 1px solid map-get(v.$colors, "green");
-	&Heading {
+	background-color: lighten(map-get(v.$colors, "dark-gray"), 5%);
+	&Header {
 		color: map-get(v.$colors, "green");
 		font-weight: bolder;
 		white-space: nowrap;
 	}
 
-	&Column {
+	&Cell {
 		padding: map-get(v.$spacing, "md");
 		border: 1px solid map-get(v.$colors, "white");
 		text-align: center;

@@ -2,8 +2,7 @@ import { AminoAcid } from "../../../../utils/staticvalues";
 import { aminoAcidArrayToSections } from "../../../../utils/stringoperations";
 import { v4 as uuid } from "uuid";
 import { Section } from "./Section";
-import styles from "./Frame.module.scss";
-import classNames from "classnames";
+import Table from "../../../../components/Table/Table";
 
 type FrameProps = {
 	acids: AminoAcid[];
@@ -11,24 +10,20 @@ type FrameProps = {
 };
 
 /* RNA Reading frames */
-export function Frame({ acids, shift }: FrameProps) {
+function getFrame({ acids, shift }: FrameProps) {
 	const sections = aminoAcidArrayToSections(acids);
-	return (
-		<tr className={styles.TableRow}>
-			<td className={classNames(styles.TableColumn, styles.Shift)}>+{shift}</td>
-			<td className={styles.TableColumn}>
-				{sections.map((section) => (
-					<Section
-						key={uuid()}
-						acids={section.string}
-						isProtein={section.isProtein}
-						startIndex={section.codonIndex}
-						frame={shift}
-					/>
-				))}
-			</td>
-		</tr>
-	);
+	return [
+		<div key={shift}>{shift}</div>,
+		sections.map((section) => (
+			<Section
+				key={uuid()}
+				acids={section.string}
+				isProtein={section.isProtein}
+				startIndex={section.codonIndex}
+				frame={shift}
+			/>
+		)),
+	];
 }
 
 type ReadingFramesProps = {
@@ -37,15 +32,14 @@ type ReadingFramesProps = {
 
 export function ReadingFrames({ frames }: ReadingFramesProps) {
 	return (
-		<table className={styles.Table}>
-			<thead className={styles.TableHeading}>
-				<td className={styles.TableColumn}>Shift</td>
-				<td className={styles.TableColumn}>Sequence</td>
-			</thead>
-
-			{frames.map((frame, index) => (
-				<Frame key={uuid()} acids={frame} shift={index} />
-			))}
-		</table>
+		<Table
+			header={["Shift", "Sequence"]}
+			content={frames.map((frame, index) => {
+				return getFrame({
+					acids: frame,
+					shift: index,
+				});
+			})}
+		/>
 	);
 }
