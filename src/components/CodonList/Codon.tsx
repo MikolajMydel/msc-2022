@@ -1,9 +1,9 @@
 import styles from "./Codon.module.scss";
 import classNames from "classnames";
-import { translateCodon } from "../../../../utils/codonOperations";
-import { AminoAcid } from "../../../../utils/staticvalues";
-import { sequenceTypes } from "../../../../types/biology/codeSequence";
-import { convertDNAToRNA } from "../../../../utils/transcription";
+import { translateCodon } from "../../utils/codonOperations";
+import { AminoAcid } from "../../utils/staticvalues";
+import { sequenceTypes } from "../../types/biology/codeSequence";
+import { convertDNAToRNA } from "../../utils/transcription";
 type CodonProps = {
 	nitrogenBases: string;
 	sequenceType: sequenceTypes;

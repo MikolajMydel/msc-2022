@@ -1,7 +1,7 @@
 import Codon from "./Codon";
 import styles from "./Codon.module.scss";
 import { v4 as uuidv4 } from "uuid";
-import { sequenceTypes } from "../../../../types/biology/codeSequence";
+import { sequenceTypes } from "../../types/biology/codeSequence";
 
 type CodonListProps = {
 	codons: string[];

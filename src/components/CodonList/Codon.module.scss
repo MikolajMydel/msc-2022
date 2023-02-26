@@ -1,6 +1,7 @@
-@use "../../../../styles/variables.scss" as v;
+@use "../../styles/variables.scss" as v;
 .CodonList {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: left;
 	flex-wrap: wrap;

@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 
 export default function HorizontalTable({ header, content }: TableProps) {
 	return (
-		<table className={styles.Table}>
+		<>
 			<thead className={styles.TableHeader}>
 				<tr>
 					{header.map((value) => (
@@ -25,6 +25,6 @@ export default function HorizontalTable({ header, content }: TableProps) {
 					</tr>
 				))}
 			</tbody>
-		</table>
+		</>
 	);
 }

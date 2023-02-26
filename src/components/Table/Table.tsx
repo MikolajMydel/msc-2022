@@ -1,11 +1,14 @@
 import { ReactNode } from "react";
 import VerticalTable from "./VerticalTable";
 import HorizontalTable from "./HorizontalTable";
+import styles from "./Table.module.scss";
+import classNames from "classnames";
 
 export type TableProps = {
 	header: string[];
 	content: ReactNode[][];
 	isVertical?: boolean;
+	className?: string;
 };
 export default function Table(props: TableProps) {
 	if (
@@ -14,6 +17,13 @@ export default function Table(props: TableProps) {
 	) {
 		throw new Error("Uneven table");
 	}
-	if (props.isVertical) return <VerticalTable {...props} />;
-	else return <HorizontalTable {...props} />;
+	const table = props.isVertical ? (
+		<VerticalTable {...props} />
+	) : (
+		<HorizontalTable {...props} />
+	);
+
+	return (
+		<table className={classNames(styles.Table, props.className)}>{table}</table>
+	);
 }

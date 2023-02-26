@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Protein } from "../../utils/protein";
-import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
 import { FormulaImage } from "./Formula";
 import styles from "./proteins.module.scss";
+import CodonList from "../../../../components/CodonList/CodonList";
+import Table from "../../../../components/Table/Table";
 
 type ProteinComponentProps = {
 	protein: Protein;
@@ -48,9 +49,21 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 			<div>
 				<ProteinLink />
 				<Name />
-				<h5 className={styles.BiggerFont}>Amino acids: </h5>
+				{/* <h5 className={styles.BiggerFont}>Amino acids: </h5> */}
 				<div className={styles.SmallerFont}>
-					<AminoAcids acids={protein.acids} />
+					<Table
+						className={styles.Table}
+						header={["Amino Acids"]}
+						content={[
+							[
+								<CodonList
+									key={"CodonList"}
+									codons={protein.acids}
+									sequenceType="RNA"
+								/>,
+							],
+						]}
+					/>
 				</div>
 				<div className={styles.FormulaWrapper}>
 					<FormulaImage acids={protein.acids} />
