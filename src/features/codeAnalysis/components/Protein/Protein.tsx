@@ -61,7 +61,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 
 	if (expanded) {
 		return (
-			<div>
+			<div className={styles.Wrapper}>
 				<BasicInfo />
 				<h5 className={styles.BiggerFont}>Properties: </h5>
 				<div className={styles.SmallerFont}>
@@ -77,7 +77,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	}
 
 	return (
-		<div>
+		<div className={styles.Wrapper}>
 			<BasicInfo />
 			<button className={styles.ShowMoreButton} onClick={() => expand(true)}>
 				<span>Show more</span>

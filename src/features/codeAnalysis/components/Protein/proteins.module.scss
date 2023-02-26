@@ -1,4 +1,11 @@
 @use "../../../../styles/variables.scss" as v;
+.Property {
+	margin: map-get(v.$spacing, "md") 0;
+}
+
+.Wrapper {
+	margin: map-get(v.$spacing, "2xl");
+}
 .sub {
 	vertical-align: sub;
 	font-size: smaller;
@@ -55,6 +62,7 @@
 	}
 }
 .BiggerFont {
+	margin-top: map-get($map: v.$spacing, $key: "lg");
 	font-size: 1.2rem;
 	font-family: "Lato";
 	font-weight: 600;

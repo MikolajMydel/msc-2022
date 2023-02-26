@@ -7,8 +7,7 @@ type TooltipProps = {
 export function Tooltip({ tooltip, tooltiptext }: TooltipProps) {
 	return (
 		<span className={styles.Tooltip}>
-			{tooltip}
-			<span className={styles.Tooltiptext}>{tooltiptext}</span>
+			{`${tooltip}: `} <span className={styles.Tooltiptext}>{tooltiptext}</span>
 		</span>
 	);
 }
