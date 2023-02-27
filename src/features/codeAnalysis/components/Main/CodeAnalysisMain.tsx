@@ -40,6 +40,12 @@ export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 		<div className={Styles.Wrapper}>
 			<Header></Header>
 			<AnalysisBody />
+			<a href="#">
+				<img
+					src={"../../../../img/slide-up.png"}
+					className={Styles.TopArrow}
+				></img>
+			</a>
 		</div>
 	);
 }
