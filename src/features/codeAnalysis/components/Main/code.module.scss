@@ -5,6 +5,11 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	cursor: pointer;
+
+	&Visible {
+		white-space: pre-wrap;
+		overflow: auto;
+	}
 }
 
 .Wrapper {
