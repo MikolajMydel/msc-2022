@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Protein } from "../../utils/protein";
-import { AminoAcids } from "../AminoAcid/AminoAcid";
 import { ProteinProperties, ProteinPosition } from "./ProteinProperties";
 import { FormulaImage } from "./Formula";
 import styles from "./proteins.module.scss";
+import CodonList from "../../../../components/CodonList/CodonList";
+import Table from "../../../../components/Table/Table";
+import { copyToClipboard } from "../../../../utils/copyToClipboard";
+import { aminoAcidArrayToString } from "../../../../utils/stringoperations";
 
 type ProteinComponentProps = {
 	protein: Protein;
@@ -48,9 +51,31 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 			<div>
 				<ProteinLink />
 				<Name />
-				<h5 className={styles.BiggerFont}>Amino acids: </h5>
+				{/* <h5 className={styles.BiggerFont}>Amino acids: </h5> */}
 				<div className={styles.SmallerFont}>
-					<AminoAcids acids={protein.acids} />
+					<Table
+						className={styles.Table}
+						header={["Amino Acids"]}
+						content={[
+							[
+								<CodonList
+									key={"CodonList"}
+									codons={protein.acids}
+									sequenceType="RNA"
+								/>,
+							],
+							[
+								<button
+									key="Clipboard"
+									onClick={() => {
+										copyToClipboard(aminoAcidArrayToString(protein.acids));
+									}}
+								>
+									Copy to clipboard
+								</button>,
+							],
+						]}
+					/>
 				</div>
 				<div className={styles.FormulaWrapper}>
 					<FormulaImage acids={protein.acids} />
@@ -61,7 +86,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 
 	if (expanded) {
 		return (
-			<div>
+			<div className={styles.Wrapper}>
 				<BasicInfo />
 				<h5 className={styles.BiggerFont}>Properties: </h5>
 				<div className={styles.SmallerFont}>
@@ -77,7 +102,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 	}
 
 	return (
-		<div>
+		<div className={styles.Wrapper}>
 			<BasicInfo />
 			<button className={styles.ShowMoreButton} onClick={() => expand(true)}>
 				<span>Show more</span>

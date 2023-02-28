@@ -24,23 +24,25 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			<div className={styles.Chart}>
 				<AminoAcidsChart protein={protein} />
 			</div>
-			<p>
-				<Tooltip tooltip="Mass:" tooltiptext="Molecular mass" /> {protein.mass}
+			<p className={styles.Property}>
+				<Tooltip tooltip="Mass" tooltiptext="Molecular mass" /> {protein.mass}
 			</p>
-			<p>
+			<p className={styles.Property}>
 				Chemical formula: <ChemicalComposition atoms={protein.atomCounts} />
 			</p>
-			<p>
+			<p className={styles.Property}>
 				<Tooltip
-					tooltip="Instability index:"
+					tooltip="Instability index"
 					tooltiptext="Estimate of the stabilty of the protein. Values higher than 40 predict that the protein is unstable."
 				/>
 				<ProteinStabilityIndex protein={protein} />
 			</p>
-			<p>Total atom count: {protein.totalAtomCount}</p>
-			<p>
+			<p className={styles.Property}>
+				Total atom count: {protein.totalAtomCount}
+			</p>
+			<p className={styles.Property}>
 				<Tooltip
-					tooltip="TGrand Average of Hydropathy:"
+					tooltip="TGrand Average of Hydropathy"
 					tooltiptext="Average hydropathy value of all amino acids"
 				/>
 				{protein.hydropathyIndex}
@@ -50,14 +52,14 @@ export function ProteinProperties({ protein }: ProteinPropertiesProps) {
 			</div>
 			<p>
 				<Tooltip
-					tooltip="Positively charged amino acids:"
+					tooltip="Positively charged amino acids"
 					tooltiptext="Number of Arginine and Lysine residues"
 				/>
 				{protein.positivelyChargedAcids}
 			</p>
 			<p>
 				<Tooltip
-					tooltip="Negatively charged amino acids:"
+					tooltip="Negatively charged amino acids"
 					tooltiptext="Number of Glutamic acid and Aspartic acid residues"
 				/>
 				{protein.negativelyChargedAcids}
