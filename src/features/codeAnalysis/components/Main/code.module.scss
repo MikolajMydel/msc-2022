@@ -1,5 +1,12 @@
 @use "../../../../styles/variables.scss" as v;
 
+.Wrap {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
 .Wrapper {
 	width: 80%;
 	margin: auto;
