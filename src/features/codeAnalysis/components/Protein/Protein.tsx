@@ -5,6 +5,8 @@ import { FormulaImage } from "./Formula";
 import styles from "./proteins.module.scss";
 import CodonList from "../../../../components/CodonList/CodonList";
 import Table from "../../../../components/Table/Table";
+import { copyToClipboard } from "../../../../utils/copyToClipboard";
+import { aminoAcidArrayToString } from "../../../../utils/stringoperations";
 
 type ProteinComponentProps = {
 	protein: Protein;
@@ -61,6 +63,16 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 									codons={protein.acids}
 									sequenceType="RNA"
 								/>,
+							],
+							[
+								<button
+									key="Clipboard"
+									onClick={() => {
+										copyToClipboard(aminoAcidArrayToString(protein.acids));
+									}}
+								>
+									Copy to clipboard
+								</button>,
 							],
 						]}
 					/>
