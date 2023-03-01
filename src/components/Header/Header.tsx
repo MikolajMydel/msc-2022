@@ -1,6 +1,7 @@
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 export function Header() {
 	const [open, setOpen] = useState(false);
 
@@ -32,7 +33,17 @@ export function Header() {
 				onClick={() => setOpen(true)}
 			/>
 			{open ? (
-				<div className={styles.MobileMenu}>
+				<motion.div
+					className={styles.MobileMenu}
+					initial={{ x: 20, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					transition={{
+						type: "tween",
+						duration: 0.25,
+						delay: 0.2,
+						ease: [0.25, 0.25, 0.25, 0.75],
+					}}
+				>
 					<div className={styles.Empty}></div>
 					<div className={styles.MobileNav}>
 						<img
@@ -55,7 +66,7 @@ export function Header() {
 							<p>GitHub</p>
 						</a>
 					</div>
-				</div>
+				</motion.div>
 			) : null}
 		</div>
 	);
