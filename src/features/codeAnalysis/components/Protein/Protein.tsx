@@ -52,9 +52,8 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 				<ProteinLink />
 				<Name />
 				{/* <h5 className={styles.BiggerFont}>Amino acids: </h5> */}
-				<div className={styles.SmallerFont}>
+				<div className={styles.Table}>
 					<Table
-						className={styles.Table}
 						header={["Amino Acids"]}
 						content={[
 							[
@@ -66,6 +65,7 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 							],
 							[
 								<button
+									className={styles.CopyButton}
 									key="Clipboard"
 									onClick={() => {
 										copyToClipboard(aminoAcidArrayToString(protein.acids));

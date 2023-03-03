@@ -21,7 +21,7 @@
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "sm");
 	font-family: v.$main-font;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	color: map-get(v.$colors, "font-color");
 	font-weight: 500;
 }
@@ -29,7 +29,7 @@
 	margin-top: map-get(v.$spacing, "md");
 	margin-bottom: map-get(v.$spacing, "xsm");
 	font-family: v.$main-font;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	font-weight: 500;
 	color: map-get(v.$colors, "font-color");
 	//font-size: 2rem;
@@ -99,13 +99,34 @@
 		background-color: #d1cfcf;
 	}
 }
+.Table {
+	width: 95%;
+	margin: auto;
+}
 .FormulaWrapper {
 	width: 95%;
 	margin: auto;
 	margin-bottom: map-get(v.$spacing, "md");
 	margin-top: map-get(v.$spacing, "md");
 }
-
+.CodonListDiv {
+	font-size: 0.8rem !important;
+}
+.CopyButton {
+	font-family: v.$main-font !important;
+	position: relative;
+	font-size: 17px;
+	margin: map-get(v.$spacing, "sm");
+	font-weight: 600;
+	padding: 0.6vw;
+	cursor: pointer;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	background-color: map-get(v.$colors, "green");
+	border-radius: v.$border-radius;
+	color: map-get(v.$colors, "white");
+	border: none;
+}
 @media (max-width: 1600px) {
 	.Chart {
 		scrollbar-color: map-get(v.$colors, "green") rgb(36, 36, 36);

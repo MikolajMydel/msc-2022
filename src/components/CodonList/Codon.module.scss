@@ -10,7 +10,7 @@
 	margin-right: 2rem;
 }
 .Wrapper {
-	font-size: 2rem;
+	font-size: 1rem;
 	margin: 0.4rem;
 	height: 100%;
 	display: flex;
@@ -25,7 +25,7 @@
 .Codon {
 	font-family: "Lato";
 	font-weight: 300;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: map-get(v.$colors, "white");
 	&Start {
 		color: map-get(v.$colors, "green");
