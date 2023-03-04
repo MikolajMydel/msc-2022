@@ -19,17 +19,17 @@
 }
 .protein {
 	margin-top: map-get(v.$spacing, "md");
-	margin-bottom: map-get(v.$spacing, "sm");
+	margin-bottom: map-get(v.$spacing, "md");
 	font-family: v.$main-font;
-	font-size: 2.5rem;
+	font-size: 2.4rem;
 	color: map-get(v.$colors, "font-color");
 	font-weight: 500;
 }
 .peptide {
 	margin-top: map-get(v.$spacing, "md");
-	margin-bottom: map-get(v.$spacing, "xsm");
+	margin-bottom: map-get(v.$spacing, "md");
 	font-family: v.$main-font;
-	font-size: 2.5rem;
+	font-size: 2.4rem;
 	font-weight: 500;
 	color: map-get(v.$colors, "font-color");
 	//font-size: 2rem;
@@ -102,6 +102,7 @@
 .Table {
 	width: 95%;
 	margin: auto;
+	margin-left: 1.5rem !important;
 }
 .FormulaWrapper {
 	width: 95%;

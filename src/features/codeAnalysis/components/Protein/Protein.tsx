@@ -20,9 +20,9 @@ export function ProteinComponent({ protein }: ProteinComponentProps) {
 			<>
 				,{" "}
 				{protein.stable ? (
-					<span className={styles.stable}>stable</span>
+					<span className={styles.stable}>stable:</span>
 				) : (
-					<span className={styles.unstable}>unstable</span>
+					<span className={styles.unstable}>unstable:</span>
 				)}
 			</>
 		);

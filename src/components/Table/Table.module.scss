@@ -1,7 +1,6 @@
 @use "../../styles/variables.scss" as v;
 .Table {
 	border-collapse: collapse;
-	margin-top: map-get(v.$spacing, "md");
 	border: 1px solid rgb(89, 89, 89);
 	// background-color: lighten(map-get(v.$colors, "dark-gray"), 5%);
 	thead tr {
