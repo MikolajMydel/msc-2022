@@ -4,9 +4,16 @@ import {
 } from "../../../../utils/transcription";
 import { useState, useEffect } from "react";
 import Input from "./Input";
-import { isCharacterAllowed } from "../../utils/validateKeyboardInput";
+import {
+	isCharacterAllowed,
+	isCharacterSpecial,
+} from "../../utils/validateKeyboardInput";
 import { sequenceTypes } from "../../../../types/biology/codeSequence";
-import { handleChangeType, handleKeyDownType } from "../../../../types/events";
+import {
+	handleChangeType,
+	handleKeyDownType,
+	handlePasteType,
+} from "../../../../types/events";
 import {
 	saveInputValue,
 	AutosavedValueType,
@@ -19,6 +26,7 @@ export default function InputContainer() {
 	const [value, setValue] = useState<string>("");
 	const [error, setError] = useState<boolean>(false);
 	const [autosaveEnabled, switchAutosave] = useState<boolean>(false);
+	const [isCtrlActive, activateCtrl] = useState<boolean>(false);
 
 	const [sequenceType, setSequenceType] = useState<sequenceTypes>("RNA");
 
@@ -68,11 +76,24 @@ export default function InputContainer() {
 
 	const handleKeydown: handleKeyDownType = (event) => {
 		const key = event.key;
+		if (isCtrlActive && isCharacterSpecial(key)) {
+			return;
+		}
+		if (event.ctrlKey || key === "Meta") {
+			activateCtrl(true);
+			return;
+		} else {
+			activateCtrl(false);
+		}
 		const isAllowed = isCharacterAllowed(key)[sequenceType];
 		if (key.length === 1 && !isAllowed) {
 			setError(true);
 			event.preventDefault();
 		}
+	};
+
+	const handlePaste: handlePasteType = (/*event */) => {
+		activateCtrl(false);
 	};
 
 	const cancelError = () => {
@@ -91,6 +112,7 @@ export default function InputContainer() {
 	return (
 		<Input
 			value={value}
+			handlePaste={handlePaste}
 			handleChange={handleChange}
 			handleKeyDown={handleKeydown}
 			error={error}

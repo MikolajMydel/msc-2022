@@ -1,6 +1,10 @@
 // Input presentation component
 import { useEffect } from "react";
-import { handleChangeType, handleKeyDownType } from "../../../../types/events";
+import {
+	handleChangeType,
+	handleKeyDownType,
+	handlePasteType,
+} from "../../../../types/events";
 import styles from "./Input.module.scss";
 import CodonList from "../../../../components/CodonList/CodonList";
 import ControlledInput from "../../../../components/ControlledInput/ControlledInput";
@@ -22,12 +26,14 @@ type InputProps = {
 	cancelError: () => void;
 	sequenceType: sequenceTypes;
 	switchSequenceType: () => void;
+	handlePaste: handlePasteType;
 };
 
 export default function Input({
 	value,
 	handleChange,
 	handleKeyDown,
+	handlePaste,
 	error,
 	cancelError,
 	sequenceType,
@@ -66,6 +72,7 @@ export default function Input({
 					value={value}
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
+					onPaste={handlePaste}
 				/>
 			</div>
 			<MessageList>{errorMessage}</MessageList>
