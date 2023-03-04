@@ -1,22 +1,31 @@
 @use "../../styles/variables.scss" as v;
 .CodonList {
+	max-width: 80vw;
+	overflow: hidden;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: left;
-	flex-wrap: wrap;
 	width: auto;
 	margin-left: 2rem;
 	margin-right: 2rem;
 }
 .Wrapper {
+	display: none;
 	font-size: 1rem;
 	margin: 0.4rem;
 	height: 100%;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+
+	&:nth-last-child(-n + 8) {
+		display: flex;
+	}
+	// oldest visible codon is dim
+	&:nth-last-child(0n + 8) {
+		opacity: 0.5;
+	}
 }
 .Name,
 .Codon {
