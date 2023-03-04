@@ -12,7 +12,7 @@
 }
 .Wrapper {
 	display: none;
-	font-size: 2rem;
+	font-size: 1rem;
 	margin: 0.4rem;
 	height: 100%;
 	flex-direction: column;
@@ -22,7 +22,7 @@
 	&:nth-last-child(-n + 8) {
 		display: flex;
 	}
-	// last visible codon is dim
+	// oldest visible codon is dim
 	&:nth-last-child(0n + 8) {
 		opacity: 0.5;
 	}
@@ -34,7 +34,7 @@
 .Codon {
 	font-family: "Lato";
 	font-weight: 300;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: map-get(v.$colors, "white");
 	&Start {
 		color: map-get(v.$colors, "green");

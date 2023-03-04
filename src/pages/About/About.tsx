@@ -1,9 +1,19 @@
 import { Header } from "../../components/Header/Header";
 import styles from "./About.module.scss";
+import { motion } from "framer-motion";
 
 export default function About() {
 	return (
-		<div>
+		<motion.div
+			initial={{ x: -20, opacity: 0 }}
+			animate={{ x: 0, opacity: 1 }}
+			transition={{
+				type: "tween",
+				duration: 0.8,
+				delay: 0.3,
+				ease: [0.25, 0.25, 0.25, 0.75],
+			}}
+		>
 			<Header></Header>
 			<main>
 				<h1 className={styles.Title}>
@@ -160,13 +170,12 @@ export default function About() {
 						className={styles.Arrow}
 						alt=""
 					/>
-
 					<div className={styles.Sequencing}>
 						<h5 className={styles.BiggerFont}>Polypeptide</h5>
 						<p className={styles.Sequence}>Arginine-Serine-Alanine</p>
 					</div>
 				</article>
 			</main>
-		</div>
+		</motion.div>
 	);
 }
