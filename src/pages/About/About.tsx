@@ -1,3 +1,4 @@
+import { arrow, formula } from "../../../img";
 import { Header } from "../../components/Header/Header";
 import styles from "./About.module.scss";
 import { motion } from "framer-motion";
@@ -29,7 +30,7 @@ export default function About() {
 				</p>
 				<article className={styles.Visualization}>
 					<div>
-						<img src={"../../../../../img/img.png"} alt="" />
+						<img src={formula} alt="" />
 					</div>
 					<div>
 						<h5 className={styles.BiggerFont}>
@@ -154,22 +155,14 @@ export default function About() {
 						</h5>
 						<p className={styles.Sequence}>C-G-G-A-G-C-G-C-A-T-G-A</p>
 					</div>
-					<img
-						src={"../../../../../img/arrow.png"}
-						className={styles.Arrow}
-						alt=""
-					/>
+					<img src={arrow} className={styles.Arrow} alt="" />
 					<div className={styles.Sequencing}>
 						<h5 className={styles.BiggerFont}>mRNA</h5>
 						<p className={styles.Sequence}>
 							AGG-AGC-GCA-<span className={styles.Red}>UGA</span>
 						</p>
 					</div>
-					<img
-						src={"../../../../../img/arrow.png"}
-						className={styles.Arrow}
-						alt=""
-					/>
+					<img src={arrow} className={styles.Arrow} alt="" />
 					<div className={styles.Sequencing}>
 						<h5 className={styles.BiggerFont}>Polypeptide</h5>
 						<p className={styles.Sequence}>Arginine-Serine-Alanine</p>
