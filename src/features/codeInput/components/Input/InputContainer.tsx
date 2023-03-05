@@ -27,6 +27,7 @@ export default function InputContainer() {
 	const [error, setError] = useState<boolean>(false);
 	const [autosaveEnabled, switchAutosave] = useState<boolean>(false);
 	const [isCtrlActive, activateCtrl] = useState<boolean>(false);
+	const [isDataValid, setDataValidity] = useState<boolean>(true);
 
 	const [sequenceType, setSequenceType] = useState<sequenceTypes>("RNA");
 
@@ -46,7 +47,21 @@ export default function InputContainer() {
 
 	useEffect(() => {
 		if (autosaveEnabled) autosave();
+		if (!isDataValid) validateData();
 	}, [value]);
+
+	const validateData = () => {
+		const validData: string[] = [];
+		for (let character of value) {
+			if (isCharacterAllowed(character)[sequenceType])
+				validData.push(character);
+		}
+		if (value.length !== validData.length) {
+			setError(true);
+			setValue(validData.join(""));
+			setDataValidity(true);
+		}
+	};
 
 	const autosave = () => {
 		const data: AutosavedValueType = {
@@ -93,7 +108,7 @@ export default function InputContainer() {
 	};
 
 	const handlePaste: handlePasteType = (/*event */) => {
-		activateCtrl(false);
+		setDataValidity(false);
 	};
 
 	const cancelError = () => {
