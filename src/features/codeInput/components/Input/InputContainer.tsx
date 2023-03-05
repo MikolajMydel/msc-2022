@@ -52,7 +52,7 @@ export default function InputContainer() {
 
 	const validateData = () => {
 		const validData: string[] = [];
-		for (let character of value) {
+		for (const character of value) {
 			if (isCharacterAllowed(character)[sequenceType])
 				validData.push(character);
 		}
