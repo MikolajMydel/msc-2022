@@ -29,6 +29,6 @@ npm test
 
 Dokumentacja jest dostępna [tutaj](https://github.com/MikolajMydel/msc-2022/wiki)
 
-## Źródła
+## Źródła:
 
 Źródła dostępne są na stronie [wiki](https://github.com/MikolajMydel/msc-2022/wiki/%C5%B9r%C3%B3d%C5%82a)
