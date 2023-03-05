@@ -6,6 +6,8 @@ const sequenceRegex: Record<sequenceTypes, RegExp> = {
 	RNA: RNA_REGEXP,
 };
 
+const SPECIAL_CHARACTERS = ["C", "V", "X"];
+
 type isCharacterAllowed = Record<sequenceTypes, boolean>;
 
 export const allowedCharacters: Record<sequenceTypes, string[]> = {
@@ -21,4 +23,8 @@ export function isCharacterAllowed(keyCode: string): isCharacterAllowed {
 		return { ...previousValue, [sequenceType]: regex.test(keyCode) };
 	},
 	{} as isCharacterAllowed);
+}
+
+export function isCharacterSpecial(keyCode: string) {
+	return SPECIAL_CHARACTERS.includes(keyCode.toUpperCase());
 }
