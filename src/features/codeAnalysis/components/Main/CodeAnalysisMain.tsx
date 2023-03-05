@@ -2,6 +2,7 @@ import { getAllFrames, getAllProteins } from "../../utils/translation";
 import { CodeAndFrames } from "./Code";
 import { AnalysisResult } from "./Result";
 import { Header } from "../../../../components/Header/Header";
+import { slideUpIcon } from "../../../../../img";
 import Styles from "./CodeAnalysisMain.module.scss";
 type CodeAnalysisParams = {
 	rna: string;
@@ -41,10 +42,7 @@ export function CodeAnalysisMain({ rna }: CodeAnalysisParams) {
 			<Header></Header>
 			<AnalysisBody />
 			<a href="#">
-				<img
-					src={"../../../../img/slide-up.png"}
-					className={Styles.TopArrow}
-				></img>
+				<img src={slideUpIcon} className={Styles.TopArrow}></img>
 			</a>
 		</div>
 	);
