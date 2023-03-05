@@ -2,13 +2,15 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+
+import { closeIcon, menuIcon, trophyIcon } from "../../../img";
 export function Header() {
 	const [open, setOpen] = useState(false);
 
 	return (
 		<div className={styles.HeaderClass}>
 			<Link to={"/"}>
-				<img src="../../../../../img/trophy.png" alt="" />
+				<img src={trophyIcon} alt="" />
 				<p>Motorola Science Cup 2022</p>
 			</Link>
 			<div className={styles.Nav}>
@@ -28,7 +30,7 @@ export function Header() {
 			</div>
 			<img
 				className={styles.Hamburger}
-				src={"../../../../../img/menu.png"}
+				src={menuIcon}
 				alt="menu"
 				onClick={() => setOpen(true)}
 			/>
@@ -46,11 +48,7 @@ export function Header() {
 				>
 					<div className={styles.Empty}></div>
 					<div className={styles.MobileNav}>
-						<img
-							src={"../../../../../img/close.png"}
-							alt=""
-							onClick={() => setOpen(false)}
-						/>
+						<img src={closeIcon} alt="" onClick={() => setOpen(false)} />
 						<Link to={"/"} onClick={() => setOpen(false)}>
 							<p>Home</p>
 						</Link>
