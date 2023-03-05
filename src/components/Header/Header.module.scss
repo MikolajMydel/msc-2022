@@ -12,6 +12,8 @@
 
 	a {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		text-decoration: none;
 		img {
 			width: 30px;
@@ -21,7 +23,6 @@
 			margin-left: 0.6rem;
 			font-weight: 300;
 			font-size: 22px;
-			margin-top: 0.4rem;
 			color: white;
 		}
 	}
